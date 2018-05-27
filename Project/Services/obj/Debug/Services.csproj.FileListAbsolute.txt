@@ -1,0 +1,5 @@
+E:\Freelancer\ASang\vehiclemanager\Project\Services\bin\Debug\Services.dll
+E:\Freelancer\ASang\vehiclemanager\Project\Services\bin\Debug\Services.pdb
+E:\Freelancer\ASang\vehiclemanager\Project\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+E:\Freelancer\ASang\vehiclemanager\Project\Services\obj\Debug\Services.dll
+E:\Freelancer\ASang\vehiclemanager\Project\Services\obj\Debug\Services.pdb

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="XeNangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BanHang">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID_Product" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="NgayBan" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DatHang">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TenNguoiDat" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SDT" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="MailZalo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenHang" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ThoiGianCanLay" Type="datetime" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+    <Property Name="TrangThai" Type="varchar" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kho">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="NgayUpdated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MasterData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Value" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Keys" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NhapHang">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NgayNhapHang" Type="date" Nullable="false" />
+    <Property Name="ID_Product" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="TinhTrang" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Hang" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhanLoaiXe" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+    <Property Name="Loai" Type="varchar" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Loai" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ThongTinSanPham">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Hieu" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Doi" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Hang" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+    <Property Name="TinhTrang" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="PhanLoai" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Image1" Type="varchar(max)" Nullable="false" />
+    <Property Name="Image2" Type="varchar(max)" />
+    <Property Name="Image3" Type="varchar(max)" />
+    <Property Name="Image4" Type="varchar(max)" />
+    <Property Name="Image5" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="XeNangModelStoreContainer">
+    <EntitySet Name="BanHang" EntityType="Self.BanHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DatHang" EntityType="Self.DatHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kho" EntityType="Self.Kho" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MasterData" EntityType="Self.MasterData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhapHang" EntityType="Self.NhapHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThongTinSanPham" EntityType="Self.ThongTinSanPham" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
