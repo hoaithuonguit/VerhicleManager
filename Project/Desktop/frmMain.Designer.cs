@@ -37,7 +37,6 @@
             this.strip_ThemSanPham = new System.Windows.Forms.ToolStripMenuItem();
             this.strip_NhapHang = new System.Windows.Forms.ToolStripMenuItem();
             this.strip_BanHang = new System.Windows.Forms.ToolStripMenuItem();
-            this.strip_MasterData = new System.Windows.Forms.ToolStripMenuItem();
             this.strip_QuanLiKho = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip_Time = new System.Windows.Forms.ToolStripStatusLabel();
@@ -92,8 +91,7 @@
             this.strip_ThemThongTinSanPham,
             this.strip_ThemSanPham,
             this.strip_NhapHang,
-            this.strip_BanHang,
-            this.strip_MasterData});
+            this.strip_BanHang});
             this.cậpNhậtDữLiệuToolStripMenuItem.Image = global::Desktop.Properties.Resources.icons8_plus_48;
             this.cậpNhậtDữLiệuToolStripMenuItem.Name = "cậpNhậtDữLiệuToolStripMenuItem";
             this.cậpNhậtDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(228, 36);
@@ -130,14 +128,6 @@
             this.strip_BanHang.Size = new System.Drawing.Size(380, 36);
             this.strip_BanHang.Text = "Bán hàng";
             this.strip_BanHang.Click += new System.EventHandler(this.strip_BanHang_Click);
-            // 
-            // strip_MasterData
-            // 
-            this.strip_MasterData.Image = global::Desktop.Properties.Resources.BTsua;
-            this.strip_MasterData.Name = "strip_MasterData";
-            this.strip_MasterData.Size = new System.Drawing.Size(380, 36);
-            this.strip_MasterData.Text = "Master data";
-            this.strip_MasterData.Click += new System.EventHandler(this.strip_MasterData_Click);
             // 
             // strip_QuanLiKho
             // 
@@ -213,6 +203,5 @@
         private System.Windows.Forms.TabControl tabControl_Main;
         private System.Windows.Forms.ToolStripMenuItem strip_NhapHang;
         private System.Windows.Forms.ToolStripMenuItem strip_BanHang;
-        private System.Windows.Forms.ToolStripMenuItem strip_MasterData;
     }
 }

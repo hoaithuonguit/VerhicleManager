@@ -63,12 +63,6 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMasterData.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMasterData.Designer.cs">
-      <DependentUpon>frmMasterData.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmNhapHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +74,12 @@
     </Compile>
     <Compile Include="frmSanPham.Designer.cs">
       <DependentUpon>frmSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongTinCuaHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTinCuaHang.Designer.cs">
+      <DependentUpon>frmThongTinCuaHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThongTinSanPham.cs">
       <SubType>Form</SubType>
@@ -97,9 +97,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMasterData.resx">
-      <DependentUpon>frmMasterData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhapHang.resx">
       <DependentUpon>frmNhapHang.cs</DependentUpon>

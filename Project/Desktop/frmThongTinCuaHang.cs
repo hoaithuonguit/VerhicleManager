@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
-    public partial class frmMasterData : Form
+    public partial class frmThongTinCuaHang : Form
     {
-        public frmMasterData()
+        public frmThongTinCuaHang()
         {
             InitializeComponent();
-        }
-
-        private void frmMasterData_Load(object sender, EventArgs e)
-        {
-            strip_Luu.Enabled = false;
-            strip_Sua.Enabled = false;
-            strip_Xoa.Enabled = false;
         }
     }
 }

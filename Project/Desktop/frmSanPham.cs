@@ -17,11 +17,6 @@ namespace Desktop
             InitializeComponent();
         }
         #region Event
-        private void cbb_Loai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbb_Loai.Text == "Xe nâng") tb_Loai.Text = "01";
-            if (cbb_Loai.Text == "Phụ tùng") tb_Loai.Text = "02";
-        }
         #endregion
     }
 }

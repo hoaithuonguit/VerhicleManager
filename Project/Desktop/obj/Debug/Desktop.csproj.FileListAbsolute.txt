@@ -39,3 +39,17 @@ C:\Users\BaoDuy\Documents\VerhicleManager\Project\Desktop\obj\Debug\Desktop.frmS
 C:\Users\BaoDuy\Documents\VerhicleManager\Project\Desktop\obj\Debug\Desktop.frmThongTinSanPham.resources
 C:\Users\BaoDuy\Documents\VerhicleManager\Project\Desktop\obj\Debug\Desktop.Properties.Resources.resources
 C:\Users\BaoDuy\Documents\VerhicleManager\Project\Desktop\obj\Debug\Desktop.csproj.GenerateResource.Cache
+C:\Users\BaoDuy\Desktop\Project\Desktop\bin\Debug\Desktop.exe.config
+C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.exe
+C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.pdb
+C:\Users\BaoDuy\Desktop\Project\Desktop\bin\Debug\Desktop.exe
+C:\Users\BaoDuy\Desktop\Project\Desktop\bin\Debug\Desktop.pdb
+C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.csprojResolveAssemblyReference.cache
+C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.frmBanHang.resources
+C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.frmKho.resources
+C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.frmMain.resources
+C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.frmNhapHang.resources
+C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.frmSanPham.resources
+C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.frmThongTinSanPham.resources
+C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.Properties.Resources.resources
+C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.csproj.GenerateResource.Cache

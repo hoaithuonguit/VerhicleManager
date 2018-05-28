@@ -36,13 +36,10 @@
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
             this.btn_XuatExcel = new System.Windows.Forms.Button();
-            this.tb_Loai = new System.Windows.Forms.TextBox();
             this.cbb_Loai = new System.Windows.Forms.ComboBox();
             this.tb_Ten = new System.Windows.Forms.TextBox();
-            this.tb_ID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_DuLieu = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -63,13 +60,10 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.tb_Loai);
             this.groupBox1.Controls.Add(this.cbb_Loai);
             this.groupBox1.Controls.Add(this.tb_Ten);
-            this.groupBox1.Controls.Add(this.tb_ID);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -147,14 +141,6 @@
             this.btn_XuatExcel.Text = "Xuất excel";
             this.btn_XuatExcel.UseVisualStyleBackColor = true;
             // 
-            // tb_Loai
-            // 
-            this.tb_Loai.Enabled = false;
-            this.tb_Loai.Location = new System.Drawing.Point(402, 174);
-            this.tb_Loai.Name = "tb_Loai";
-            this.tb_Loai.Size = new System.Drawing.Size(158, 35);
-            this.tb_Loai.TabIndex = 6;
-            // 
             // cbb_Loai
             // 
             this.cbb_Loai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -162,30 +148,22 @@
             this.cbb_Loai.Items.AddRange(new object[] {
             "Xe nâng",
             "Phụ tùng"});
-            this.cbb_Loai.Location = new System.Drawing.Point(214, 174);
+            this.cbb_Loai.Location = new System.Drawing.Point(214, 117);
             this.cbb_Loai.Name = "cbb_Loai";
             this.cbb_Loai.Size = new System.Drawing.Size(149, 37);
             this.cbb_Loai.TabIndex = 5;
-            this.cbb_Loai.SelectedIndexChanged += new System.EventHandler(this.cbb_Loai_SelectedIndexChanged);
             // 
             // tb_Ten
             // 
-            this.tb_Ten.Location = new System.Drawing.Point(214, 117);
+            this.tb_Ten.Location = new System.Drawing.Point(214, 60);
             this.tb_Ten.Name = "tb_Ten";
             this.tb_Ten.Size = new System.Drawing.Size(346, 35);
             this.tb_Ten.TabIndex = 4;
             // 
-            // tb_ID
-            // 
-            this.tb_ID.Location = new System.Drawing.Point(214, 60);
-            this.tb_ID.Name = "tb_ID";
-            this.tb_ID.Size = new System.Drawing.Size(346, 35);
-            this.tb_ID.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 177);
+            this.label3.Location = new System.Drawing.Point(33, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(175, 29);
             this.label3.TabIndex = 2;
@@ -194,20 +172,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 120);
+            this.label2.Location = new System.Drawing.Point(33, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(172, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên sản phẩm:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID sản phẩm:";
             // 
             // groupBox2
             // 
@@ -322,13 +291,10 @@
         private System.Windows.Forms.DataGridView dgv_DuLieu;
         private System.Windows.Forms.ToolStripButton strip_Luu;
         private System.Windows.Forms.ToolStripButton strip_Thoat;
-        private System.Windows.Forms.TextBox tb_Loai;
         private System.Windows.Forms.ComboBox cbb_Loai;
         private System.Windows.Forms.TextBox tb_Ten;
-        private System.Windows.Forms.TextBox tb_ID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btn_XuatExcel;
         private System.Windows.Forms.Label label4;

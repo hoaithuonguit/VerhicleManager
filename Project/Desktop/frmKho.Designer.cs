@@ -48,6 +48,8 @@
             this.strip_Xoa = new System.Windows.Forms.ToolStripButton();
             this.strip_Luu = new System.Windows.Forms.ToolStripButton();
             this.strip_Thoat = new System.Windows.Forms.ToolStripButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbb_PhanLoai = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -59,6 +61,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.cbb_PhanLoai);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.btn_KiemTra);
             this.groupBox1.Controls.Add(this.cbb_TenSanPham);
@@ -163,7 +167,7 @@
             // 
             // btn_KiemTra
             // 
-            this.btn_KiemTra.Location = new System.Drawing.Point(197, 129);
+            this.btn_KiemTra.Location = new System.Drawing.Point(197, 173);
             this.btn_KiemTra.Name = "btn_KiemTra";
             this.btn_KiemTra.Size = new System.Drawing.Size(127, 52);
             this.btn_KiemTra.TabIndex = 25;
@@ -173,7 +177,7 @@
             // cbb_TenSanPham
             // 
             this.cbb_TenSanPham.FormattingEnabled = true;
-            this.cbb_TenSanPham.Location = new System.Drawing.Point(197, 60);
+            this.cbb_TenSanPham.Location = new System.Drawing.Point(194, 107);
             this.cbb_TenSanPham.Name = "cbb_TenSanPham";
             this.cbb_TenSanPham.Size = new System.Drawing.Size(369, 37);
             this.cbb_TenSanPham.TabIndex = 24;
@@ -181,7 +185,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 63);
+            this.label1.Location = new System.Drawing.Point(16, 110);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 29);
             this.label1.TabIndex = 23;
@@ -267,6 +271,23 @@
             this.strip_Thoat.Size = new System.Drawing.Size(85, 29);
             this.strip_Thoat.Text = "Thoát";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 63);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(119, 29);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Phân loại:";
+            // 
+            // cbb_PhanLoai
+            // 
+            this.cbb_PhanLoai.FormattingEnabled = true;
+            this.cbb_PhanLoai.Location = new System.Drawing.Point(194, 60);
+            this.cbb_PhanLoai.Name = "cbb_PhanLoai";
+            this.cbb_PhanLoai.Size = new System.Drawing.Size(369, 37);
+            this.cbb_PhanLoai.TabIndex = 28;
+            // 
             // frmKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -312,5 +333,7 @@
         private System.Windows.Forms.RadioButton rdb_HangBanNhieuNhat;
         private System.Windows.Forms.RadioButton rdb_HangHet;
         private System.Windows.Forms.Button btn_KiemHang;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbb_PhanLoai;
     }
 }
