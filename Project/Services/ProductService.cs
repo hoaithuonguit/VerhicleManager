@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Data.Dtos;
+using Data.Infrastructure;
 using Data.Repositories;
 using Services.Abstract;
 
@@ -22,14 +23,14 @@ namespace Services
             _repository.AddProduct(product);
         }
 
-        public void ImportProduct(ProductDto product, int count)
+        public void ImportProduct(ProductDto product, int count, DateTime dateCreate)
         {
-            _repository.ImportProduct(product, count);
+            _repository.ImportProduct(product, count, dateCreate);
         }
 
-        public void SellProduct(ProductDto product, int count)
+        public void SellProduct(ProductDto product, int count, DateTime dateCreate)
         {
-            _repository.SellProduct(product, count);
+            _repository.SellProduct(product, count, dateCreate);
         }
 
         public List<ProductDto> GetTopProduct(int range)
@@ -50,6 +51,16 @@ namespace Services
         public void ExportToCsv(List<ProductDto> products, string fileName)
         {
             _repository.ExportToCsvFile(products, fileName);
+        }
+
+        public List<ProductStatusDto> GetAllProductStatus(string key1, string key2 = "", string key3 = "")
+        {
+            return Helper.GetMasterData<ProductStatusDto>(key1, key2, key3);
+        }
+
+        public List<ProductTypeDto> GetAllProductType(string key1, string key2 = "", string key3 = "")
+        {
+            return Helper.GetMasterData<ProductTypeDto>(key1, key2, key3);
         }
     }
 }

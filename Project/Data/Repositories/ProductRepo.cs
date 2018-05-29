@@ -38,7 +38,7 @@ namespace Data.Repositories
                         ID = ID
                     });
 
-                    dbContext.ThongTinSanPhams.Add(new ThongTinSanPham()
+                    ThongTinSanPham productInfomation = new ThongTinSanPham()
                     {
                         Hieu = product.Hieu,
                         Doi = product.Doi,
@@ -47,12 +47,13 @@ namespace Data.Repositories
                         TinhTrang = product.TinhTrang,
                         PhanLoai = product.PhanLoai,
                         Image1 = product.Image1,
-                        Image2 = product.Image2,
-                        Image3 = product.Image3,
-                        Image4 = product.Image4,
-                        Image5 = product.Image5,
                         ID = ID
-                    });
+                    };
+                    if (product.Image2 != null) productInfomation.Image2 = product.Image2;
+                    if (product.Image3 != null) productInfomation.Image2 = product.Image3;
+                    if (product.Image4 != null) productInfomation.Image2 = product.Image4;
+                    if (product.Image5 != null) productInfomation.Image2 = product.Image5;
+                    dbContext.ThongTinSanPhams.Add(productInfomation);
 
                     dbContext.SaveChanges();
                     return true;
@@ -81,7 +82,7 @@ namespace Data.Repositories
 
         }
 
-        public bool ImportProduct(ProductDto product, int count)
+        public bool ImportProduct(ProductDto product, int count, DateTime dateCreate)
         {
             try
             {
@@ -89,7 +90,7 @@ namespace Data.Repositories
                 {
                     dbContext.NhapHangs.Add(new NhapHang()
                     {
-                        NgayNhapHang = DateTime.Today,
+                        NgayNhapHang = dateCreate,
                         ID_Product = product.ID,
                         SoLuong = count,
                         TinhTrang = product.TinhTrang,
@@ -140,7 +141,7 @@ namespace Data.Repositories
             }
         }
 
-        public bool SellProduct(ProductDto product, int count)
+        public bool SellProduct(ProductDto product, int count, DateTime dateCreate)
         {
             try
             {
@@ -154,7 +155,7 @@ namespace Data.Repositories
                     dbContext.BanHangs.Add(new BanHang()
                     {
                         ID_Product = product.ID,
-                        NgayBan = DateTime.Now,
+                        NgayBan = dateCreate,
                         SoLuong = count,
                         ID = (from s in dbContext.BanHangs select s.ID).Count()
                     });
@@ -189,53 +190,74 @@ namespace Data.Repositories
             using (var dbContext = new XeNangEntities())
             {
                 var date = DateTime.Now.AddDays(-7).Date;
-                var result = ((from b in dbContext.BanHangs
-                               join p in dbContext.SanPhams on b.ID_Product equals p.ID
-                               join d in dbContext.ThongTinSanPhams on p.ID equals d.ID
-                               where b.NgayBan > date
-                               select new
-                               {
-                                   Product = new
-                                   {
-                                       p.ID,
-                                       p.Ten,
-                                       p.Loai,
-                                       d.Hieu,
-                                       d.Doi,
-                                       d.Hang,
-                                       d.MoTa,
-                                       d.TinhTrang,
-                                       d.PhanLoai,
-                                       d.Image1,
-                                       d.Image2,
-                                       d.Image3,
-                                       d.Image4,
-                                       d.Image5
-                                   },
-                                   Quantity = b.SoLuong
-                               }
+                var resultQuery = ((from b in dbContext.BanHangs
+                                    join p in dbContext.SanPhams on b.ID_Product equals p.ID
+                                    join d in dbContext.ThongTinSanPhams on p.ID equals d.ID
+                                    where b.NgayBan > date
+                                    select new
+                                    {
+                                        Product = new
+                                        {
+                                            p.ID,
+                                            p.Ten,
+                                            p.Loai,
+                                            d.Hieu,
+                                            d.Doi,
+                                            d.Hang,
+                                            d.MoTa,
+                                            d.TinhTrang,
+                                            d.PhanLoai,
+                                            d.Image1,
+                                            d.Image2,
+                                            d.Image3,
+                                            d.Image4,
+                                            d.Image5
+                                        },
+                                        Quantity = b.SoLuong
+                                    }
                     into productQuantity
-                               group productQuantity by productQuantity.Product
+                                    group productQuantity by productQuantity.Product
                     into pg
-                               let total = pg.Sum(prod => prod.Quantity)
-                               orderby total descending
-                               select new ProductDto()
-                               {
-                                   ID = pg.Key.ID,
-                                   Ten = pg.Key.Ten,
-                                   Loai = pg.Key.Loai,
-                                   Hieu = pg.Key.Hieu,
-                                   Doi = pg.Key.Doi,
-                                   Hang = pg.Key.Hang,
-                                   MoTa = pg.Key.MoTa,
-                                   TinhTrang = (from m in dbContext.MasterDatas where m.Name == pg.Key.TinhTrang select m.Value).FirstOrDefault(),
-                                   PhanLoai = (from m in dbContext.MasterDatas where m.Name == pg.Key.PhanLoai select m.Value).FirstOrDefault(),
-                                   Image1 = pg.Key.Image1,
-                                   Image2 = pg.Key.Image2,
-                                   Image3 = pg.Key.Image3,
-                                   Image4 = pg.Key.Image4,
-                                   Image5 = pg.Key.Image5
-                               }).Take(range)).ToList<ProductDto>();
+                                    let total = pg.Sum(prod => prod.Quantity)
+                                    orderby total descending
+                                    select new ProductDto()
+                                    {
+                                        ID = pg.Key.ID,
+                                        Ten = pg.Key.Ten,
+                                        Loai = pg.Key.Loai,
+                                        Hieu = pg.Key.Hieu,
+                                        Doi = pg.Key.Doi,
+                                        Hang = pg.Key.Hang,
+                                        MoTa = pg.Key.MoTa,
+                                        TinhTrang = pg.Key.TinhTrang,
+                                        PhanLoai = pg.Key.PhanLoai,
+                                        Image1 = pg.Key.Image1,
+                                        Image2 = pg.Key.Image2,
+                                        Image3 = pg.Key.Image3,
+                                        Image4 = pg.Key.Image4,
+                                        Image5 = pg.Key.Image5
+                                    }).Take(range)).ToList<ProductDto>();
+
+                var result = (from p in resultQuery
+                              select new ProductDto()
+                              {
+                                  ID = p.ID,
+                                  Ten = p.Ten,
+                                  Loai = Helper.CheckType(p.Loai),
+                                  Hieu = p.Hieu,
+                                  Hang = p.Hang,
+                                  Doi = p.Doi,
+                                  MoTa = p.MoTa,
+                                  TinhTrang = Helper.GetStatusValue(p.TinhTrang),
+                                  PhanLoai = Helper.GetCategoryValue(p.PhanLoai),
+                                  Image1 = p.Image1,
+                                  Image2 = p.Image2,
+                                  Image3 = p.Image3,
+                                  Image4 = p.Image4,
+                                  Image5 = p.Image5,
+                              }).ToList<ProductDto>();
+
+
                 return result;
             }
         }
@@ -244,26 +266,43 @@ namespace Data.Repositories
         {
             using (var dbContext = new XeNangEntities())
             {
-                var result = (from p in dbContext.SanPhams
-                              join d in dbContext.ThongTinSanPhams on p.ID equals d.ID
+                var resultQuery = (from p in dbContext.SanPhams
+                                   join d in dbContext.ThongTinSanPhams on p.ID equals d.ID
+                                   select new ProductDto()
+                                   {
+                                       ID = p.ID,
+                                       Ten = p.Ten,
+                                       Loai = p.Loai,
+                                       Hieu = d.Hieu,
+                                       Hang = d.Hang,
+                                       Doi = d.Doi,
+                                       MoTa = d.MoTa,
+                                       TinhTrang = d.TinhTrang,
+                                       PhanLoai = d.PhanLoai,
+                                       Image1 = d.Image1,
+                                       Image2 = d.Image2,
+                                       Image3 = d.Image3,
+                                       Image4 = d.Image4,
+                                       Image5 = d.Image5,
+                                   }).ToList<ProductDto>();
+
+                var result = (from p in resultQuery
                               select new ProductDto()
                               {
                                   ID = p.ID,
                                   Ten = p.Ten,
-                                  Loai = p.Loai,
-                                  Hieu = d.Hieu,
-                                  Hang = d.Hang,
-                                  Doi = d.Doi,
-                                  MoTa = d.MoTa,
-                                  TinhTrang = (from m in dbContext.MasterDatas where m.Name == d.TinhTrang select m.Value)
-                                      .FirstOrDefault(),
-                                  PhanLoai = (from m in dbContext.MasterDatas where m.Name == d.PhanLoai select m.Value)
-                                      .FirstOrDefault(),
-                                  Image1 = d.Image1,
-                                  Image2 = d.Image2,
-                                  Image3 = d.Image3,
-                                  Image4 = d.Image4,
-                                  Image5 = d.Image5,
+                                  Loai = Helper.CheckType(p.Loai),
+                                  Hieu = p.Hieu,
+                                  Hang = p.Hang,
+                                  Doi = p.Doi,
+                                  MoTa = p.MoTa,
+                                  TinhTrang = Helper.GetStatusValue(p.TinhTrang),
+                                  PhanLoai = Helper.GetCategoryValue(p.PhanLoai),
+                                  Image1 = p.Image1,
+                                  Image2 = p.Image2,
+                                  Image3 = p.Image3,
+                                  Image4 = p.Image4,
+                                  Image5 = p.Image5,
                               }).ToList<ProductDto>();
 
                 return result;
@@ -301,27 +340,28 @@ namespace Data.Repositories
                 using (var dbContext = new XeNangEntities())
                 {
                     var result = (from p in dbContext.SanPhams
-                        join d in dbContext.ThongTinSanPhams on p.ID equals d.ID
-                        where p.ID == id
-                        select new ProductDto()
-                        {
-                            ID = id,
-                            Ten = p.Ten,
-                            Loai = p.Loai,
-                            Doi = d.Doi,
-                            Hang = d.Hang,
-                            Hieu = d.Hieu,
-                            TinhTrang = (from m in dbContext.MasterDatas where m.Name == d.TinhTrang select m.Value)
-                                .FirstOrDefault(),
-                            PhanLoai = (from m in dbContext.MasterDatas where m.Name == d.PhanLoai select m.Value)
-                                .FirstOrDefault(),
-                            Image1 = d.Image1,
-                            Image2 = d.Image2,
-                            Image3 = d.Image3,
-                            Image4 = d.Image4,
-                            Image5 = d.Image5,
-                            MoTa = d.MoTa,
-                        }).FirstOrDefault();
+                                  join d in dbContext.ThongTinSanPhams on p.ID equals d.ID
+                                  where p.ID == id
+                                  select new ProductDto()
+                                  {
+                                      ID = id,
+                                      Ten = p.Ten,
+                                      Loai = p.Loai,
+                                      Doi = d.Doi,
+                                      Hang = d.Hang,
+                                      Hieu = d.Hieu,
+                                      TinhTrang = d.TinhTrang,
+                                      PhanLoai = d.PhanLoai,
+                                      Image1 = d.Image1,
+                                      Image2 = d.Image2,
+                                      Image3 = d.Image3,
+                                      Image4 = d.Image4,
+                                      Image5 = d.Image5,
+                                      MoTa = d.MoTa,
+                                  }).FirstOrDefault();
+                    result.Loai = Helper.CheckType(result.Loai);
+                    result.TinhTrang = Helper.GetStatusValue(result.TinhTrang);
+                    result.PhanLoai = Helper.GetCategoryValue(result.PhanLoai);
                     return result;
 
                 }

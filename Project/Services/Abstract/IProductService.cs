@@ -11,9 +11,9 @@ namespace Services.Abstract
     {
         void AddProduct(ProductDto product);
 
-        void ImportProduct(ProductDto product, int count);
+        void ImportProduct(ProductDto product, int count, DateTime dateCreate);
 
-        void SellProduct(ProductDto product, int count);
+        void SellProduct(ProductDto product, int count, DateTime dateCreate);
 
         List<ProductDto> GetTopProduct(int range);
 
@@ -22,5 +22,9 @@ namespace Services.Abstract
         ProductDto GetProductByID(int ID);
 
         void ExportToCsv(List<ProductDto> products, string fileName);
+
+        List<ProductStatusDto> GetAllProductStatus(string key1, string key2 = "", string key3 = "");
+
+        List<ProductTypeDto> GetAllProductType(string key1, string key2 = "", string key3 = "");
     }
 }
