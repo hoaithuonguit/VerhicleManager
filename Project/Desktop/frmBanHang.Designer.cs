@@ -32,11 +32,9 @@
             this.dtp_NgayBan = new System.Windows.Forms.DateTimePicker();
             this.tb_SoLuong = new System.Windows.Forms.TextBox();
             this.cbb_TenSanPham = new System.Windows.Forms.ComboBox();
-            this.tb_ID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
@@ -63,11 +61,9 @@
             this.groupBox1.Controls.Add(this.dtp_NgayBan);
             this.groupBox1.Controls.Add(this.tb_SoLuong);
             this.groupBox1.Controls.Add(this.cbb_TenSanPham);
-            this.groupBox1.Controls.Add(this.tb_ID);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -80,14 +76,14 @@
             // dtp_NgayBan
             // 
             this.dtp_NgayBan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_NgayBan.Location = new System.Drawing.Point(214, 217);
+            this.dtp_NgayBan.Location = new System.Drawing.Point(214, 164);
             this.dtp_NgayBan.Name = "dtp_NgayBan";
             this.dtp_NgayBan.Size = new System.Drawing.Size(355, 35);
             this.dtp_NgayBan.TabIndex = 29;
             // 
             // tb_SoLuong
             // 
-            this.tb_SoLuong.Location = new System.Drawing.Point(214, 166);
+            this.tb_SoLuong.Location = new System.Drawing.Point(214, 113);
             this.tb_SoLuong.Name = "tb_SoLuong";
             this.tb_SoLuong.Size = new System.Drawing.Size(355, 35);
             this.tb_SoLuong.TabIndex = 28;
@@ -95,23 +91,15 @@
             // cbb_TenSanPham
             // 
             this.cbb_TenSanPham.FormattingEnabled = true;
-            this.cbb_TenSanPham.Location = new System.Drawing.Point(214, 113);
+            this.cbb_TenSanPham.Location = new System.Drawing.Point(214, 60);
             this.cbb_TenSanPham.Name = "cbb_TenSanPham";
             this.cbb_TenSanPham.Size = new System.Drawing.Size(355, 37);
             this.cbb_TenSanPham.TabIndex = 27;
             // 
-            // tb_ID
-            // 
-            this.tb_ID.Enabled = false;
-            this.tb_ID.Location = new System.Drawing.Point(214, 60);
-            this.tb_ID.Name = "tb_ID";
-            this.tb_ID.Size = new System.Drawing.Size(355, 35);
-            this.tb_ID.TabIndex = 26;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 222);
+            this.label4.Location = new System.Drawing.Point(33, 169);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 29);
             this.label4.TabIndex = 25;
@@ -120,7 +108,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 169);
+            this.label3.Location = new System.Drawing.Point(33, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 29);
             this.label3.TabIndex = 24;
@@ -129,20 +117,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 116);
+            this.label2.Location = new System.Drawing.Point(33, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(172, 29);
             this.label2.TabIndex = 23;
             this.label2.Text = "Tên sản phẩm:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 29);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "ID bán hàng:";
             // 
             // groupBox3
             // 
@@ -297,11 +276,9 @@
         private System.Windows.Forms.DateTimePicker dtp_NgayBan;
         private System.Windows.Forms.TextBox tb_SoLuong;
         private System.Windows.Forms.ComboBox cbb_TenSanPham;
-        private System.Windows.Forms.TextBox tb_ID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_DuLieu;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton strip_Them;
