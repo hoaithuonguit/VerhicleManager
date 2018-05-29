@@ -53,3 +53,4 @@ C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.frmSanPham.resources
 C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.frmThongTinSanPham.resources
 C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.Properties.Resources.resources
 C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.csproj.GenerateResource.Cache
+C:\Users\BaoDuy\Desktop\Project\Desktop\obj\Debug\Desktop.frmThongTinCuaHang.resources

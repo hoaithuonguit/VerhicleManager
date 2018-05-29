@@ -56,7 +56,8 @@ namespace Desktop
 
         private void strip_ChinhSuaThongTinCuaHang_Click(object sender, EventArgs e)
         {
-
+            frmThongTinCuaHang frm = new frmThongTinCuaHang();
+            frm.ShowDialog();
         }
 
         private void strip_NhapHang_Click(object sender, EventArgs e)
