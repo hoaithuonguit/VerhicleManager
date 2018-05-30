@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services.Abstract
+namespace Data.Dtos
 {
-    interface IProduct
+    public class ProductTypeDto : MasterDataDto
     {
+       
     }
 }
