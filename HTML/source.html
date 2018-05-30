@@ -1,0 +1,1626 @@
+ 
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<title>xe nâng</title>
+
+<meta name="description" content="xe nâng" />
+
+<meta name="keywords" content="xe nâng" /><link  rel="shortcut icon" type="image/x-icon" href="http://thietbikhotoanthang.com/images/gianhang/logo/20150722103028624w2SoJ9w.ico" />
+
+	<script type="text/javascript" src="JS/jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript" src="JS/jquery_002.js"></script>
+
+    <script type="text/javascript" src="JS/wt-rotator.js"></script>
+
+    <script type="text/javascript" src="JS/jquery-tooltip.js"></script>
+
+    <script type="text/javascript" src="JS/jquery.jcarousel.js"></script>
+
+    <script type="text/javascript" src="JS/jquery.jcarousel.autoscroll.js"></script>
+
+    <script type="text/javascript" src="JS/jquery.adv.scrolls.js"></script>
+
+    <script type="text/javascript" src="JS/jquery.fancybox-1.3.4.pack.js"></script>
+
+    <script type="text/javascript" src="JS/CommonFunction.js"></script>
+
+    
+    <link href="./Style.css" type="text/css" rel="stylesheet" />
+
+<script type="text/javascript">
+
+
+if (window.parent!=window && location.href.toLowerCase().indexOf('gianhangvn.com') != -1){ 
+
+	alert('Trang web bạn đang vào chưa được tích hợp tên miền chính thức với hệ thống của GianHangVN.Com.');
+
+	window.open(location.href, '_top', '');
+
+}
+	$(document).ready(function(){
+
+		$("#nav li").hover(function(){ 
+
+			$(this).find('ul:first').css({visibility: "visible",display: "none"}).show(400); 
+
+			},function(){ 
+
+			$(this).find('ul:first').css({visibility: "hidden"}); 
+		}); 
+		$(".mnuleft li").hover(function(){ 
+
+			$(this).find('ul:first').css({visibility: "visible",display: "none"}).show(400); 
+
+			},function(){ 
+
+			$(this).find('ul:first').css({visibility: "hidden"}); 
+		});
+	});
+	function view_click(isViewDetail){
+
+		if(!isViewDetail){
+
+			$('#viewdetail').hide();
+
+			$('#viewlarge').show('slow');
+
+			document.getElementById("aDetail").className = "a_icon thumb_detail";
+
+			document.getElementById("aThumb").className = "a_icon thumb_large_selected";
+		}
+		else{
+
+			$('#viewlarge').hide();
+
+			$('#viewdetail').show('slow');
+
+			document.getElementById("aDetail").className = "a_icon thumb_detail_selected";
+
+			document.getElementById("aThumb").className = "a_icon thumb_large";
+		}
+	}    
+
+function CheckValidTuKhoaTim()
+
+{
+
+    var objTxtTuKhoaTim = document.getElementById("txtTuKhoaTimKiem");
+
+    var valid = true;
+
+    if(objTxtTuKhoaTim.value.Trim().length == 0 || objTxtTuKhoaTim.value.Trim() == "Tìm kiếm...")
+    {
+
+        valid = false;
+
+        alert("Từ khóa tìm chưa nhập");
+
+        objTxtTuKhoaTim.focus();
+    }
+
+    else if(objTxtTuKhoaTim.value.Trim().length < 3)
+    {
+
+        valid = false;
+
+        alert("Từ khóa tìm phải ít nhất là 3 ký tự");
+
+        objTxtTuKhoaTim.focus();
+
+    }
+
+    return valid;
+
+}
+
+
+
+function txtTuKhoaTimKiem_OnKeyPress(e)
+
+{
+    if(e.keyCode == 13)
+    {
+        TimSanPham_OnClick();
+
+    }
+}
+
+function TimSanPham_OnClick()
+
+{
+	if(CheckValidTuKhoaTim())
+    {
+        document.getElementById("frmTimSanPham").submit();
+    }
+}
+
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+
+  _gaq.push(['_setAccount', '']);
+
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script type="text/javascript" src="file:///Macintosh HD/Users/thoaduong/SAVE/DW/apis.google.com/js/plusone.js">
+
+  {lang: 'vi'}
+
+</script>
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+ 	<script type="text/javascript">
+
+
+
+   		$("body").removeClass("class_body");
+
+	</script>
+
+<body class="class_body" style="background:#111 url(http://thietbikhotoanthang.com/images/gianhang/background/20150720033619WT1EvWP0b2.jpg) fixed top center;"   >
+	<!--==============================BANNER================================-->
+
+	<div id="banner">
+
+	     <div class="div_banner">
+
+<img style="width: 979px;" src="http://thietbikhotoanthang.com/images/gianhang/banner/201605090241331auyGgJDTQ.png" />
+
+<div class="clear"></div></div>	</div>	
+
+<!--==============================MENU================================-->
+
+	<div id="menu" style="font-weight:bold;">
+
+		<div class="div_menu">
+
+			<ul id="nav">
+
+                 <li class="top first"><a class="top_link" href="http://thietbikhotoanthang.com" title="Trang chủ">Trang chủ</a></li>
+
+                                    <li class="top first"><a title="XE NÂNG  DẦU CŨ" href="http://thietbikhotoanthang.com/danh-muc/xe-nang-dau-cu-170.html" target=""  class="top_link">XE NÂNG  DẦU CŨ</a></li>
+
+                                    <li class="top first"><a title="XE NÂNG ĐIỆN CŨ" href="http://thietbikhotoanthang.com/danh-muc/xe-nang-dien-cu-171.html" target=""  class="top_link">XE NÂNG ĐIỆN CŨ</a></li>
+
+                                    <li class="top first"><a title="XE NÂNG BÁN TỰ ĐỘNG" href="http://thietbikhotoanthang.com/danh-muc/xe-nang-ban-tu-dong-157.html" target=""  class="top_link">XE NÂNG BÁN TỰ ĐỘNG</a></li>
+
+                                                    <li class="top first"><a title="Giới thiệu" href="http://thietbikhotoanthang.com/chuyen-muc/gioi-thieu-52.html" target=""  class="top_link">Giới thiệu</a></li>
+
+                                    <li class="top first"><a title="SẢN PHẨM" href="http://thietbikhotoanthang.com/chuyen-muc/san-pham-51.html" target=""  class="top_link">SẢN PHẨM</a></li>
+
+                                    <li class="top first"><a title="Dịch vụ" href="http://thietbikhotoanthang.com/chuyen-muc/dich-vu-41.html" target=""  class="top_link">Dịch vụ</a></li>
+
+                                    <li class="top first"><a title="Tin tức" href="http://thietbikhotoanthang.com/chuyen-muc/tin-tuc-44.html" target=""  class="top_link">Tin tức</a></li>
+
+                                <li class="top"><a title="Liên hệ" href="http://thietbikhotoanthang.com/lien-he.html" target=""  class="top_link">Liên hệ</a></li>
+
+            </ul>
+
+            <div class="div_search">
+
+            <script type="text/javascript">
+
+                $(document).ready(function(){
+
+                    $('.a_btnsearch').click(function(){
+
+                        var keyword = $('#txtTuKhoaTimKiem').val();
+
+                        window.location.href="http://thietbikhotoanthang.com/tu-khoa-tim/"+keyword+'/';
+
+                        return false;
+
+                    })  
+                    $('#txtTuKhoaTimKiem').keypress(function(event){
+
+                        var keycode = (event.keyCode ? event.keyCode : event.which);
+
+                        if(keycode == '13'){
+
+                              var keyword = $('#txtTuKhoaTimKiem').val();
+
+                        window.location.href="http://thietbikhotoanthang.com/tu-khoa-tim/"+keyword+'/';
+
+                        return false;    
+
+                        }
+                    });
+                })
+
+            </script>
+
+                <form id="frmTimSanPham" action="http://xenangsaigon.com/san-pham.html" method="post">
+
+                    <input type="text" name="Empty" style="display:none;" />
+
+				    <input type="text" name="txtTuKhoaTimKiem" id="txtTuKhoaTimKiem" class="txtsearch" value="Tìm kiếm..." onfocus="if(this.value=='Tìm kiếm...') this.value='';" onblur="if(this.value=='') this.value='Tìm kiếm...';" maxlength="50" />
+
+				    <a href="#" class="a_btnsearch"></a>
+
+                </form>
+
+			</div>
+
+		</div>	</div>
+
+    <div id="divHeartBanner" style="display:none;">
+
+            </div>
+
+	<div id="content">
+
+	<div class="div_content">                     
+
+<div id="ctl00_divLeftModule" class="div_left">
+
+    <div class="div_box div_box_cate">
+	<div class="div_box_top div_box_cate_top">
+    	<h3 class="h3_box h3_box_cate">Danh mục sản phẩm</h3>
+    </div>
+    <div class="div_box_center div_box_cate_center">
+    <ul class="mnuleft2">
+				  <li>
+            <a class="first" title="XE NÂNG  DẦU CŨ" href="http://thietbikhotoanthang.com/danh-muc/xe-nang-dau-cu-170.html" target="">XE NÂNG  DẦU CŨ</a>
+            <ul class="mnuleft3">
+                                    <li><a href="http://thietbikhotoanthang.com/danh-muc/nisssan-176.html">NISSSAN</a></li>
+                                    <li><a href="http://thietbikhotoanthang.com/danh-muc/komatsu-173.html">KOMATSU</a></li>
+                                    <li><a href="http://thietbikhotoanthang.com/danh-muc/toyota-174.html">TOYOTA</a></li>
+                                    <li><a href="http://thietbikhotoanthang.com/danh-muc/tcm-175.html">TCM</a></li>
+                                    <li><a href="http://thietbikhotoanthang.com/danh-muc/mitsubishi-177.html">MITSUBISHI</a></li>
+                            </ul>
+        </li>
+        		  <li>
+            <a class="first" title="XE NÂNG ĐIỆN CŨ" href="http://thietbikhotoanthang.com/danh-muc/xe-nang-dien-cu-171.html" target="">XE NÂNG ĐIỆN CŨ</a>
+            <ul class="mnuleft3">
+                                    <li><a href="http://thietbikhotoanthang.com/danh-muc/nisssan-181.html">NISSSAN</a></li>
+                                    <li><a href="http://thietbikhotoanthang.com/danh-muc/komatsu-182.html">KOMATSU</a></li>
+                                    <li><a href="http://thietbikhotoanthang.com/danh-muc/toyota-178.html">TOYOTA</a></li>
+                            </ul>
+        </li>
+        		  <li>
+            <a class="first" title="XE ĐẨY BÀN" href="http://thietbikhotoanthang.com/danh-muc/xe-day-ban-117.html" target="">XE ĐẨY BÀN</a>
+            <ul class="mnuleft3">
+                            </ul>
+        </li>
+        		  <li>
+            <a class="first" title="XE NÂNG KẸP PHUY" href="http://thietbikhotoanthang.com/danh-muc/xe-nang-kep-phuy-123.html" target="">XE NÂNG KẸP PHUY</a>
+            <ul class="mnuleft3">
+                            </ul>
+        </li>
+        		  <li>
+            <a class="first" title="XE NÂNG MẶT BÀN" href="http://thietbikhotoanthang.com/danh-muc/xe-nang-mat-ban-124.html" target="">XE NÂNG MẶT BÀN</a>
+            <ul class="mnuleft3">
+                            </ul>
+        </li>
+        		  <li>
+            <a class="first" title="XE NÂNG BÁN TỰ ĐỘNG" href="http://thietbikhotoanthang.com/danh-muc/xe-nang-ban-tu-dong-157.html" target="">XE NÂNG BÁN TỰ ĐỘNG</a>
+            <ul class="mnuleft3">
+                            </ul>
+        </li>
+        		  <li>
+            <a class="first" title="BÀN NÂNG THUỶ LỰC" href="http://thietbikhotoanthang.com/danh-muc/ban-nang-thuy-luc-151.html" target="">BÀN NÂNG THUỶ LỰC</a>
+            <ul class="mnuleft3">
+                            </ul>
+        </li>
+        		  <li>
+            <a class="first" title="XE NÂNG TAY" href="http://thietbikhotoanthang.com/danh-muc/xe-nang-tay-146.html" target="">XE NÂNG TAY</a>
+            <ul class="mnuleft3">
+                                    <li><a href="http://thietbikhotoanthang.com/danh-muc/xe-nang-tay-thap-138.html">XE NÂNG TAY THẤP</a></li>
+                                    <li><a href="http://thietbikhotoanthang.com/danh-muc/xe-nang-tay-cao-141.html">XE NÂNG TAY CAO</a></li>
+                            </ul>
+        </li>
+        		  <li>
+            <a class="first" title="THANG NÂNG ĐIỆN" href="http://thietbikhotoanthang.com/danh-muc/thang-nang-dien-160.html" target="">THANG NÂNG ĐIỆN</a>
+            <ul class="mnuleft3">
+                            </ul>
+        </li>
+        		  <li>
+            <a class="first" title="CẦU CONTAINER" href="http://thietbikhotoanthang.com/danh-muc/cau-container-161.html" target="">CẦU CONTAINER</a>
+            <ul class="mnuleft3">
+                            </ul>
+        </li>
+        		  <li>
+            <a class="first" title="SỬA CHỮA XE NÂNG" href="http://thietbikhotoanthang.com/danh-muc/sua-chua-xe-nang-167.html" target="">SỬA CHỮA XE NÂNG</a>
+            <ul class="mnuleft3">
+                            </ul>
+        </li>
+        		  <li>
+            <a class="first" title="PALLET NHỰA" href="http://thietbikhotoanthang.com/danh-muc/pallet-nhu-a-169.html" target="">PALLET NHỰA</a>
+            <ul class="mnuleft3">
+                            </ul>
+        </li>
+        		  <li>
+            <a class="first" title="THÙNG RÁC" href="http://thietbikhotoanthang.com/danh-muc/thung-rac-165.html" target="">THÙNG RÁC</a>
+            <ul class="mnuleft3">
+                            </ul>
+        </li>
+        		  <li>
+            <a class="first" title="SÓNG NHỰA" href="http://thietbikhotoanthang.com/danh-muc/song-nhua-122.html" target="">SÓNG NHỰA</a>
+            <ul class="mnuleft3">
+                                    <li><a href="http://thietbikhotoanthang.com/danh-muc/song-nhua-ho-148.html">SÓNG NHỰA HỞ</a></li>
+                                    <li><a href="http://thietbikhotoanthang.com/danh-muc/song-nhua-bit-158.html">SÓNG NHỰA BÍT</a></li>
+                            </ul>
+        </li>
+        	</ul>
+    </div>
+    <div class="div_box_bottom div_box_cate_bottom"></div>
+</div>
+
+<div class="div_box div_box_online">
+	<div class="div_box_top div_box_online_top">
+    	<h3 class="h3_box h3_box_online">Hổ trợ trực tuyến</h3>
+    </div>
+<style>
+.div_online .p_nameonline {
+    line-height: 18px;
+    padding: 0;
+    margin-top: 4px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+</style>
+    <div class="div_box_center div_box_online_center">
+        <div class="div_online">
+                        
+
+            <p class="p_nameonline">
+                Hotline - 0973 212 939            </p>
+                    </div>
+    </div>
+    <div class="div_box_bottom div_box_online_bottom"></div>
+</div>
+
+<div class="div_box div_box_s_product1">
+	<div class="div_box_top div_box_s_product1_top">
+    	<h3 class="h3_box h3_box_s_product1">Sản phẩm mới</h3>
+    </div>
+    <div class="div_box_center div_box_s_product1_center">
+        <div class="jcarousel-product">
+            <div class="jcarousel-vertical" id="jcarousel262654" >
+                <ul>
+                                            <li>
+                            <div class="div_pro1">
+                                <div class="div_pro1_img" >
+                                    <a href="http://thietbikhotoanthang.com/chi-tiet/mitsubishi-15-t-391.html" title="MITSUBISHI 1,5 T">
+                                        <img alt="MITSUBISHI 1,5 T" title="MITSUBISHI 1,5 T"  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s391.jpg"/></a>
+                                </div>
+                                <h1 class="h1_title_pro1"><a href="http://thietbikhotoanthang.com/chi-tiet/mitsubishi-15-t-391.html" title="MITSUBISHI 1,5 T">MITSUBISHI 1,5 T</a></h1>
+                                <span class="s_price_pro1">
+                                Vui lòng gọi                                </span>
+                            </div>
+                        </li>
+                                            <li>
+                            <div class="div_pro1">
+                                <div class="div_pro1_img" >
+                                    <a href="http://thietbikhotoanthang.com/chi-tiet/komatsu-15-t-390.html" title="KOMATSU 1,5 T">
+                                        <img alt="KOMATSU 1,5 T" title="KOMATSU 1,5 T"  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s390.jpg"/></a>
+                                </div>
+                                <h1 class="h1_title_pro1"><a href="http://thietbikhotoanthang.com/chi-tiet/komatsu-15-t-390.html" title="KOMATSU 1,5 T">KOMATSU 1,5 T</a></h1>
+                                <span class="s_price_pro1">
+                                LIÊN HỆ 0973212939                                </span>
+                            </div>
+                        </li>
+                                            <li>
+                            <div class="div_pro1">
+                                <div class="div_pro1_img" >
+                                    <a href="http://thietbikhotoanthang.com/chi-tiet/tcm-389.html" title="TCM">
+                                        <img alt="TCM" title="TCM"  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s389.jpg"/></a>
+                                </div>
+                                <h1 class="h1_title_pro1"><a href="http://thietbikhotoanthang.com/chi-tiet/tcm-389.html" title="TCM">TCM</a></h1>
+                                <span class="s_price_pro1">
+                                LIÊN HỆ 0973212939                                
+								</span>
+                            </div>
+                        </li>
+                                            <li>
+                            <div class="div_pro1">
+                                <div class="div_pro1_img" >
+                                    <a href="http://thietbikhotoanthang.com/chi-tiet/komatsu-25-t-388.html" title="KOMATSU 2,5 T">
+                                        <img alt="KOMATSU 2,5 T" title="KOMATSU 2,5 T"  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s388.jpg"/></a>
+                                </div>
+                                <h1 class="h1_title_pro1"><a href="http://thietbikhotoanthang.com/chi-tiet/komatsu-25-t-388.html" title="KOMATSU 2,5 T">KOMATSU 2,5 T</a></h1>
+                                <span class="s_price_pro1">
+                                LIÊN HỆ 0973212939                                </span>
+                            </div>
+                        </li>
+                                            <li>
+                            <div class="div_pro1">
+                                <div class="div_pro1_img" >
+                                    <a href="http://thietbikhotoanthang.com/chi-tiet/toyota-25-tan-387.html" title="TOYOTA 2,5 TẤN">
+                                        <img alt="TOYOTA 2,5 TẤN" title="TOYOTA 2,5 TẤN"  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s387.jpg"/></a>
+                                </div>
+                                <h1 class="h1_title_pro1"><a href="http://thietbikhotoanthang.com/chi-tiet/toyota-25-tan-387.html" title="TOYOTA 2,5 TẤN">TOYOTA 2,5 TẤN</a></h1>
+                                <span class="s_price_pro1">
+                                LIÊN HỆ 0973212939                                </span>
+                            </div>
+                        </li>
+                                            <li>
+                            <div class="div_pro1">
+                                <div class="div_pro1_img" >
+                                    <a href="http://thietbikhotoanthang.com/chi-tiet/mitsubishi-35-tan-386.html" title="MITSUBISHI 3,5 TẤN">
+                                        <img alt="MITSUBISHI 3,5 TẤN" title="MITSUBISHI 3,5 TẤN"  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s386.jpg"/></a>
+                                </div>
+                                <h1 class="h1_title_pro1"><a href="http://thietbikhotoanthang.com/chi-tiet/mitsubishi-35-tan-386.html" title="MITSUBISHI 3,5 TẤN">MITSUBISHI 3,5 TẤN</a></h1>
+                                <span class="s_price_pro1">
+                                LIÊN HỆ 0973212939                                </span>
+                            </div>
+                        </li>
+                                            <li>
+                            <div class="div_pro1">
+                                <div class="div_pro1_img" >
+                                    <a href="http://thietbikhotoanthang.com/chi-tiet/nissan-2t-385.html" title="NISSAN 2T">
+                                        <img alt="NISSAN 2T" title="NISSAN 2T"  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s385.jpg"/></a>
+                                </div>
+                                <h1 class="h1_title_pro1"><a href="http://thietbikhotoanthang.com/chi-tiet/nissan-2t-385.html" title="NISSAN 2T">NISSAN 2T</a></h1>
+                                <span class="s_price_pro1">
+                                LIÊN HỆ 0973212939                                </span>
+                            </div>
+                        </li>
+                                            <li>
+                            <div class="div_pro1">
+                                <div class="div_pro1_img" >
+                                    <a href="http://thietbikhotoanthang.com/chi-tiet/toyota15-t-384.html" title="TOYOTA1,5 T">
+                                        <img alt="TOYOTA1,5 T" title="TOYOTA1,5 T"  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s384.jpg"/></a>
+                                </div>
+                                <h1 class="h1_title_pro1"><a href="http://thietbikhotoanthang.com/chi-tiet/toyota15-t-384.html" title="TOYOTA1,5 T">TOYOTA1,5 T</a></h1>
+                                <span class="s_price_pro1">
+                                LIÊN HỆ 0973212939                                </span>
+                            </div>
+                        </li>
+                                            <li>
+                            <div class="div_pro1">
+                                <div class="div_pro1_img" >
+                                    <a href="http://thietbikhotoanthang.com/chi-tiet/nissan-25-t-383.html" title="NISSAN 2,5 T">
+                                        <img alt="NISSAN 2,5 T" title="NISSAN 2,5 T"  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s383.jpg"/></a>
+                                </div>
+                                <h1 class="h1_title_pro1"><a href="http://thietbikhotoanthang.com/chi-tiet/nissan-25-t-383.html" title="NISSAN 2,5 T">NISSAN 2,5 T</a></h1>
+                                <span class="s_price_pro1">
+                                LIÊN HỆ 0973212939                                </span>
+                            </div>
+                        </li>
+                                            <li>
+                            <div class="div_pro1">
+                                <div class="div_pro1_img" >
+                                    <a href="http://thietbikhotoanthang.com/chi-tiet/nissan-2t-382.html" title="NISSAN 2T">
+                                        <img alt="NISSAN 2T" title="NISSAN 2T"  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s382.jpg"/></a>
+                                </div>
+                                <h1 class="h1_title_pro1"><a href="http://thietbikhotoanthang.com/chi-tiet/nissan-2t-382.html" title="NISSAN 2T">NISSAN 2T</a></h1>
+                                <span class="s_price_pro1">
+                                LIÊN HỆ 0973212939                                </span>
+                            </div>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+    </div>
+    <div class="div_box_bottom div_box_s_product1_bottom"></div>
+</div> 
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+		// Init Slider San Pham Trai
+		$('#jcarousel262654').jcarousel({
+       		wrap: 'circular'
+		});
+	
+		$('#jcarousel262654').jcarouselAutoscroll({
+			target: '+=1',
+			interval: '4000',
+			create: $('#jcarousel262654').hover(function() {
+                $(this).jcarouselAutoscroll('stop');
+            },
+            function() {
+                $(this).jcarouselAutoscroll('start');
+            })
+		});
+	});
+	
+</script>
+<div class="div_box div_box_advert">
+	<div class="div_box_top div_box_advert_top">
+    	<h3 class="h3_box h3_box_advert">Quảng cáo</h3>
+    </div>
+    
+    <div class="div_box_center div_box_advert_center">
+            </div>
+    <div class="div_box_bottom div_box_advert_bottom"></div>
+</div> 
+<div class="div_box div_box_statistics">
+	<div class="div_box_top div_box_statistics_top">
+    	<h3 class="h3_box h3_box_statistics">Thống kê</h3>
+    </div>
+    <div class="div_box_center div_box_statistics_center">
+        <div class="div_onethongke theongay">
+            <span class="s_onethongke_text">Đang online</span> <span class="s_onethongke_number"> 4</span>
+        </div>
+        <div class="div_onethongke homqua">
+            <span class="s_onethongke_text">Hôm nay</span> <span class="s_onethongke_number">45</span>
+        </div>
+        
+         <div class="div_onethongke homqua">
+            <span class="s_onethongke_text">Tổng cộng</span> <span class="s_onethongke_number"> 145468</span>
+        </div>
+        
+    </div>
+    <div class="div_box_bottom div_box_statistics_bottom"></div>
+</div>
+      </div>
+
+
+
+<div class="div_right">
+
+    
+
+
+
+<div id="ctl00_MainContent_divMainContent">
+
+        
+
+    
+
+<script type="text/javascript">
+
+    document.getElementById("divHeartBanner").style.display = "";
+
+    document.getElementById("pathmenu").style.display = "none";
+
+</script>
+
+                <div class="div_box div_box_l_pro2">
+
+	                <div class="div_box_top div_box_l_pro2_top">
+
+    	                <h3 class="h3_box h3_box_l_pro2">Sản phẩm</h3>
+
+                    </div>
+
+                    <div class="div_box_center div_box_l_pro2_center">
+
+                    	
+
+                        <div class="div_box_l_pro2_content">
+
+                        	                            <div class="div_pro2 first" >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s132.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac2-0-132.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s132.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac2-0-132.html">Xe nâng tay thấp- Model: AC2.0</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac2-0-132.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 " >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s133.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac2-5-133.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s133.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac2-5-133.html">Xe nâng tay thấp- Model: AC2.5</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac2-5-133.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 first" >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s134.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac3-0-134.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s134.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac3-0-134.html">Xe nâng tay thấp- Model: AC3.0</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac3-0-134.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 " >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s223.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac5-0-223.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s223.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac5-0-223.html">Xe nâng tay thấp- Model: AC5.0</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac5-0-223.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 first" >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s253.png" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-sieu-dai-lc25-20-253.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s253.png"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-sieu-dai-lc25-20-253.html">Xe nâng tay siêu dài- LC25/20</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-sieu-dai-lc25-20-253.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 " >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s131.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac2-0-131.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s131.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac2-0-131.html">Xe nâng tay thấp- Model: AC2.0</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac2-0-131.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 first" >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s230.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-a1-0-16-230.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s230.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-a1-0-16-230.html">Xe nâng tay cao- Model A1.0/16</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-a1-0-16-230.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 " >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s174.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-d1-0-16-174.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s174.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-d1-0-16-174.html">Xe nâng tay cao- Model D1.0/16</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-d1-0-16-174.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 first" >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s231.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-a2-0-16-231.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s231.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-a2-0-16-231.html">Xe nâng tay cao- Model A2.0/16</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-a2-0-16-231.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 " >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s179.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-cao-model-tmsq-179.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s179.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-cao-model-tmsq-179.html">Xe nâng cao- Model TMSQ</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-cao-model-tmsq-179.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 first" >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s227.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-bishamon-227.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s227.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-bishamon-227.html">Xe nâng tay thấp Bishamon</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-bishamon-227.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 " >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s254.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac2-0-254.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s254.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac2-0-254.html">Xe nâng tay thấp- Model: AC2.0</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-thap-model-ac2-0-254.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 first" >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s232.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-d2-0-16-232.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s232.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-d2-0-16-232.html">Xe nâng tay cao - Model D2.0/16</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-d2-0-16-232.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 " >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s233.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-d1-0-16-233.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s233.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-d1-0-16-233.html">Xe nâng tay cao - Model D1.0/16</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-d1-0-16-233.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 first" >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s234.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-e1-0-25-234.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s234.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-e1-0-25-234.html">Xe nâng tay cao - Model E1.0/25</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-e1-0-25-234.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 " >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s235.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-sieu-rong-model-ew1-0-16-235.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s235.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-sieu-rong-model-ew1-0-16-235.html">Xe nâng tay cao siêu rộng Model : EW1.0/16</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-sieu-rong-model-ew1-0-16-235.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             	                            <div class="div_pro2 first" >
+
+                                    <div class="div_pro2_img" >
+
+                                        <a class="preview" src="http://thietbikhotoanthang.com/images/gianhang/item/item_s236.jpg" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-a1-0-16-236.html"><img  src="http://thietbikhotoanthang.com/images/gianhang/item/item_s236.jpg"/></a>
+
+                                        <span class="s_pro2_icon_call"></span>
+
+                                        
+
+                                    </div>
+
+                                    <h3 class="h3_pro2_title"><a href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-a1-0-16-236.html">Xe nâng tay cao- Model A1.0/16</a></h3>
+
+                                    <div class="div_pro2_price">
+
+                                    <span class="s_price_pro2">
+
+                                        Liên hệ 0973 212 939                                            
+
+                                    </span>
+
+                                    
+
+                                    </div>
+
+                                    <div class="div_pro2_button">
+
+                                        <a class="a_btn_detail" href="http://thietbikhotoanthang.com/chi-tiet/xe-nang-tay-cao-model-a1-0-16-236.html"></a>
+
+                                        
+
+                                                <a class="a_btn_dathang disable" href="javascript:;"></a>
+
+                                        
+
+                                    </div>
+
+                                </div>
+
+                             		                </div>
+
+                         <div style="clear: both;"></div>
+
+        <style type="text/css">
+
+            #paging a
+
+            {
+
+                padding: 5px 10px;
+
+                background-color: maroon;
+
+                color: #FFFFFF;
+
+                margin-right: 5px;
+
+                text-decoration: underline;
+
+            }
+
+            
+
+            #paging font
+
+            {
+
+                padding: 5px 10px;
+
+                background-color: #804040;
+
+                color: #FFFFFF;
+
+                margin-right: 5px;
+
+            }
+
+        </style>
+
+        <div id="paging" style="text-align: center;">
+
+        	        </div>
+
+        <br /><br />
+
+                    </div>
+
+                    <div class="div_box_bottom div_box_l_pro2_bottom"></div>
+
+                </div>
+
+<div id="ctl00_MainContent_ucTrangChu_divAdPopup">
+
+
+
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+	        <div id="ctl00_divAd">
+
+<!--==========================================ADVERT==============================================-->
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+$(document).ready(function(){
+
+
+
+		// Init Slider Advert
+
+		$('#jcarouseladvert1').jcarousel({
+
+       		wrap: 'circular'
+
+		});
+
+
+
+		$('#jcarouseladvert1').jcarouselAutoscroll({
+
+			target: '+=1',
+
+			interval: '4000',
+
+			create: $('#jcarouseladvert1').hover(function() {
+
+                $(this).jcarouselAutoscroll('stop');
+
+            },
+
+            function() {
+
+                $(this).jcarouselAutoscroll('start');
+
+            })
+
+		});
+
+	});
+
+</script></div>
+
+            <div class="clear"></div>
+
+		</div>
+
+		<div class="clear"></div>
+
+	</div>	    
+
+<!--==============================BOTTOM================================-->
+
+	<div id="menu_bottom">
+
+		<div class="div_menu_bottom">
+
+        	<div class="div_menu_footer_content">
+
+        	    <p class="p_menufooter">
+
+	                
+
+                            <a class="a_menufooter first" href="http://thietbikhotoanthang.com" title="Trang chủ" target="">Trang chủ</a>
+
+                                                             <a class="a_menufooter" href="http://thietbikhotoanthang.com/danh-muc/xe-nang-dau-cu-170.html" title="XE NÂNG  DẦU CŨ" target="">XE NÂNG  DẦU CŨ</a>
+
+                                                            <a class="a_menufooter" href="http://thietbikhotoanthang.com/danh-muc/xe-nang-dien-cu-171.html" title="XE NÂNG ĐIỆN CŨ" target="">XE NÂNG ĐIỆN CŨ</a>
+
+                                                            <a class="a_menufooter" href="http://thietbikhotoanthang.com/danh-muc/xe-nang-ban-tu-dong-157.html" title="XE NÂNG BÁN TỰ ĐỘNG" target="">XE NÂNG BÁN TỰ ĐỘNG</a>
+
+                                                        
+
+                                                             <a class="a_menufooter" href="http://thietbikhotoanthang.com/chuyen-muc/gioi-thieu-52.html" title="Giới thiệu" target="">Giới thiệu</a>
+
+                                                            <a class="a_menufooter" href="http://thietbikhotoanthang.com/chuyen-muc/san-pham-51.html" title="SẢN PHẨM" target="">SẢN PHẨM</a>
+
+                                                            <a class="a_menufooter" href="http://thietbikhotoanthang.com/chuyen-muc/dich-vu-41.html" title="Dịch vụ" target="">Dịch vụ</a>
+
+                                                            <a class="a_menufooter" href="http://thietbikhotoanthang.com/chuyen-muc/tin-tuc-44.html" title="Tin tức" target="">Tin tức</a>
+
+                                                        <a class="a_menufooter" title="Liên hệ" href="http://thietbikhotoanthang.com/lien-he.html" target=""  class="top_link">Liên hệ</a>
+
+                    
+
+                </p>
+
+            </div>
+
+            <div class="clear"></div>
+
+		</div>
+
+		<div class="clear"></div>	</div>
+
+<!--==============================BOTTOM================================-->
+
+	<div id="bottom">
+
+		<div class="div_bottom">
+
+		    <div class="div_bottom_content">
+
+                <address>
+
+<p style="text-align: center;">&nbsp;</p>
+
+</address><address>
+
+<p style="text-align: center;"><span style="text-decoration: underline;"><strong><span style="color: #0000ff; font-size: x-large; text-decoration: underline;">C&Ocirc;NG TY TNHH SX V&Agrave; TM THIẾT BỊ KHO TO&Agrave;N THẮNG</span></strong></span></p>
+
+<p style="text-align: center;"><span style="color: #ff0000;"><strong>CHUY&Ecirc;N CUNG CẤP THIẾT BỊ N&Acirc;NG HẠ, THIẾT BỊ NH&Agrave; KHO&nbsp;</strong></span></p>
+
+<p style="text-align: center;"><span style="color: #ff0000;"><strong>DỊCH VỤ BẢO TR&Igrave; , SỬA CHỮA XE N&Acirc;NG C&Aacute;C LOẠI.</strong></span></p>
+
+<p style="text-align: center;"><span style="color: #ff0000;"><strong>&nbsp;</strong></span></p>
+
+<p style="text-align: center;"><span style="color: #ff0000;"><strong>1040/32/19 Đường TX21, Tổ 13, Khu Phố 6, Phường Thạnh Xu&acirc;n, Quận 12,TP HCM.</strong></span></p>
+
+<p style="text-align: center;"><span style="color: #ff0000;"><strong>HOT LINE:&nbsp;<strong>0973.212.939</strong></strong></span></p>
+
+</address><address>
+
+<p style="text-align: center;"><strong><span style="font-size: medium; color: #0000ff;">&nbsp;</span></strong></p>
+
+</address>            </div>
+
+		</div>
+
+        <div class="div_copyright">
+
+        
+
+            <div style="text-align: center; font-weight: bold;">Design by: <a href="http://www.quangdung.info/">Tran Dung</a></div>
+
+            <div class="clear"></div>
+
+        </div>
+
+        
+
+		<div class="clear"></div>
+
+        <script lang="javascript">(function() {var pname = ( (document.title !='')? document.title : document.querySelector('meta[property="og:title"]').getAttribute('content') );var ga = document.createElement('script'); ga.type = 'text/javascript';ga.src = '//live.vnpgroup.net/js/web_client_box.php?hash=d69a3f491361a8293908f4f6c341f947&data=eyJzc29faWQiOjI4MTMxMzYsImhhc2giOiI2NjY3YTU0YzM5MDk4NzU2Mzc2YTgzZmZhNWU1NDRhNSJ9&pname='+pname;var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script><noscript><a href="http://www.vatgia.com" title="vatgia.com" target="_blank">Tài trợ bởi vatgia.com</a></noscript><noscript><a href="http://vchat.vn" title="vchat.vn" target="_blank">Phát triển bởi vchat.vn</a></noscript>	</div>
+
+<script type="text/javascript">
+
+
+
+document.write("<script type='text/javascript' language='javascript'>MainContentW = 980;LeftBannerW = 140;RightBannerW = 140;LeftAdjust = 5;RightAdjust = 5;TopAdjust = 120;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>");
+
+function MuaSanPham(IDSanPham)
+
+{
+
+    document.getElementById("hdIDSanPhamCanMua").value = IDSanPham;
+
+    document.getElementById("frmGioHang").submit();
+
+}
+
+function HuySanPham(IDThanhVien, IDSanPham)
+
+{
+
+    document.getElementById("hdSanPhamHuy").value = IDThanhVien + "," + IDSanPham;
+
+    document.getElementById("frmGioHang").submit();
+
+}
+
+function CapNhatGioHang()
+
+{
+
+    var objHdCapNhatGioHang = document.getElementById("hdCapNhatGioHang");
+
+    var arrTxtSoLuong = document.getElementsByName("txtSoLuongSanPham_GioHang");
+
+    var valid = true;
+
+    objHdCapNhatGioHang.value = "";
+
+    for(var i=0; i < arrTxtSoLuong.length;i++)
+
+    {
+
+        if(arrTxtSoLuong[i].value.Trim().length == 0)
+
+        {
+
+            valid = false;
+
+            alert("Số lượng sản phẩm chưa nhập");
+
+            arrTxtSoLuong[i].focus();
+
+            break;
+
+        }
+
+        else if(arrTxtSoLuong[i].value <= 0)
+
+        {
+
+            valid = false;
+
+            alert("Số lượng sản phẩm không hợp lệ, số lượng phải lớn hơn 0");
+
+            arrTxtSoLuong[i].focus();
+
+            break;
+
+        }
+
+        objHdCapNhatGioHang.value += arrTxtSoLuong[i].getAttribute("IDThanhVien") + "," + arrTxtSoLuong[i].getAttribute("IDSanPham") + "," + arrTxtSoLuong[i].value + ((i < arrTxtSoLuong.length - 1)? ";" : "");
+
+    }
+
+    
+
+    if(valid)
+
+    {    
+
+        document.getElementById("frmGioHang").submit();
+
+    }
+
+}
+
+
+
+</script>
+
+
+
+    
+
+
+
+</body>
+
+
+
+</html>
+
+
+
