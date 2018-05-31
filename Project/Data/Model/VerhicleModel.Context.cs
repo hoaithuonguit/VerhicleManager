@@ -31,6 +31,7 @@ namespace Data.Model
         public virtual DbSet<MasterData> MasterDatas { get; set; }
         public virtual DbSet<NhapHang> NhapHangs { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<ThongTinSanPham> ThongTinSanPhams { get; set; }
     }
 }
