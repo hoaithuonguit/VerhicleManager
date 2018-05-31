@@ -18,9 +18,9 @@ namespace Services
         {
             this._repository = new ProductRepo();
         }
-        public void AddProduct(ProductDto product)
+        public void AddProduct(ProductDto product, string type)
         {
-            _repository.AddProduct(product);
+            _repository.AddProduct(product, type);
         }
 
         public void ImportProduct(ProductDto product, int count, DateTime dateCreate)
@@ -33,9 +33,9 @@ namespace Services
             _repository.SellProduct(product, count, dateCreate);
         }
 
-        public List<ProductDto> GetTopProduct(int range)
+        public List<ProductDto> GetTopProduct(int top)
         {
-            return _repository.GetTopProduct(range);
+            return _repository.GetTopProduct(top);
         }
 
         public List<ProductDto> GetAllProduct()
@@ -61,6 +61,16 @@ namespace Services
         public List<ProductTypeDto> GetAllProductType(string key1, string key2 = "", string key3 = "")
         {
             return Helper.GetMasterData<ProductTypeDto>(key1, key2, key3);
+        }
+
+        public List<ProductDto> GetTopVehicles(int top)
+        {
+            return _repository.GetTopVehicles(top);
+        }
+
+        public void EditVehicle(ProductDto vehicle)
+        {
+            _repository.EditVehicle(vehicle);
         }
     }
 }
