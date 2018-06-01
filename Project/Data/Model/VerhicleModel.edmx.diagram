@@ -5,13 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="6aca1693747f45828c49e842d8e51008" Name="Diagram1">
-        <EntityTypeShape EntityType="XeNangModel.BanHang" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="XeNangModel.DatHang" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="XeNangModel.Kho" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="XeNangModel.MasterData" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="XeNangModel.NhapHang" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="XeNangModel.SanPham" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="XeNangModel.ThongTinSanPham" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XeNangModel.BanHang" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="XeNangModel.DatHang" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="XeNangModel.Kho" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="XeNangModel.MasterData" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="XeNangModel.NhapHang" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="XeNangModel.SanPham" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="XeNangModel.sysdiagram" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="XeNangModel.ThongTinSanPham" Width="1.5" PointX="6.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
