@@ -10,3 +10,15 @@ E:\Freelancer\ASang\vehiclemanager\Project\Data\obj\Debug\Data.Resources.NotifyM
 E:\Freelancer\ASang\vehiclemanager\Project\Data\obj\Debug\Data.csproj.GenerateResource.Cache
 E:\Freelancer\ASang\vehiclemanager\Project\Data\obj\Debug\Data.dll
 E:\Freelancer\ASang\vehiclemanager\Project\Data\obj\Debug\Data.pdb
+C:\Users\BaoDuy\Documents\VerhicleManager\Project\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\BaoDuy\Documents\VerhicleManager\Project\Data\obj\Debug\Data.Resources.NotifyMessage.resources
+C:\Users\BaoDuy\Documents\VerhicleManager\Project\Data\obj\Debug\Data.csproj.GenerateResource.Cache
+C:\Users\BaoDuy\Documents\VerhicleManager\Project\Data\bin\Debug\Data.dll.config
+C:\Users\BaoDuy\Documents\VerhicleManager\Project\Data\bin\Debug\Data.dll
+C:\Users\BaoDuy\Documents\VerhicleManager\Project\Data\bin\Debug\Data.pdb
+C:\Users\BaoDuy\Documents\VerhicleManager\Project\Data\bin\Debug\EntityFramework.dll
+C:\Users\BaoDuy\Documents\VerhicleManager\Project\Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\BaoDuy\Documents\VerhicleManager\Project\Data\bin\Debug\EntityFramework.xml
+C:\Users\BaoDuy\Documents\VerhicleManager\Project\Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\BaoDuy\Documents\VerhicleManager\Project\Data\obj\Debug\Data.dll
+C:\Users\BaoDuy\Documents\VerhicleManager\Project\Data\obj\Debug\Data.pdb
