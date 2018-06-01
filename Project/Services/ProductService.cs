@@ -35,17 +35,17 @@ namespace Services
 
         public List<ProductDto> GetTopProduct(int top)
         {
-            return _repository.GetTopProduct(top);
+            return _repository.GetTopAccessories(top);
         }
 
-        public List<ProductDto> GetAllProduct()
+        public List<ProductDto> GetAllProduct(string type)
         {
-            return _repository.GetAll();
+            return _repository.GetAll(type);
         }
 
-        public ProductDto GetProductByID(int ID)
+        public ProductDto GetProductByID(int ID, string type)
         {
-            return _repository.GetProduct(ID);
+            return _repository.GetProduct(ID, type);
         }
 
         public void ExportToCsv(List<ProductDto> products, string fileName)
@@ -61,6 +61,11 @@ namespace Services
         public List<ProductTypeDto> GetAllProductType(string key1, string key2 = "", string key3 = "")
         {
             return Helper.GetMasterData<ProductTypeDto>(key1, key2, key3);
+        }
+
+        public List<MasterInfoDto> GetAllMasterInfo(string key1, string key2 = "", string key3 = "")
+        {
+            return Helper.GetMasterData<MasterInfoDto>(key1, key2, key3);
         }
 
         public List<ProductDto> GetTopVehicles(int top)

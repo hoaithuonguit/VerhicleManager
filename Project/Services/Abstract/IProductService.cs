@@ -17,15 +17,17 @@ namespace Services.Abstract
 
         List<ProductDto> GetTopProduct(int top);
 
-        List<ProductDto> GetAllProduct();
+        List<ProductDto> GetAllProduct(string type);
 
-        ProductDto GetProductByID(int ID);
+        ProductDto GetProductByID(int ID, string type);
 
         void ExportToCsv(List<ProductDto> products, string fileName);
 
         List<ProductStatusDto> GetAllProductStatus(string key1, string key2 = "", string key3 = "");
 
         List<ProductTypeDto> GetAllProductType(string key1, string key2 = "", string key3 = "");
+
+        List<MasterInfoDto> GetAllMasterInfo(string key1, string key2 = "", string key3 = "");
 
         List<ProductDto> GetTopVehicles(int top);
 
