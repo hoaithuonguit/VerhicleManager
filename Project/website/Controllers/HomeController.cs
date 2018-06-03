@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Data.Dtos;
+using Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,23 +10,22 @@ namespace website.Controllers
 {
     public class HomeController : Controller
     {
+        #region contructor
+        private ProductService service = new ProductService();
+       
+        #endregion
+
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+            List<ProductDto> Verhicle = new List<ProductDto>();
+            Verhicle = service.GetAllProduct("01");
+            List<ProductDto> Category = new List<ProductDto>();
+            Category = service.GetTopCategory(10);
+            ViewBag.Verhicle = Verhicle;
+            ViewBag.Category = Category;
+            return View(ViewBag);
+        }      
     }
+
+   
 }

@@ -72,10 +72,15 @@ namespace Services
         {
             return _repository.GetTopVehicles(top);
         }
-
+       
         public void EditVehicle(ProductDto vehicle)
         {
             _repository.EditVehicle(vehicle);
+        }
+
+        public List<ProductDto> GetTopCategory(int top)
+        {
+            return _repository.GetTopAccessories(top);
         }
     }
 }
