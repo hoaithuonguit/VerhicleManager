@@ -208,10 +208,65 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Image\download %281%29.jpg" />
-    <Content Include="Image\download %282%29.jpg" />
-    <Content Include="Image\download %283%29.jpg" />
-    <Content Include="Image\download.jpg" />
+    <Content Include="Content\flexslider.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\sequence-looptheme.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Image\Background\1-lazada.png" />
+    <Content Include="Image\Background\1-tiki.png" />
+    <Content Include="Image\Background\1.png" />
+    <Content Include="Image\Background\10-shoppe.png" />
+    <Content Include="Image\Background\11-tiki.png" />
+    <Content Include="Image\Background\2-lazada.png" />
+    <Content Include="Image\Background\2.jpg" />
+    <Content Include="Image\Background\3.jpg" />
+    <Content Include="Image\Background\4.jpg" />
+    <Content Include="Image\Background\5.jpg" />
+    <Content Include="Image\Background\6.png" />
+    <Content Include="Image\Background\adayroi.PNG" />
+    <Content Include="Image\Background\address.png" />
+    <Content Include="Image\Background\arow_left.png" />
+    <Content Include="Image\Background\arow_right.png" />
+    <Content Include="Image\Background\banner-01.jpg" />
+    <Content Include="Image\Background\banner-02.jpg" />
+    <Content Include="Image\Background\bg.jpg" />
+    <Content Include="Image\Background\black_transparent50.png" />
+    <Content Include="Image\Background\carticon.png" />
+    <Content Include="Image\Background\down-arow-2.png" />
+    <Content Include="Image\Background\down-arow.png" />
+    <Content Include="Image\Background\envato.png" />
+    <Content Include="Image\Background\f.png" />
+    <Content Include="Image\Background\fbicon.png" />
+    <Content Include="Image\Background\fblike.png" />
+    <Content Include="Image\Background\gplus.png" />
+    <Content Include="Image\Background\grid-icon.png" />
+    <Content Include="Image\Background\in.png" />
+    <Content Include="Image\Background\list-icon.png" />
+    <Content Include="Image\Background\loginbg.png" />
+    <Content Include="Image\Background\logo.jpg" />
+    <Content Include="Image\Background\logo.png" />
+    <Content Include="Image\Background\lotte.PNG" />
+    <Content Include="Image\Background\message.png" />
+    <Content Include="Image\Background\more-icon.png" />
+    <Content Include="Image\Background\phone.png" />
+    <Content Include="Image\Background\photodune.png" />
+    <Content Include="Image\Background\promotion-01.png" />
+    <Content Include="Image\Background\promotion-02.png" />
+    <Content Include="Image\Background\promotion-03.png" />
+    <Content Include="Image\Background\regbg.png" />
+    <Content Include="Image\Background\remove.png" />
+    <Content Include="Image\Background\search-bg.png" />
+    <Content Include="Image\Background\share.png" />
+    <Content Include="Image\Background\slider-image-02.png" />
+    <Content Include="Image\Background\slider-image-03.png" />
+    <Content Include="Image\Background\star.png" />
+    <Content Include="Image\Background\themeforest.png" />
+    <Content Include="Image\Background\twi.png" />
+    <Content Include="Image\Background\up-arow.png" />
+    <Content Include="Image\XeNang3.jpg" />
+    <Content Include="Image\XeNang2.jpg" />
+    <Content Include="Image\XeNang1.jpg" />
+    <Content Include="Image\XeNang.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Style.css" />
@@ -225,10 +280,21 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.carouFredSel-6.2.1-packed.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.elevatezoom.js" />
+    <Content Include="Scripts\jquery.flexslider.js" />
+    <Content Include="Scripts\jquery.sequence-min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -236,6 +302,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\script.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -273,6 +340,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_HeaderLayout.cshtml" />
     <Content Include="Views\Shared\_FooterLayout.cshtml" />
+    <Content Include="Views\Shared\_Slider.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Image\" />
