@@ -40,6 +40,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip_Time = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl_Main = new System.Windows.Forms.TabControl();
+            this.btn_XemDonDatHang = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +90,8 @@
             this.cậpNhậtDữLiệuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.strip_ThemThongTinSanPham,
             this.strip_NhapHang,
-            this.strip_BanHang});
+            this.strip_BanHang,
+            this.btn_XemDonDatHang});
             this.cậpNhậtDữLiệuToolStripMenuItem.Image = global::Desktop.Properties.Resources.icons8_plus_48;
             this.cậpNhậtDữLiệuToolStripMenuItem.Name = "cậpNhậtDữLiệuToolStripMenuItem";
             this.cậpNhậtDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(228, 36);
@@ -155,6 +157,14 @@
             this.tabControl_Main.Size = new System.Drawing.Size(1781, 895);
             this.tabControl_Main.TabIndex = 5;
             // 
+            // btn_XemDonDatHang
+            // 
+            this.btn_XemDonDatHang.Image = global::Desktop.Properties.Resources.BTmoi;
+            this.btn_XemDonDatHang.Name = "btn_XemDonDatHang";
+            this.btn_XemDonDatHang.Size = new System.Drawing.Size(380, 36);
+            this.btn_XemDonDatHang.Text = "Xem đơn đặt hàng";
+            this.btn_XemDonDatHang.Click += new System.EventHandler(this.btn_XemDonDatHang_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -192,5 +202,6 @@
         private System.Windows.Forms.TabControl tabControl_Main;
         private System.Windows.Forms.ToolStripMenuItem strip_NhapHang;
         private System.Windows.Forms.ToolStripMenuItem strip_BanHang;
+        private System.Windows.Forms.ToolStripMenuItem btn_XemDonDatHang;
     }
 }

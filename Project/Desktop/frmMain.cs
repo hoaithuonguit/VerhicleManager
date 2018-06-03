@@ -85,6 +85,20 @@ namespace Desktop
             tabControl_Main.SelectedTab = tp;
             frm.Show();
         }
+
+
+        private void btn_XemDonDatHang_Click(object sender, EventArgs e)
+        {
+            frmDonDatHang frm = new frmDonDatHang();            //child form
+            frm.TopLevel = false;
+            TabPage tp = new TabPage(frm.Text);
+            tabControl_Main.TabPages.Add(tp);
+            frm.Activate();
+            frm.Parent = tp;
+            frm.Dock = DockStyle.Fill;
+            tabControl_Main.SelectedTab = tp;
+            frm.Show();
+        }
         #endregion
 
         private void frmMain_Load(object sender, EventArgs e)
