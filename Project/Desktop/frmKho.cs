@@ -19,10 +19,7 @@ namespace Desktop
 
         private void frmKho_Load(object sender, EventArgs e)
         {
-            strip_Luu.Enabled = false;
-            strip_Sua.Enabled = false;
-            strip_Them.Enabled = false;
-            strip_Xoa.Enabled = false;
+
         }
     }
 }

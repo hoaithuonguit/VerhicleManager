@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_TenSanPham = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
@@ -53,10 +54,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.strip_Them = new System.Windows.Forms.ToolStripButton();
             this.strip_Sua = new System.Windows.Forms.ToolStripButton();
-            this.strip_Xoa = new System.Windows.Forms.ToolStripButton();
             this.strip_Luu = new System.Windows.Forms.ToolStripButton();
-            this.strip_Thoat = new System.Windows.Forms.ToolStripButton();
-            this.tb_TenSanPham = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -93,15 +91,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhập hàng";
             // 
+            // tb_TenSanPham
+            // 
+            this.tb_TenSanPham.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.tb_TenSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.tb_TenSanPham.Location = new System.Drawing.Point(235, 113);
+            this.tb_TenSanPham.Name = "tb_TenSanPham";
+            this.tb_TenSanPham.Size = new System.Drawing.Size(350, 35);
+            this.tb_TenSanPham.TabIndex = 21;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btn_Sua);
             this.groupBox3.Controls.Add(this.btn_Them);
             this.groupBox3.Controls.Add(this.btn_XuatExcel);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox3.Location = new System.Drawing.Point(3, 705);
+            this.groupBox3.Location = new System.Drawing.Point(3, 514);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(651, 180);
+            this.groupBox3.Size = new System.Drawing.Size(651, 371);
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Xuất dữ liệu";
@@ -135,22 +142,28 @@
             // 
             // cbb_Loai
             // 
+            this.cbb_Loai.AutoCompleteCustomSource.AddRange(new string[] {
+            "Xe nâng",
+            "Phụ tùng"});
+            this.cbb_Loai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_Loai.FormattingEnabled = true;
-            this.cbb_Loai.Location = new System.Drawing.Point(235, 431);
+            this.cbb_Loai.Location = new System.Drawing.Point(235, 60);
             this.cbb_Loai.Name = "cbb_Loai";
             this.cbb_Loai.Size = new System.Drawing.Size(350, 37);
             this.cbb_Loai.TabIndex = 19;
             // 
             // cbb_PhanLoai
             // 
+            this.cbb_PhanLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_PhanLoai.FormattingEnabled = true;
-            this.cbb_PhanLoai.Location = new System.Drawing.Point(235, 60);
+            this.cbb_PhanLoai.Location = new System.Drawing.Point(235, 438);
             this.cbb_PhanLoai.Name = "cbb_PhanLoai";
             this.cbb_PhanLoai.Size = new System.Drawing.Size(350, 37);
             this.cbb_PhanLoai.TabIndex = 18;
             // 
             // cbb_TinhTrang
             // 
+            this.cbb_TinhTrang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_TinhTrang.FormattingEnabled = true;
             this.cbb_TinhTrang.Location = new System.Drawing.Point(235, 272);
             this.cbb_TinhTrang.Name = "cbb_TinhTrang";
@@ -198,7 +211,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(36, 434);
+            this.label8.Location = new System.Drawing.Point(36, 63);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 29);
             this.label8.TabIndex = 9;
@@ -216,7 +229,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 63);
+            this.label6.Location = new System.Drawing.Point(36, 441);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 29);
             this.label6.TabIndex = 7;
@@ -289,9 +302,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.strip_Them,
             this.strip_Sua,
-            this.strip_Xoa,
-            this.strip_Luu,
-            this.strip_Thoat});
+            this.strip_Luu});
             this.toolStrip1.Location = new System.Drawing.Point(3, 31);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1149, 32);
@@ -314,14 +325,6 @@
             this.strip_Sua.Size = new System.Drawing.Size(70, 29);
             this.strip_Sua.Text = "Sửa";
             // 
-            // strip_Xoa
-            // 
-            this.strip_Xoa.Image = global::Desktop.Properties.Resources.icons8_cancel_40;
-            this.strip_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.strip_Xoa.Name = "strip_Xoa";
-            this.strip_Xoa.Size = new System.Drawing.Size(71, 29);
-            this.strip_Xoa.Text = "Xóa";
-            // 
             // strip_Luu
             // 
             this.strip_Luu.Image = global::Desktop.Properties.Resources.BTluu;
@@ -329,21 +332,6 @@
             this.strip_Luu.Name = "strip_Luu";
             this.strip_Luu.Size = new System.Drawing.Size(69, 29);
             this.strip_Luu.Text = "Lưu";
-            // 
-            // strip_Thoat
-            // 
-            this.strip_Thoat.Image = global::Desktop.Properties.Resources.icons8_shutdown_80;
-            this.strip_Thoat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.strip_Thoat.Name = "strip_Thoat";
-            this.strip_Thoat.Size = new System.Drawing.Size(85, 29);
-            this.strip_Thoat.Text = "Thoát";
-            // 
-            // tb_TenSanPham
-            // 
-            this.tb_TenSanPham.Location = new System.Drawing.Point(235, 113);
-            this.tb_TenSanPham.Name = "tb_TenSanPham";
-            this.tb_TenSanPham.Size = new System.Drawing.Size(350, 35);
-            this.tb_TenSanPham.TabIndex = 21;
             // 
             // frmNhapHang
             // 
@@ -383,9 +371,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton strip_Them;
         private System.Windows.Forms.ToolStripButton strip_Sua;
-        private System.Windows.Forms.ToolStripButton strip_Xoa;
         private System.Windows.Forms.ToolStripButton strip_Luu;
-        private System.Windows.Forms.ToolStripButton strip_Thoat;
         private System.Windows.Forms.DateTimePicker dtp_NgayNhapHang;
         private System.Windows.Forms.ComboBox cbb_Loai;
         private System.Windows.Forms.ComboBox cbb_PhanLoai;

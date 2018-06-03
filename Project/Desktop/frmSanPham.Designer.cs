@@ -30,9 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_Xoa = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
             this.btn_XuatExcel = new System.Windows.Forms.Button();
@@ -45,9 +42,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.strip_Them = new System.Windows.Forms.ToolStripButton();
             this.strip_Sua = new System.Windows.Forms.ToolStripButton();
-            this.strip_Xoa = new System.Windows.Forms.ToolStripButton();
             this.strip_Luu = new System.Windows.Forms.ToolStripButton();
-            this.strip_Thoat = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,49 +69,20 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btn_Xoa);
-            this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.btn_Sua);
             this.groupBox3.Controls.Add(this.btn_Them);
             this.groupBox3.Controls.Add(this.btn_XuatExcel);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox3.Location = new System.Drawing.Point(3, 349);
+            this.groupBox3.Location = new System.Drawing.Point(3, 209);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(727, 594);
+            this.groupBox3.Size = new System.Drawing.Size(727, 734);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Xuất dữ liệu";
             // 
-            // btn_Xoa
-            // 
-            this.btn_Xoa.Location = new System.Drawing.Point(589, 180);
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(132, 37);
-            this.btn_Xoa.TabIndex = 5;
-            this.btn_Xoa.Text = "Xóa";
-            this.btn_Xoa.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(276, 180);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(290, 37);
-            this.comboBox1.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 183);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(240, 29);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "ID sản phẩm cần xóa:";
-            // 
             // btn_Sua
             // 
-            this.btn_Sua.Location = new System.Drawing.Point(211, 82);
+            this.btn_Sua.Location = new System.Drawing.Point(211, 73);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(149, 52);
             this.btn_Sua.TabIndex = 2;
@@ -125,7 +91,7 @@
             // 
             // btn_Them
             // 
-            this.btn_Them.Location = new System.Drawing.Point(35, 82);
+            this.btn_Them.Location = new System.Drawing.Point(35, 73);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(147, 52);
             this.btn_Them.TabIndex = 1;
@@ -134,7 +100,7 @@
             // 
             // btn_XuatExcel
             // 
-            this.btn_XuatExcel.Location = new System.Drawing.Point(399, 82);
+            this.btn_XuatExcel.Location = new System.Drawing.Point(399, 73);
             this.btn_XuatExcel.Name = "btn_XuatExcel";
             this.btn_XuatExcel.Size = new System.Drawing.Size(167, 52);
             this.btn_XuatExcel.TabIndex = 0;
@@ -155,6 +121,8 @@
             // 
             // tb_Ten
             // 
+            this.tb_Ten.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.tb_Ten.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tb_Ten.Location = new System.Drawing.Point(214, 60);
             this.tb_Ten.Name = "tb_Ten";
             this.tb_Ten.Size = new System.Drawing.Size(346, 35);
@@ -209,9 +177,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.strip_Them,
             this.strip_Sua,
-            this.strip_Xoa,
-            this.strip_Luu,
-            this.strip_Thoat});
+            this.strip_Luu});
             this.toolStrip1.Location = new System.Drawing.Point(3, 31);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1088, 32);
@@ -234,14 +200,6 @@
             this.strip_Sua.Size = new System.Drawing.Size(70, 29);
             this.strip_Sua.Text = "Sửa";
             // 
-            // strip_Xoa
-            // 
-            this.strip_Xoa.Image = global::Desktop.Properties.Resources.icons8_cancel_40;
-            this.strip_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.strip_Xoa.Name = "strip_Xoa";
-            this.strip_Xoa.Size = new System.Drawing.Size(71, 29);
-            this.strip_Xoa.Text = "Xóa";
-            // 
             // strip_Luu
             // 
             this.strip_Luu.Image = global::Desktop.Properties.Resources.BTluu;
@@ -249,14 +207,6 @@
             this.strip_Luu.Name = "strip_Luu";
             this.strip_Luu.Size = new System.Drawing.Size(69, 29);
             this.strip_Luu.Text = "Lưu";
-            // 
-            // strip_Thoat
-            // 
-            this.strip_Thoat.Image = global::Desktop.Properties.Resources.icons8_shutdown_80;
-            this.strip_Thoat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.strip_Thoat.Name = "strip_Thoat";
-            this.strip_Thoat.Size = new System.Drawing.Size(85, 29);
-            this.strip_Thoat.Text = "Thoát";
             // 
             // frmSanPham
             // 
@@ -270,7 +220,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DuLieu)).EndInit();
@@ -287,20 +236,15 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton strip_Them;
         private System.Windows.Forms.ToolStripButton strip_Sua;
-        private System.Windows.Forms.ToolStripButton strip_Xoa;
         private System.Windows.Forms.DataGridView dgv_DuLieu;
         private System.Windows.Forms.ToolStripButton strip_Luu;
-        private System.Windows.Forms.ToolStripButton strip_Thoat;
         private System.Windows.Forms.ComboBox cbb_Loai;
         private System.Windows.Forms.TextBox tb_Ten;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btn_XuatExcel;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.Button btn_Them;
-        private System.Windows.Forms.Button btn_Xoa;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
