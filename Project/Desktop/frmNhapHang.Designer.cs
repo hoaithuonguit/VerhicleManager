@@ -98,7 +98,7 @@
             this.tb_TenSanPham.Location = new System.Drawing.Point(235, 113);
             this.tb_TenSanPham.Name = "tb_TenSanPham";
             this.tb_TenSanPham.Size = new System.Drawing.Size(350, 35);
-            this.tb_TenSanPham.TabIndex = 21;
+            this.tb_TenSanPham.TabIndex = 1;
             // 
             // groupBox3
             // 
@@ -175,21 +175,21 @@
             this.tb_MoTa.Location = new System.Drawing.Point(235, 383);
             this.tb_MoTa.Name = "tb_MoTa";
             this.tb_MoTa.Size = new System.Drawing.Size(350, 35);
-            this.tb_MoTa.TabIndex = 16;
+            this.tb_MoTa.TabIndex = 5;
             // 
             // tb_Hang
             // 
             this.tb_Hang.Location = new System.Drawing.Point(235, 325);
             this.tb_Hang.Name = "tb_Hang";
             this.tb_Hang.Size = new System.Drawing.Size(350, 35);
-            this.tb_Hang.TabIndex = 15;
+            this.tb_Hang.TabIndex = 4;
             // 
             // tb_SoLuong
             // 
             this.tb_SoLuong.Location = new System.Drawing.Point(235, 219);
             this.tb_SoLuong.Name = "tb_SoLuong";
             this.tb_SoLuong.Size = new System.Drawing.Size(350, 35);
-            this.tb_SoLuong.TabIndex = 13;
+            this.tb_SoLuong.TabIndex = 3;
             // 
             // dtp_NgayNhapHang
             // 
@@ -197,7 +197,7 @@
             this.dtp_NgayNhapHang.Location = new System.Drawing.Point(235, 164);
             this.dtp_NgayNhapHang.Name = "dtp_NgayNhapHang";
             this.dtp_NgayNhapHang.Size = new System.Drawing.Size(350, 35);
-            this.dtp_NgayNhapHang.TabIndex = 11;
+            this.dtp_NgayNhapHang.TabIndex = 2;
             // 
             // label9
             // 

@@ -41,19 +41,6 @@ namespace Desktop
             frm.Show();
         }
 
-        private void strip_ThemSanPham_Click(object sender, EventArgs e)
-        {
-            frmSanPham frm = new frmSanPham();            //child form
-            frm.TopLevel = false;
-            TabPage tp = new TabPage(frm.Text);
-            tabControl_Main.TabPages.Add(tp);
-            frm.Activate();
-            frm.Parent = tp;
-            frm.Dock = DockStyle.Fill;
-            tabControl_Main.SelectedTab = tp;
-            frm.Show();
-        }
-
         private void strip_ChinhSuaThongTinCuaHang_Click(object sender, EventArgs e)
         {
             frmThongTinCuaHang frm = new frmThongTinCuaHang();

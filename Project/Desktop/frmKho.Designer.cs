@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_TenSanPham = new System.Windows.Forms.TextBox();
             this.cbb_PhanLoai = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_KiemTra = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tb_TenSanPham = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -57,6 +57,13 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin kho";
+            // 
+            // tb_TenSanPham
+            // 
+            this.tb_TenSanPham.Location = new System.Drawing.Point(197, 107);
+            this.tb_TenSanPham.Name = "tb_TenSanPham";
+            this.tb_TenSanPham.Size = new System.Drawing.Size(369, 35);
+            this.tb_TenSanPham.TabIndex = 1;
             // 
             // cbb_PhanLoai
             // 
@@ -120,13 +127,6 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(893, 894);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // tb_TenSanPham
-            // 
-            this.tb_TenSanPham.Location = new System.Drawing.Point(197, 107);
-            this.tb_TenSanPham.Name = "tb_TenSanPham";
-            this.tb_TenSanPham.Size = new System.Drawing.Size(369, 35);
-            this.tb_TenSanPham.TabIndex = 29;
             // 
             // frmKho
             // 

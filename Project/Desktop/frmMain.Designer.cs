@@ -34,7 +34,6 @@
             this.strip_Thoat = new System.Windows.Forms.ToolStripMenuItem();
             this.cậpNhậtDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.strip_ThemThongTinSanPham = new System.Windows.Forms.ToolStripMenuItem();
-            this.strip_ThemSanPham = new System.Windows.Forms.ToolStripMenuItem();
             this.strip_NhapHang = new System.Windows.Forms.ToolStripMenuItem();
             this.strip_BanHang = new System.Windows.Forms.ToolStripMenuItem();
             this.strip_QuanLiKho = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,7 +88,6 @@
             // 
             this.cậpNhậtDữLiệuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.strip_ThemThongTinSanPham,
-            this.strip_ThemSanPham,
             this.strip_NhapHang,
             this.strip_BanHang});
             this.cậpNhậtDữLiệuToolStripMenuItem.Image = global::Desktop.Properties.Resources.icons8_plus_48;
@@ -104,14 +102,6 @@
             this.strip_ThemThongTinSanPham.Size = new System.Drawing.Size(380, 36);
             this.strip_ThemThongTinSanPham.Text = "Thêm thông tin sản phẩm";
             this.strip_ThemThongTinSanPham.Click += new System.EventHandler(this.strip_ThemThongTinSanPham_Click);
-            // 
-            // strip_ThemSanPham
-            // 
-            this.strip_ThemSanPham.Image = global::Desktop.Properties.Resources.service;
-            this.strip_ThemSanPham.Name = "strip_ThemSanPham";
-            this.strip_ThemSanPham.Size = new System.Drawing.Size(380, 36);
-            this.strip_ThemSanPham.Text = "Thêm sản phẩm";
-            this.strip_ThemSanPham.Click += new System.EventHandler(this.strip_ThemSanPham_Click);
             // 
             // strip_NhapHang
             // 
@@ -196,7 +186,6 @@
         private System.Windows.Forms.ToolStripMenuItem strip_Thoat;
         private System.Windows.Forms.ToolStripMenuItem cậpNhậtDữLiệuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem strip_ThemThongTinSanPham;
-        private System.Windows.Forms.ToolStripMenuItem strip_ThemSanPham;
         private System.Windows.Forms.ToolStripMenuItem strip_QuanLiKho;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStrip_Time;

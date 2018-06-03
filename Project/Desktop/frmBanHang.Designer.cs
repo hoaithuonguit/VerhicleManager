@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tb_TenSanPham = new System.Windows.Forms.TextBox();
+            this.cbb_LoaiSanPham = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dtp_NgayBan = new System.Windows.Forms.DateTimePicker();
             this.tb_SoLuong = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,9 +47,6 @@
             this.strip_Them = new System.Windows.Forms.ToolStripButton();
             this.strip_Sua = new System.Windows.Forms.ToolStripButton();
             this.strip_Luu = new System.Windows.Forms.ToolStripButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbb_LoaiSanPham = new System.Windows.Forms.ComboBox();
-            this.tb_TenSanPham = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -75,20 +75,47 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin bán hàng";
             // 
+            // tb_TenSanPham
+            // 
+            this.tb_TenSanPham.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.tb_TenSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.tb_TenSanPham.Location = new System.Drawing.Point(214, 111);
+            this.tb_TenSanPham.Name = "tb_TenSanPham";
+            this.tb_TenSanPham.Size = new System.Drawing.Size(432, 35);
+            this.tb_TenSanPham.TabIndex = 1;
+            // 
+            // cbb_LoaiSanPham
+            // 
+            this.cbb_LoaiSanPham.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_LoaiSanPham.FormattingEnabled = true;
+            this.cbb_LoaiSanPham.Location = new System.Drawing.Point(214, 60);
+            this.cbb_LoaiSanPham.Name = "cbb_LoaiSanPham";
+            this.cbb_LoaiSanPham.Size = new System.Drawing.Size(432, 37);
+            this.cbb_LoaiSanPham.TabIndex = 31;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(33, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(175, 29);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Loại sản phẩm:";
+            // 
             // dtp_NgayBan
             // 
             this.dtp_NgayBan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_NgayBan.Location = new System.Drawing.Point(214, 215);
             this.dtp_NgayBan.Name = "dtp_NgayBan";
             this.dtp_NgayBan.Size = new System.Drawing.Size(432, 35);
-            this.dtp_NgayBan.TabIndex = 29;
+            this.dtp_NgayBan.TabIndex = 3;
             // 
             // tb_SoLuong
             // 
             this.tb_SoLuong.Location = new System.Drawing.Point(214, 164);
             this.tb_SoLuong.Name = "tb_SoLuong";
             this.tb_SoLuong.Size = new System.Drawing.Size(432, 35);
-            this.tb_SoLuong.TabIndex = 28;
+            this.tb_SoLuong.TabIndex = 2;
             // 
             // label4
             // 
@@ -218,32 +245,6 @@
             this.strip_Luu.Name = "strip_Luu";
             this.strip_Luu.Size = new System.Drawing.Size(69, 29);
             this.strip_Luu.Text = "Lưu";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 29);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Loại sản phẩm:";
-            // 
-            // cbb_LoaiSanPham
-            // 
-            this.cbb_LoaiSanPham.FormattingEnabled = true;
-            this.cbb_LoaiSanPham.Location = new System.Drawing.Point(214, 60);
-            this.cbb_LoaiSanPham.Name = "cbb_LoaiSanPham";
-            this.cbb_LoaiSanPham.Size = new System.Drawing.Size(432, 37);
-            this.cbb_LoaiSanPham.TabIndex = 31;
-            // 
-            // tb_TenSanPham
-            // 
-            this.tb_TenSanPham.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.tb_TenSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.tb_TenSanPham.Location = new System.Drawing.Point(214, 111);
-            this.tb_TenSanPham.Name = "tb_TenSanPham";
-            this.tb_TenSanPham.Size = new System.Drawing.Size(432, 35);
-            this.tb_TenSanPham.TabIndex = 32;
             // 
             // frmBanHang
             // 
