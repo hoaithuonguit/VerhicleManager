@@ -1,69 +1,28 @@
-﻿
-<div id="banner">
-    <div class="div_banner">
-        <img style="width: 979px;" src="http://thietbikhotoanthang.com/images/gianhang/banner/201605090241331auyGgJDTQ.png" />
-        <div class="clear"></div>
-    </div>
-</div>	
-<div id="menu" style="font-weight:bold;">
-    <div class="div_menu">
-        <ul id="nav">
-            <li class="top first"><a class="top_link" href="#" title="Trang chủ">Trang chủ</a></li>
-
-            <li class="top first"><a title="XE NÂNG" href="#" target="" class="top_link">Xe nâng</a></li>
-
-            <li class="top first"><a title="PHỤ TÙNG" href="#" target="" class="top_link">Phụ tùng</a></li>
-
-            <li class="top first"><a title="ĐẶT HÀNG" href="#" target="" class="top_link">Đặt hàng</a></li>
-
-            <li class="top first"><a title="Giới thiệu" href="#" target="" class="top_link">Giới thiệu</a></li>
-        </ul>
-
-        <div class="div_search">
-
-            @*<script type="text/javascript">
-
-                $(document).ready(function(){
-
-                    $('.a_btnsearch').click(function(){
-
-                        var keyword = $('#txtTuKhoaTimKiem').val();
-
-                        window.location.href="http://thietbikhotoanthang.com/tu-khoa-tim/"+keyword+'/';
-
-                        return false;
-
-                    })
-                    $('#txtTuKhoaTimKiem').keypress(function(event){
-
-                        var keycode = (event.keyCode ? event.keyCode : event.which);
-
-                        if(keycode == '13'){
-
-                              var keyword = $('#txtTuKhoaTimKiem').val();
-
-                        window.location.href="http://thietbikhotoanthang.com/tu-khoa-tim/"+keyword+'/';
-
-                        return false;
-
-                        }
-                    });
-                })
-
-            </script>*@
-
-            <form id="frmTimSanPham" action="http://xenangsaigon.com/san-pham.html" method="post">
-
-                <input type="text" name="Empty" style="display:none;" />
-
-                <input type="text" name="txtTuKhoaTimKiem" id="txtTuKhoaTimKiem" class="txtsearch" value="Tìm kiếm..." onfocus="if(this.value=='Tìm kiếm...') this.value='';" onblur="if(this.value=='') this.value='Tìm kiếm...';" maxlength="50" />
-
-                <a href="#" class="a_btnsearch"></a>
-
-            </form>
-
+﻿<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-10">
+                <div class="clearfix"></div>
+                <div class="header_bottom">
+                    <ul class="option">
+                        <li id="search" class="search">
+                            <form>
+                                <input class="search-submit" type="submit" value="">
+                                <input class="search-input" placeholder="Nhập thông tin tìm kiếm" type="text" value="" name="search">
+                            </form>
+                        </li>
+                    </ul>
+                    
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="#">Xe Nâng</a></li>
+                            <li><a href="#">Phụ tùng</a></li>
+                            <li><a href="#">Đặt hàng</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
 </div>
-
