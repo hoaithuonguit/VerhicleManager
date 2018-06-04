@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -316,6 +317,9 @@
     <Content Include="Views\Shared\_HeaderLayout.cshtml" />
     <Content Include="Views\Shared\_FooterLayout.cshtml" />
     <Content Include="Views\Shared\_Slider.cshtml" />
+    <Content Include="Views\Product\Verhicle.cshtml" />
+    <Content Include="Views\Shared\_LeftLayout.cshtml" />
+    <Content Include="Views\Product\Category.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Image\" />
