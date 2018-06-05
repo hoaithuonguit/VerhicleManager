@@ -322,6 +322,8 @@
     <Content Include="Views\Shared\_LeftLayout.cshtml" />
     <Content Include="Views\Product\Category.cshtml" />
     <Content Include="Views\Product\Order.cshtml" />
+    <Content Include="Views\Product\VerhicleDetail.cshtml" />
+    <Content Include="Views\Product\CategoryDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Image\" />

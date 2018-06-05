@@ -12,29 +12,29 @@
             <div class="col-md-9">
                 <div class="products-grid">
                     <div class="row">
-                        @foreach (var item in ViewBag.lsCategory)
-                        {
-                            <div class="col-md-4 col-sm-6">
-                                <div class="products">
-                                    <div class="thumbnail">
-                                        <a href="#">
-                                            <img src="@item.Image1" alt="Product Name">
-                                        </a>
-                                    </div>
-                                    <div class="productname">
-                                        @item.Ten
-                                    </div>
-                                    <h4 class="price">
-                                        @item.TinhTrang
-                                    </h4>
-                                    <div class="button_group">
-                                        <button class="button add-cart" type="button">
-                                            Xem Chi tiết
-                                        </button>
+                        <form id="form">
+                            @foreach (var item in ViewBag.lsCategory)
+                            {
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="products">
+                                        <div class="thumbnail">
+                                            <a href="#">
+                                                <img src="@item.Image1" alt="Product Name">
+                                            </a>
+                                        </div>
+                                        <div class="productname">
+                                            @item.Ten
+                                        </div>
+                                        <h4 class="price">
+                                            @item.TinhTrang
+                                        </h4>
+                                        <div class="button_group">
+                                            <button class="btn" form="form" formaction=@Url.Action("CategoryDetail", new { id = @item.ID })>Xem chi tiết</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        }
+                            }
+                        </form>
                     </div>
 
                 </div>

@@ -58,5 +58,28 @@ namespace website.Controllers
         {
             return View();
         }
+       
+        public ActionResult VerhicleDetail(int id)
+        {
+            ProductDto Product = new ProductDto();
+            Product = _service.GetProductByID(id, Constant.TYPE_VEHICLE);
+            Product.Image1 = _common.ChangePathImage(Product.Image1);
+            if (Product.Image2 != null) Product.Image2 = _common.ChangePathImage(Product.Image2);
+            if (Product.Image3 != null) Product.Image3 = _common.ChangePathImage(Product.Image3);
+            if (Product.Image4 != null) Product.Image4 = _common.ChangePathImage(Product.Image4);
+            if (Product.Image5 != null) Product.Image5 = _common.ChangePathImage(Product.Image5);
+            ViewBag.VerhicleDetail = Product;
+            return View(ViewBag);
+        }
+
+        //CategoryDetail
+        public ActionResult CategoryDetail(int id)
+        {
+            ProductDto Product = new ProductDto();
+            Product = _service.GetProductByID(id, Constant.TYPE_ACCESSORY);
+            Product.Image1 = _common.ChangePathImage(Product.Image1);       
+            ViewBag.CategoryDetail = Product;
+            return View(ViewBag);
+        }
     }
 }
