@@ -35,7 +35,7 @@ namespace Desktop
             //    tb_TenSanPham.AutoCompleteCustomSource = MyCollection;
             //    con.Close();
             }
-        }
+    }
 
         
     }

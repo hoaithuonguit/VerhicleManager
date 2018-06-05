@@ -64,10 +64,15 @@ namespace Services
         {
             return Helper.GetMasterData("TypeV");
         }
-
         public List<MasterDataDto> GetAllTypeOfAccessory()
+       
         {
             return Helper.GetMasterData("Type");
+        }
+
+        public List<ProductDto> GetTopCategory(int top)
+        {
+            return _repository.GetTopAccessories(top);
         }
     }
 }

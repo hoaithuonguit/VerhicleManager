@@ -195,25 +195,80 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\flexslider.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\sequence-looptheme.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Image\Background\1-lazada.png" />
+    <Content Include="Image\Background\1-tiki.png" />
+    <Content Include="Image\Background\1.png" />
+    <Content Include="Image\Background\10-shoppe.png" />
+    <Content Include="Image\Background\11-tiki.png" />
+    <Content Include="Image\Background\2-lazada.png" />
+    <Content Include="Image\Background\2.jpg" />
+    <Content Include="Image\Background\3.jpg" />
+    <Content Include="Image\Background\4.jpg" />
+    <Content Include="Image\Background\5.jpg" />
+    <Content Include="Image\Background\6.png" />
+    <Content Include="Image\Background\adayroi.PNG" />
+    <Content Include="Image\Background\address.png" />
+    <Content Include="Image\Background\arow_left.png" />
+    <Content Include="Image\Background\arow_right.png" />
+    <Content Include="Image\Background\banner-01.jpg" />
+    <Content Include="Image\Background\banner-02.jpg" />
+    <Content Include="Image\Background\bg.jpg" />
+    <Content Include="Image\Background\black_transparent50.png" />
+    <Content Include="Image\Background\carticon.png" />
+    <Content Include="Image\Background\down-arow-2.png" />
+    <Content Include="Image\Background\down-arow.png" />
+    <Content Include="Image\Background\envato.png" />
+    <Content Include="Image\Background\f.png" />
+    <Content Include="Image\Background\fbicon.png" />
+    <Content Include="Image\Background\fblike.png" />
+    <Content Include="Image\Background\gplus.png" />
+    <Content Include="Image\Background\grid-icon.png" />
+    <Content Include="Image\Background\in.png" />
+    <Content Include="Image\Background\list-icon.png" />
+    <Content Include="Image\Background\loginbg.png" />
+    <Content Include="Image\Background\logo.jpg" />
+    <Content Include="Image\Background\logo.png" />
+    <Content Include="Image\Background\lotte.PNG" />
+    <Content Include="Image\Background\message.png" />
+    <Content Include="Image\Background\more-icon.png" />
+    <Content Include="Image\Background\phone.png" />
+    <Content Include="Image\Background\photodune.png" />
+    <Content Include="Image\Background\promotion-01.png" />
+    <Content Include="Image\Background\promotion-02.png" />
+    <Content Include="Image\Background\promotion-03.png" />
+    <Content Include="Image\Background\regbg.png" />
+    <Content Include="Image\Background\remove.png" />
+    <Content Include="Image\Background\search-bg.png" />
+    <Content Include="Image\Background\share.png" />
+    <Content Include="Image\Background\slider-image-02.png" />
+    <Content Include="Image\Background\slider-image-03.png" />
+    <Content Include="Image\Background\star.png" />
+    <Content Include="Image\Background\themeforest.png" />
+    <Content Include="Image\Background\twi.png" />
+    <Content Include="Image\Background\up-arow.png" />
+    <Content Include="Image\XeNang3.jpg" />
+    <Content Include="Image\XeNang2.jpg" />
+    <Content Include="Image\XeNang1.jpg" />
+    <Content Include="Image\XeNang.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -221,10 +276,21 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.carouFredSel-6.2.1-packed.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.elevatezoom.js" />
+    <Content Include="Scripts\jquery.flexslider.js" />
+    <Content Include="Scripts\jquery.sequence-min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -232,6 +298,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\script.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -246,32 +313,17 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_HeaderLayout.cshtml" />
+    <Content Include="Views\Shared\_FooterLayout.cshtml" />
+    <Content Include="Views\Shared\_Slider.cshtml" />
+    <Content Include="Views\Product\Verhicle.cshtml" />
+    <Content Include="Views\Shared\_LeftLayout.cshtml" />
+    <Content Include="Views\Product\Category.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\Image\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -280,6 +332,16 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{C3743254-D8A7-4392-AE69-BD9D8575C663}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{776A9573-85F2-4BB0-9534-BEB4DE028A90}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
