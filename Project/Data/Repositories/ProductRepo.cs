@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
-using System.Data.Entity.Migrations;
 using System.Data.Entity.Validation;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Data.Dtos;
 using Data.Model;
 using Data.Infrastructure;
@@ -18,9 +16,8 @@ namespace Data.Repositories
         public ProductRepo()
         {
         }
-
         #region AddingMethod
-        public bool AddProduct(ProductDto product, string type)
+        public string AddProduct(ProductDto product, string type)
         {
             try
             {
@@ -31,7 +28,7 @@ namespace Data.Repositories
                                          select p.ID).Count();
 
                     if (checkIfExists > 0)
-                        return false;
+                        return Constant.MESSAGE_ERROR;
                     var getCount = (from p in dbContext.SanPhams select p.ID).Count();
                     int ID = getCount + 1;
                     dbContext.SanPhams.Add(new SanPham()
@@ -59,7 +56,7 @@ namespace Data.Repositories
                     dbContext.ThongTinSanPhams.Add(productInfomation);
 
                     dbContext.SaveChanges();
-                    return true;
+                    return Constant.MESSAGE_SUCCESS;
 
                 }
             }
@@ -76,110 +73,16 @@ namespace Data.Repositories
                     }
                 }
 
-                return false;
+                return Constant.MESSAGE_ERROR;
             }
             catch (DbUpdateException ex)
             {
-                return false;
+                return Constant.MESSAGE_ERROR;
             }
 
-        }
-        public bool AddNewProduct(ProductDto product, string type)
-        {
-            try
-            {
-                using (var dbContext = new XeNangEntities())
-                {
-                    var checkIfExists = (from p in dbContext.SanPhams
-                                         where p.Ten.ToUpper().Equals(product.Ten.ToUpper())
-                                         select p.ID).Count();
-
-                    if (checkIfExists > 0)
-                        return false;
-                    var getCount = (from p in dbContext.SanPhams select p.ID).Count();
-                    int ID = getCount + 1;
-                    dbContext.SanPhams.Add(new SanPham()
-                    {
-                        Loai = type,
-                        Ten = product.Ten,
-                        ID = ID
-                    });
-
-                    return true;
-                }
-            }
-            catch (DbEntityValidationException ex)
-            {
-                foreach (var e in ex.EntityValidationErrors)
-                {
-                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
-                        e.Entry.Entity.GetType().Name, e.Entry.State);
-                    foreach (var ve in e.ValidationErrors)
-                    {
-                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-                            ve.PropertyName, ve.ErrorMessage);
-                    }
-                }
-
-                return false;
-            }
-            catch (DbUpdateException ex)
-            {
-                return false;
-            }
-        }
-        public bool AddProductInformation(ProductDto productInfo)
-        {
-            try
-            {
-                using (var dbContext = new XeNangEntities())
-                {
-
-                    ThongTinSanPham productInfomation = new ThongTinSanPham()
-                    {
-                        Hieu = productInfo.Hieu,
-                        Doi = productInfo.Doi,
-                        Hang = productInfo.Hang,
-                        MoTa = productInfo.MoTa,
-                        TinhTrang = productInfo.TinhTrang,
-                        PhanLoai = productInfo.PhanLoai,
-                        Image1 = productInfo.Image1,
-                        ID = productInfo.ID
-                    };
-                    if (productInfo.Image2 != null) productInfomation.Image2 = productInfo.Image2;
-                    if (productInfo.Image3 != null) productInfomation.Image2 = productInfo.Image3;
-                    if (productInfo.Image4 != null) productInfomation.Image2 = productInfo.Image4;
-                    if (productInfo.Image5 != null) productInfomation.Image2 = productInfo.Image5;
-                    dbContext.ThongTinSanPhams.Add(productInfomation);
-
-                    dbContext.SaveChanges();
-                    return true;
-
-                }
-            }
-            catch (DbEntityValidationException ex)
-            {
-                foreach (var e in ex.EntityValidationErrors)
-                {
-                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
-                        e.Entry.Entity.GetType().Name, e.Entry.State);
-                    foreach (var ve in e.ValidationErrors)
-                    {
-                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-                            ve.PropertyName, ve.ErrorMessage);
-                    }
-                }
-
-                return false;
-            }
-            catch (DbUpdateException ex)
-            {
-                return false;
-            }
         }
         #endregion
-
-        public bool ImportProduct(ProductDto product, int count, DateTime dateCreate)
+        public string ImportProduct(ProductDto product, int count, DateTime dateCreate)
         {
             try
             {
@@ -195,7 +98,7 @@ namespace Data.Repositories
                         PhanLoaiXe = product.PhanLoai,
                         MoTa = product.MoTa,
                         Loai = product.Loai,
-                        ID = (from s in dbContext.NhapHangs select s.ID).Count()
+                        ID = (from s in dbContext.NhapHangs select s.ID).Count() + 1
                     });
 
                     var thisProductInStock = dbContext.Khoes.Where(p => p.ID == product.ID).DefaultIfEmpty(null)
@@ -216,7 +119,7 @@ namespace Data.Repositories
 
                     dbContext.SaveChanges();
 
-                    return true;
+                    return Constant.MESSAGE_SUCCESS;
                 }
             }
             catch (DbEntityValidationException ex)
@@ -232,59 +135,13 @@ namespace Data.Repositories
                     }
                 }
 
-                return false;
+                return Constant.MESSAGE_ERROR;
             }
             catch (DbUpdateException ex)
             {
-                return false;
+                return Constant.MESSAGE_ERROR;
             }
         }
-
-        public bool SellProduct(ProductDto product, int count, DateTime dateCreate)
-        {
-            try
-            {
-                using (var dbContext = new XeNangEntities())
-                {
-                    var productInStock = (dbContext.Khoes.First(p => p.ID == product.ID));
-                    if (productInStock.SoLuong < count)
-                        return false;
-
-                    dbContext.BanHangs.Add(new BanHang()
-                    {
-                        ID_Product = product.ID,
-                        NgayBan = dateCreate,
-                        SoLuong = count,
-                        ID = (from s in dbContext.BanHangs select s.ID).Count()
-                    });
-
-                    productInStock.NgayUpdated = dateCreate;
-                    productInStock.SoLuong -= count;
-                    dbContext.SaveChanges();
-                    return true;
-                }
-            }
-            catch (DbEntityValidationException ex)
-            {
-                foreach (var e in ex.EntityValidationErrors)
-                {
-                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
-                        e.Entry.Entity.GetType().Name, e.Entry.State);
-                    foreach (var ve in e.ValidationErrors)
-                    {
-                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-                            ve.PropertyName, ve.ErrorMessage);
-                    }
-                }
-
-                return false;
-            }
-            catch (DbUpdateException ex)
-            {
-                return false;
-            }
-        }
-
         #region QueryMethod
         public List<ProductDto> GetTopAccessories(int top)
         {
@@ -358,8 +215,9 @@ namespace Data.Repositories
                                   Image5 = p.Image5,
                               }).ToList<ProductDto>();
 
-
-                return result;
+                if (result.Count > 0)
+                    return result;
+                return new List<ProductDto>();
             }
         }
         public List<ProductDto> GetTopVehicles(int top)
@@ -433,8 +291,9 @@ namespace Data.Repositories
                                   Image5 = p.Image5,
                               }).ToList<ProductDto>();
 
-
-                return result;
+                if (result.Count > 0)
+                    return result;
+                return new List<ProductDto>();
             }
         }
         public List<ProductDto> GetAll(string type)
@@ -480,8 +339,9 @@ namespace Data.Repositories
                                   Image4 = p.Image4,
                                   Image5 = p.Image5,
                               }).ToList<ProductDto>();
-
-                return result;
+                if (result.Count > 0)
+                    return result;
+                return new List<ProductDto>();
             }
         }
         public ProductDto GetProduct(int id, string type)
@@ -523,7 +383,6 @@ namespace Data.Repositories
             }
         }
         #endregion
-
         public bool ExportToCsvFile(List<ProductDto> products, string fileName)
         {
             try

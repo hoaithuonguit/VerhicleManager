@@ -1,26 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Data.Dtos;
-using Data.Infrastructure;
 
 namespace Data.Repositories
 {
     public interface IProductRepo
     {
-        bool AddProduct(ProductDto product, string type);
-        bool ImportProduct(ProductDto product, int count, DateTime dateCreate);
-        bool SellProduct(ProductDto product, int count, DateTime dateCreate);
+        /// <summary>
+        /// Add new Product (can be a vehicle or an accessory) to database
+        /// </summary>
+        /// <param name="product">Information of product</param>
+        /// <param name="type"> Constant.TYPE_VEHICLE = "01" or Constant.TYPE_ACCESSORY = "02"</param>
+        /// <returns>Constant.MESSAGE_SUCCESS if add product success or Constant.MESSAGE_ERROR if error occur</returns>
+        string AddProduct(ProductDto product, string type);
+        string ImportProduct(ProductDto product, int count, DateTime dateCreate);
         List<ProductDto> GetTopAccessories(int top);
         List<ProductDto> GetAll(string type);
         bool ExportToCsvFile(List<ProductDto> products, string fileName);
         ProductDto GetProduct(int id, string type);
         bool EditVehicle(ProductDto vehicle);
         List<ProductDto> GetTopVehicles(int top);
-        bool AddNewProduct(ProductDto product, string type);
-        bool AddProductInformation(ProductDto productInfo);
-
+        
     }
 }
