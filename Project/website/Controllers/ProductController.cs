@@ -54,5 +54,9 @@ namespace website.Controllers
             ViewBag.countCategory = count;
             return View(ViewBag);
         }
+        public ActionResult Order()
+        {
+            return View();
+        }
     }
 }
