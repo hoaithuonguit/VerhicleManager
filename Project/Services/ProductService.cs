@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Data.Dtos;
 using Data.Infrastructure;
 using Data.Repositories;
@@ -28,11 +25,6 @@ namespace Services
             _repository.ImportProduct(product, count, dateCreate);
         }
 
-        public void SellProduct(ProductDto product, int count, DateTime dateCreate)
-        {
-            _repository.SellProduct(product, count, dateCreate);
-        }
-
         public List<ProductDto> GetTopProduct(int top)
         {
             return _repository.GetTopAccessories(top);
@@ -53,21 +45,6 @@ namespace Services
             _repository.ExportToCsvFile(products, fileName);
         }
 
-        public List<ProductStatusDto> GetAllProductStatus(string key1, string key2 = "", string key3 = "")
-        {
-            return Helper.GetMasterData<ProductStatusDto>(key1, key2, key3);
-        }
-
-        public List<ProductTypeDto> GetAllProductType(string key1, string key2 = "", string key3 = "")
-        {
-            return Helper.GetMasterData<ProductTypeDto>(key1, key2, key3);
-        }
-
-        public List<MasterInfoDto> GetAllMasterInfo(string key1, string key2 = "", string key3 = "")
-        {
-            return Helper.GetMasterData<MasterInfoDto>(key1, key2, key3);
-        }
-
         public List<ProductDto> GetTopVehicles(int top)
         {
             return _repository.GetTopVehicles(top);
@@ -76,6 +53,21 @@ namespace Services
         public void EditVehicle(ProductDto vehicle)
         {
             _repository.EditVehicle(vehicle);
+        }
+
+        public List<MasterDataDto> GetAllStatusOfProduct()
+        {
+            return Helper.GetMasterData("Status");
+        }
+
+        public List<MasterDataDto> GetAllTypeOfVehicle()
+        {
+            return Helper.GetMasterData("TypeV");
+        }
+
+        public List<MasterDataDto> GetAllTypeOfAccessory()
+        {
+            return Helper.GetMasterData("Type");
         }
     }
 }
