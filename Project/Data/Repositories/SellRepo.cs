@@ -15,26 +15,26 @@ namespace Data.Repositories
         {
         }
 
-        public string SellProduct(ProductDto product, int count, DateTime dateCreate)
+        public string SellProduct(SellProductDto sellInformation, DateTime dateCreate)
         {
             try
             {
                 using (var dbContext = new XeNangEntities())
                 {
-                    var productInStock = (dbContext.Khoes.First(p => p.ID == product.ID));
-                    if (productInStock.SoLuong < count)
+                    var productInStock = (dbContext.Khoes.First(p => p.ID == sellInformation.ID_Product));
+                    if (productInStock.SoLuong < sellInformation.Quantities)
                         return Constant.MESSAGE_ERROR;
 
                     dbContext.BanHangs.Add(new BanHang()
                     {
-                        ID_Product = product.ID,
+                        ID_Product = sellInformation.ID_Product,
                         NgayBan = dateCreate,
-                        SoLuong = count,
+                        SoLuong = sellInformation.Quantities,
                         ID = (from s in dbContext.BanHangs select s.ID).Count() + 1
                     });
 
                     productInStock.NgayUpdated = dateCreate;
-                    productInStock.SoLuong -= count;
+                    productInStock.SoLuong -= sellInformation.Quantities;
                     dbContext.SaveChanges();
                     return Constant.MESSAGE_SUCCESS;
                 }

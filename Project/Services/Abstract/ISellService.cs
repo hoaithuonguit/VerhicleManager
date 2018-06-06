@@ -9,8 +9,8 @@ namespace Services.Abstract
 {
     public interface ISellService
     {
-        void SellProduct(ProductDto product, int count, DateTime dateCreate);
-        string OrderProduct(OrderDetailDto order);
+        void SellProduct(SellProductDto sellInformation, DateTime dateCreate);
+        string OrderProduct(OrderDetailDto order, DateTime dateCreate);
 
         List<OrderDetailDto> GetAllOrdersAreWaiting();
     }

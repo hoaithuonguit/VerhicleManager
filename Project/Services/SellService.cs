@@ -17,14 +17,14 @@ namespace Services.Abstract
             _sellRepo = new SellRepo();
         }
 
-        public void SellProduct(ProductDto product, int count, DateTime dateCreate)
+        public void SellProduct(SellProductDto sellInformation, DateTime dateCreate)
         {
-            _sellRepo.SellProduct(product, count, dateCreate);
+            _sellRepo.SellProduct(sellInformation, dateCreate);
         }
 
-        public string OrderProduct(OrderDetailDto order)
+        public string OrderProduct(OrderDetailDto order, DateTime dateCreate)
         {
-            return _sellRepo.OrderProduct(order, TODO);
+            return _sellRepo.OrderProduct(order, dateCreate);
         }
 
         public List<OrderDetailDto> GetAllOrdersAreWaiting()
