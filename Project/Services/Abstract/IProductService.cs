@@ -34,5 +34,10 @@ namespace Services.Abstract
         List<SellProductDto> LoadAllSellInformation();
         List<StockDto> LoadStockInformation();
 
+        // sell and order product
+        string SellProduct(SellProductDto sellInformation, DateTime dateCreate);
+        string OrderProduct(OrderDetailDto order, DateTime dateCreate);
+        List<OrderDetailDto> GetAllOrdersAreWaiting();
+
     }
 }

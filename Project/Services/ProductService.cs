@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
+using System.Linq;
 using Data.Dtos;
 using Data.Infrastructure;
+using Data.Model;
 using Data.Repositories;
 using Services.Abstract;
 
@@ -59,17 +63,14 @@ namespace Services
         {
             return Helper.GetMasterData("Status");
         }
-
         public List<MasterDataDto> GetAllTypeOfVehicle()
         {
             return Helper.GetMasterData("TypeV");
         }
         public List<MasterDataDto> GetAllTypeOfAccessory()
-
         {
             return Helper.GetMasterData("Type");
         }
-
         public int GetIDProduct(string productName)
         {
             return Helper.GetIDFromName(productName);
@@ -90,9 +91,25 @@ namespace Services
             return _repository.GetStockInformation();
         }
 
+        public string SellProduct(SellProductDto sellInformation, DateTime dateCreate)
+        {
+            return _repository.SellProduct(sellInformation, dateCreate);
+        }
+
+        public string OrderProduct(OrderDetailDto order, DateTime dateCreate)
+        {
+            return _repository.OrderProduct(order, dateCreate);
+        }
+
+        public List<OrderDetailDto> GetAllOrdersAreWaiting()
+        {
+            return _repository.GetAllOrdersAreWaiting();
+        }
+
         public List<ProductDto> GetTopCategory(int top)
         {
             return _repository.GetTopAccessories(top);
         }
+
     }
 }

@@ -8,7 +8,6 @@ namespace Data.Repositories
     {
         string AddProduct(ProductDto product, string type);
         string ImportProduct(ImportProductDto importInformation, DateTime dateCreate);
-
         List<ProductDto> GetTopAccessories(int top);
         List<ProductDto> GetAll(string type);
         ProductDto GetProduct(int id, string type);
@@ -16,10 +15,10 @@ namespace Data.Repositories
         List<ImportProductDto> GetImportInformation();
         List<SellProductDto> GetSellInformation();
         List<StockDto> GetStockInformation();
-
         bool ExportToCsvFile(List<ProductDto> products, string fileName);
         bool EditVehicle(ProductDto vehicle);
-       
-        
+        string SellProduct(SellProductDto sellInformation, DateTime dateCreate);
+        string OrderProduct(OrderDetailDto order, DateTime dateCreate);
+        List<OrderDetailDto> GetAllOrdersAreWaiting();
     }
 }
