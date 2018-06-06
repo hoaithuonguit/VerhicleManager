@@ -8,7 +8,7 @@ namespace Services.Abstract
     {
         void AddProduct(ProductDto product, string tpye);
 
-        void ImportProduct(ProductDto product, int count, DateTime dateCreate);
+        void ImportProduct(ImportProductDto importInformation, DateTime dateCreate);
 
         List<ProductDto> GetTopProduct(int top);
 
@@ -23,7 +23,16 @@ namespace Services.Abstract
         void EditVehicle(ProductDto vehicle);
 
         List<MasterDataDto> GetAllStatusOfProduct();
+
         List<MasterDataDto> GetAllTypeOfVehicle();
+
         List<MasterDataDto> GetAllTypeOfAccessory();
+
+        int GetIDProduct(string productName);
+
+        List<ImportProductDto> LoadAllImportInformation();
+        List<SellProductDto> LoadAllSellInformation();
+        List<StockDto> LoadStockInformation();
+
     }
 }
