@@ -27,29 +27,47 @@ namespace Data.Infrastructure
             }
         }
 
-        public static string GetStatusValue(string statusName)
+        // get "Value" field  in MasterDate with "Name" as parameter
+        public static string GetValueFromNameInMaster(string name)
         {
             using (var dbContext = new XeNangEntities())
             {
-                string result = (from m in dbContext.MasterDatas where m.Name == statusName select m.Value)
+                string result = (from m in dbContext.MasterDatas where m.Name.Equals(name) select m.Value)
                     .FirstOrDefault();
                 return result;
             }
         }
 
-        public static string GetCategoryValue(string categoryName)
+        // get "Name" field in MasterData with "Value" as parameter
+        public static string GetNameFromValueInMaster(string value)
         {
             using (var dbContext = new XeNangEntities())
             {
-                string result = (from m in dbContext.MasterDatas where m.Name == categoryName select m.Value)
+                string result = (from m in dbContext.MasterDatas where m.Value.Equals(value) select m.Name)
                     .FirstOrDefault();
                 return result;
             }
         }
 
-        public static string CheckType(string type)
+        public static string GetTypeName(string type)
         {
             return type.Equals("01") ? "Xe nâng" : "Phụ tùng";
+        }
+
+        // return ID of product or -1 if product is not available
+        public static int GetIDFromName(string productName)
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                int result =
+                    (from p in dbContext.SanPhams where p.Ten.ToUpper().Equals(productName.ToUpper()) select p.ID).DefaultIfEmpty(-1).FirstOrDefault();
+                return result;
+            }
+        }
+
+        public static string GetTypeID(string type)
+        {
+            return type.Equals("Xe nâng") ? "01" : "02";
         }
 
     }

@@ -16,7 +16,7 @@ namespace Data.Repositories
         public ProductRepo()
         {
         }
-        #region AddingMethod
+
         public string AddProduct(ProductDto product, string type)
         {
             try
@@ -81,8 +81,8 @@ namespace Data.Repositories
             }
 
         }
-        #endregion
-        public string ImportProduct(ProductDto product, int count, DateTime dateCreate)
+
+        public string ImportProduct(ImportProductDto importInformation, DateTime dateCreate)
         {
             try
             {
@@ -91,30 +91,31 @@ namespace Data.Repositories
                     dbContext.NhapHangs.Add(new NhapHang()
                     {
                         NgayNhapHang = dateCreate,
-                        ID_Product = product.ID,
-                        SoLuong = count,
-                        TinhTrang = product.TinhTrang,
-                        Hang = product.Hang,
-                        PhanLoaiXe = product.PhanLoai,
-                        MoTa = product.MoTa,
-                        Loai = product.Loai,
+                        ID_Product = importInformation.ID_Product,
+                        SoLuong = importInformation.Quantities,
+                        TinhTrang = importInformation.Status,
+                        Hang = importInformation.Label,
+                        PhanLoaiXe = importInformation.Classification,
+                        MoTa = importInformation.Description,
+                        Loai = importInformation.Category,
                         ID = (from s in dbContext.NhapHangs select s.ID).Count() + 1
                     });
 
-                    var thisProductInStock = dbContext.Khoes.Where(p => p.ID == product.ID).DefaultIfEmpty(null)
+                    var thisProductInStock = dbContext.Khoes.Where(p => p.ID == importInformation.ID_Product)
+                        .DefaultIfEmpty(null)
                         .FirstOrDefault();
                     if (thisProductInStock == null)
                     {
                         dbContext.Khoes.Add(new Kho()
                         {
-                            ID = product.ID,
+                            ID = importInformation.ID_Product,
                             NgayUpdated = dateCreate,
-                            SoLuong = count
+                            SoLuong = importInformation.Quantities
                         });
                     }
                     else
                     {
-                        thisProductInStock.SoLuong += count;
+                        thisProductInStock.SoLuong += importInformation.Quantities;
                     }
 
                     dbContext.SaveChanges();
@@ -142,7 +143,9 @@ namespace Data.Repositories
                 return Constant.MESSAGE_ERROR;
             }
         }
+
         #region QueryMethod
+
         public List<ProductDto> GetTopAccessories(int top)
         {
             using (var dbContext = new XeNangEntities())
@@ -201,13 +204,13 @@ namespace Data.Repositories
                               {
                                   ID = p.ID,
                                   Ten = p.Ten,
-                                  Loai = Helper.CheckType(p.Loai),
+                                  Loai = Helper.GetTypeName(p.Loai),
                                   Hieu = p.Hieu,
                                   Hang = p.Hang,
                                   Doi = p.Doi,
                                   MoTa = p.MoTa,
-                                  TinhTrang = Helper.GetStatusValue(p.TinhTrang),
-                                  PhanLoai = Helper.GetCategoryValue(p.PhanLoai),
+                                  TinhTrang = Helper.GetValueFromNameInMaster(p.TinhTrang),
+                                  PhanLoai = Helper.GetValueFromNameInMaster(p.PhanLoai),
                                   Image1 = p.Image1,
                                   Image2 = p.Image2,
                                   Image3 = p.Image3,
@@ -220,6 +223,7 @@ namespace Data.Repositories
                 return new List<ProductDto>();
             }
         }
+
         public List<ProductDto> GetTopVehicles(int top)
         {
             using (var dbContext = new XeNangEntities())
@@ -277,13 +281,13 @@ namespace Data.Repositories
                               {
                                   ID = p.ID,
                                   Ten = p.Ten,
-                                  Loai = Helper.CheckType(p.Loai),
+                                  Loai = Helper.GetTypeName(p.Loai),
                                   Hieu = p.Hieu,
                                   Hang = p.Hang,
                                   Doi = p.Doi,
                                   MoTa = p.MoTa,
-                                  TinhTrang = Helper.GetStatusValue(p.TinhTrang),
-                                  PhanLoai = Helper.GetCategoryValue(p.PhanLoai),
+                                  TinhTrang = Helper.GetValueFromNameInMaster(p.TinhTrang),
+                                  PhanLoai = Helper.GetValueFromNameInMaster(p.PhanLoai),
                                   Image1 = p.Image1,
                                   Image2 = p.Image2,
                                   Image3 = p.Image3,
@@ -296,6 +300,113 @@ namespace Data.Repositories
                 return new List<ProductDto>();
             }
         }
+
+        public List<ImportProductDto> GetImportInformation()
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result_query = (from i in dbContext.NhapHangs
+                                    join p in dbContext.SanPhams on i.ID_Product equals p.ID
+                                    select new ImportProductDto()
+                                    {
+                                        ID = i.ID,
+                                        ID_Product = i.ID_Product,
+                                        ProductName = p.Ten,
+                                        Quantities = i.SoLuong,
+                                        DateCreate = i.NgayNhapHang,
+                                        Classification = i.PhanLoaiXe,
+                                        Status = i.TinhTrang,
+                                        Description = i.MoTa,
+                                        Category = p.Loai
+                                    }).ToList<ImportProductDto>();
+
+                var result = (from r in result_query
+                              select new ImportProductDto()
+                              {
+                                  ID = r.ID,
+                                  ID_Product = r.ID_Product,
+                                  ProductName = r.ProductName,
+                                  Quantities = r.Quantities,
+                                  DateCreate = r.DateCreate,
+                                  Classification = Helper.GetValueFromNameInMaster(r.Classification),
+                                  Status = Helper.GetValueFromNameInMaster(r.Status),
+                                  Description = r.Description,
+                                  Category = Helper.GetTypeName(r.Category)
+                              }).ToList<ImportProductDto>();
+
+                if (result.Count > 0)
+                    return result;
+                return new List<ImportProductDto>();
+
+            }
+
+
+        }
+
+        public List<SellProductDto> GetSellInformation()
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result_query = (from s in dbContext.BanHangs
+                                    join p in dbContext.SanPhams on s.ID_Product equals p.ID
+                                    select new SellProductDto()
+                                    {
+                                        ID = s.ID,
+                                        ID_Product = s.ID_Product,
+                                        ProductName = p.Ten,
+                                        Category = p.Loai,
+                                        DateOfSale = s.NgayBan,
+                                        Quantities = s.SoLuong
+                                    }).ToList<SellProductDto>();
+
+                var result = (from r in result_query
+                              select new SellProductDto()
+                              {
+                                  ID = r.ID,
+                                  ID_Product = r.ID_Product,
+                                  ProductName = r.ProductName,
+                                  Category = Helper.GetTypeName(r.Category),
+                                  DateOfSale = r.DateOfSale,
+                                  Quantities = r.Quantities
+                              }).ToList<SellProductDto>();
+
+                if (result.Count > 0)
+                    return result;
+                return new List<SellProductDto>();
+            }
+        }
+
+        public List<StockDto> GetStockInformation()
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result_query = (from s in dbContext.Khoes
+                                    join p in dbContext.SanPhams on s.ID equals p.ID
+                                    select new StockDto()
+                                    {
+                                        ID = s.ID,
+                                        Category = p.Loai,
+                                        Inventories = s.SoLuong,
+                                        LastUpdate = s.NgayUpdated,
+                                        ProductName = p.Ten
+                                    }).ToList<StockDto>();
+
+                var result = (from r in result_query
+                              select new StockDto()
+                              {
+                                  ID = r.ID,
+                                  Category = Helper.GetTypeName(r.Category),
+                                  Inventories = r.Inventories,
+                                  LastUpdate = r.LastUpdate,
+                                  ProductName = r.ProductName
+                              }).ToList<StockDto>();
+
+                if (result.Count > 0)
+                    return result;
+                return new List<StockDto>();
+            }
+        }
+
         public List<ProductDto> GetAll(string type)
         {
             using (var dbContext = new XeNangEntities())
@@ -326,13 +437,13 @@ namespace Data.Repositories
                               {
                                   ID = p.ID,
                                   Ten = p.Ten,
-                                  Loai = Helper.CheckType(p.Loai),
+                                  Loai = Helper.GetTypeName(p.Loai),
                                   Hieu = p.Hieu,
                                   Hang = p.Hang,
                                   Doi = p.Doi,
                                   MoTa = p.MoTa,
-                                  TinhTrang = Helper.GetStatusValue(p.TinhTrang),
-                                  PhanLoai = Helper.GetCategoryValue(p.PhanLoai),
+                                  TinhTrang = Helper.GetValueFromNameInMaster(p.TinhTrang),
+                                  PhanLoai = Helper.GetValueFromNameInMaster(p.PhanLoai),
                                   Image1 = p.Image1,
                                   Image2 = p.Image2,
                                   Image3 = p.Image3,
@@ -344,6 +455,7 @@ namespace Data.Repositories
                 return new List<ProductDto>();
             }
         }
+
         public ProductDto GetProduct(int id, string type)
         {
             try
@@ -370,9 +482,9 @@ namespace Data.Repositories
                                       Image5 = d.Image5,
                                       MoTa = d.MoTa,
                                   }).FirstOrDefault();
-                    result.Loai = Helper.CheckType(result.Loai);
-                    result.TinhTrang = Helper.GetStatusValue(result.TinhTrang);
-                    result.PhanLoai = Helper.GetCategoryValue(result.PhanLoai);
+                    result.Loai = Helper.GetTypeName(result.Loai);
+                    result.TinhTrang = Helper.GetValueFromNameInMaster(result.TinhTrang);
+                    result.PhanLoai = Helper.GetValueFromNameInMaster(result.PhanLoai);
                     return result;
 
                 }
@@ -382,7 +494,37 @@ namespace Data.Repositories
                 return null;
             }
         }
+
+        public List<OrderDetailDto> GetAllOrdersAreWaiting()
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result = (from o in dbContext.DatHangs
+                              where o.TrangThai.Equals(Constant.STATUS_WAITING)
+                              select new OrderDetailDto()
+                              {
+                                  CustomerAddr = o.DiaChi,
+                                  CustomerEmail = o.MailZalo,
+                                  CustomerName = o.TenNguoiDat,
+                                  CustomerPhoneNo = o.SDT,
+                                  DateOfDelivery = o.ThoiGianCanLay,
+                                  Description = o.MoTa,
+                                  ID = o.ID,
+                                  ProductName = o.TenHang,
+                                  Quantities = o.SoLuong,
+                                  Status = o.TrangThai
+                              }).ToList<OrderDetailDto>();
+
+
+                if (result.Count > 0)
+                    return result;
+
+                return new List<OrderDetailDto>();
+            }
+        }
+
         #endregion
+
         public bool ExportToCsvFile(List<ProductDto> products, string fileName)
         {
             try
@@ -420,6 +562,7 @@ namespace Data.Repositories
                              {
                                  ID = p.ID,
                                  Ten = p.Ten,
+                                 Loai = p.Loai,
                                  Hieu = d.Hieu,
                                  Doi = d.Doi,
                                  Hang = d.Hang,
@@ -436,6 +579,7 @@ namespace Data.Repositories
                     // edit
                     v.Ten = vehicle.Ten;
                     v.Hieu = vehicle.Hieu;
+                    v.Loai = vehicle.Loai;
                     v.Doi = vehicle.Doi;
                     v.Hang = vehicle.Hang;
                     v.MoTa = vehicle.MoTa;
@@ -454,6 +598,99 @@ namespace Data.Repositories
             catch (Exception ex)
             {
                 return false;
+            }
+        }
+
+        public string SellProduct(SellProductDto sellInformation, DateTime dateCreate)
+        {
+            try
+            {
+                using (var dbContext = new XeNangEntities())
+                {
+                    var productInStock = (dbContext.Khoes.First(p => p.ID == sellInformation.ID_Product));
+                    if (productInStock.SoLuong < sellInformation.Quantities)
+                        return Constant.MESSAGE_ERROR;
+
+                    dbContext.BanHangs.Add(new BanHang()
+                    {
+                        ID_Product = sellInformation.ID_Product,
+                        NgayBan = dateCreate,
+                        SoLuong = sellInformation.Quantities,
+                        ID = (from s in dbContext.BanHangs select s.ID).Count() + 1
+                    });
+
+                    productInStock.NgayUpdated = dateCreate;
+                    productInStock.SoLuong -= sellInformation.Quantities;
+                    dbContext.SaveChanges();
+                    return Constant.MESSAGE_SUCCESS;
+                }
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var e in ex.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        e.Entry.Entity.GetType().Name, e.Entry.State);
+                    foreach (var ve in e.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+
+                return Constant.MESSAGE_ERROR;
+            }
+            catch (DbUpdateException ex)
+            {
+                return Constant.MESSAGE_ERROR;
+            }
+        }
+
+        public string OrderProduct(OrderDetailDto order, DateTime dateCreate)
+        {
+            try
+            {
+                using (var dbContext = new XeNangEntities())
+                {
+                    int ID = (from o in dbContext.DatHangs select o.ID).Count() + 1;
+                    var or = new DatHang()
+                    {
+                        ID = ID,
+                        DiaChi = order.CustomerAddr,
+                        MailZalo = order.CustomerEmail,
+                        CreateDt = dateCreate,
+                        SDT = order.CustomerPhoneNo,
+                        SoLuong = order.Quantities,
+                        TenHang = order.ProductName,
+                        TenNguoiDat = order.CustomerName,
+                        ThoiGianCanLay = order.DateOfDelivery,
+                        TrangThai = order.Status,
+                    };
+                    if (order.Description != null) or.MoTa = order.Description;
+                    dbContext.DatHangs.Add(or);
+                    dbContext.SaveChanges();
+
+                    return Constant.MESSAGE_SUCCESS;
+                }
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var e in ex.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        e.Entry.Entity.GetType().Name, e.Entry.State);
+                    foreach (var ve in e.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+
+                return Constant.MESSAGE_ERROR;
+            }
+            catch (DbUpdateException ex)
+            {
+                return Constant.MESSAGE_ERROR;
             }
         }
 
