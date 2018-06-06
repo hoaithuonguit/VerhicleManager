@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using website.Models;
 
 namespace website.Controllers
 {
@@ -80,6 +81,31 @@ namespace website.Controllers
             Product.Image1 = _common.ChangePathImage(Product.Image1);       
             ViewBag.CategoryDetail = Product;
             return View(ViewBag);
+        }
+
+        [HttpPost]
+        public ActionResult Order(OrderProductModel model)
+        {
+            OrderDetailDto dto = new OrderDetailDto();
+            dto.CustomerName = model.Name;
+            dto.CustomerAddr = model.Address;
+            dto.CustomerEmail = model.Email;
+            dto.DateOfDelivery = model.DateRecieved;
+            dto.Description = model.Description;
+            dto.ProductName = model.ProductName;
+            dto.Quantities = model.Count;
+            dto.Status = Constant.STATUS_WAITING;
+            dto.CustomerPhoneNo = model.Sdt;
+            string _messageResult = _service.OrderProduct(dto, DateTime.Now);
+            if (_messageResult.Equals(Constant.MESSAGE_SUCCESS))
+                return RedirectToAction("Index", "Home");
+            else
+            {
+               
+                return View();
+            }
+               
+
         }
     }
 }

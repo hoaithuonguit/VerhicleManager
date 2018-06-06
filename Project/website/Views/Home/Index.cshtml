@@ -16,25 +16,29 @@
                         {
                             for (int j = 0; j < ViewBag.VerhicleCount - (i * 4); j++)
                             {
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="products">
-                                        <div class="thumbnail">
-                                            <a href="details.html">
-                                                <img src="@ViewBag.Verhicle[j].Image1" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="productname">
-                                            @ViewBag.Verhicle[j].Ten
-                                        </div>
-                                        <h4 class="price">
-                                            @ViewBag.Verhicle[j].TinhTrang
-                                        </h4>
-                                        <div class="button_group">
-                                            <button class="button add-cart" type="button"><a href="#">Xem chi tiết</a></button>
-                                            <button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button>
+                                <form id="form">
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="products">
+                                            <div class="thumbnail">
+                                                <a href="details.html">
+                                                    <img src="@ViewBag.Verhicle[j].Image1" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="productname">
+                                                @ViewBag.Verhicle[j].Ten
+                                            </div>
+                                            <h4 class="price">
+                                                @ViewBag.Verhicle[j].TinhTrang
+                                            </h4>
+                                            <div class="button_group">
+
+                                                <div class="button_group">
+                                                    <button class="button add-cart" form="form" formaction=@Url.Action("VerhicleDetail", "Product", new { id = @ViewBag.Verhicle[j].ID })>Xem chi tiết</button>
+                                                </div>
+                                           </div>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             }
                         }
                         else
@@ -42,25 +46,27 @@
                             for (int j = 0; j < 4; j++)
                             {
 
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="products">
-                                <div class="thumbnail"><a href="details.html">
-                                    <img src="@ViewBag.Verhicle[j].Image1" alt="Product Name">
-                                    </a></div>
-                                <div class="productname">
-                               @ViewBag.Verhicle[j].Ten
-                                </div>
-                                <h4 class="price">
-                                    @ViewBag.Verhicle[j].TinhTrang
-                                </h4>
-                                <div class="button_group">
-                                    <button class="button add-cart" type="button"><a href="#">Xem chi tiết</a></button>
-                                    <button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button>
-                                </div>
-                            </div>
-                        </div>  
-                        }
+                                <form id="form">
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="products">
+                                            <div class="thumbnail">
+                                                <a href="details.html">
+                                                    <img src="@ViewBag.Verhicle[j].Image1" alt="Product Name">
+                                                </a>
+                                            </div>
+                                            <div class="productname">
+                                                @ViewBag.Verhicle[j].Ten
+                                            </div>
+                                            <h4 class="price">
+                                                @ViewBag.Verhicle[j].TinhTrang
+                                            </h4>
+                                            <div class="button_group">
+                                                <button class="button add-cart" form="form" formaction=@Url.Action("VerhicleDetail", "Product", new { id = @ViewBag.Verhicle[j].ID })>Xem chi tiết</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            }
                         }
                     </div>
                 </li>
@@ -79,25 +85,26 @@
                             {
                                 for (int j = 0; j < ViewBag.CategoryCount - (i * 4); j++)
                                 {
-                                    <div class="col-md-3 col-sm-6">
-                                        <div class="products">
-                                            <div class="thumbnail">
-                                                <a href="details.html">
-                                                    <img src="@ViewBag.Category[j].Image1" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="productname">
-                                                @ViewBag.Category[j].Ten
-                                            </div>
-                                            <h4 class="price">
-                                                @ViewBag.Category[j].TinhTrang
-                                            </h4>
-                                            <div class="button_group">
-                                                <button class="button add-cart" type="button"><a href="#">Xem chi tiết</a></button>
-                                                <button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button>
+                                    <form id="form">
+                                        <div class="col-md-3 col-sm-6">
+                                            <div class="products">
+                                                <div class="thumbnail">
+                                                    <a href="details.html">
+                                                        <img src="@ViewBag.Category[j].Image1" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="productname">
+                                                    @ViewBag.Category[j].Ten
+                                                </div>
+                                                <h4 class="price">
+                                                    @ViewBag.Category[j].TinhTrang
+                                                </h4>
+                                                <div class="button_group">
+                                                    <button class="button add-cart" form="form" formaction=@Url.Action("CategoryDetail", "Product", new { id = @ViewBag.Category[j].ID })>Xem chi tiết</button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 }
                             }
                             else
@@ -105,26 +112,26 @@
                                 for (int j = 0; j < 4; j++)
                                 {
 
-
-                                    <div class="col-md-3 col-sm-6">
-                                        <div class="products">
-                                            <div class="thumbnail">
-                                                <a href="details.html">
-                                                    <img src="@ViewBag.Category[j].Image1" alt="Product Name">
-                                                </a>
-                                            </div>
-                                            <div class="productname">
-                                                @ViewBag.Category[j].Ten
-                                            </div>
-                                            <h4 class="price">
-                                                @ViewBag.Category[j].TinhTrang
-                                            </h4>
-                                            <div class="button_group">
-                                                <button class="button add-cart" type="button"><a href="#">Xem chi tiết</a></button>
-                                                <button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button>
+                                    <form id="form">
+                                        <div class="col-md-3 col-sm-6">
+                                            <div class="products">
+                                                <div class="thumbnail">
+                                                    <a href="details.html">
+                                                        <img src="@ViewBag.Category[j].Image1" alt="Product Name">
+                                                    </a>
+                                                </div>
+                                                <div class="productname">
+                                                    @ViewBag.Category[j].Ten
+                                                </div>
+                                                <h4 class="price">
+                                                    @ViewBag.Category[j].TinhTrang
+                                                </h4>
+                                                <div class="button_group">
+                                                    <button class="button add-cart" form="form" formaction=@Url.Action("CategoryDetail", "Product", new { id = @ViewBag.Category[j].ID })>Xem chi tiết</button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 }
                             }
                         </div>
