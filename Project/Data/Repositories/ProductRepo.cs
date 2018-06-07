@@ -8,6 +8,9 @@ using System.Text;
 using Data.Dtos;
 using Data.Model;
 using Data.Infrastructure;
+using Microsoft.Office.Interop.Excel;
+using app = Microsoft.Office.Interop.Excel.Application;
+using System.Windows.Forms;
 
 namespace Data.Repositories
 {
@@ -409,6 +412,71 @@ namespace Data.Repositories
             }
         }
 
+        public List<StockDto> GetStockInformationType(string Type)
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result_query = (from s in dbContext.Khoes
+                                    join p in dbContext.SanPhams on s.ID equals p.ID
+                                    where p.Loai.Equals(Type)
+                                    select new StockDto()
+                                    {
+                                        ID = s.ID,
+                                        Category = p.Loai,
+                                        Inventories = s.SoLuong,
+                                        LastUpdate = s.NgayUpdated,
+                                        ProductName = p.Ten
+                                    }).ToList<StockDto>();
+
+                var result = (from r in result_query
+                              select new StockDto()
+                              {
+                                  ID = r.ID,
+                                  Category = Helper.GetTypeName(r.Category),
+                                  Inventories = r.Inventories,
+                                  LastUpdate = r.LastUpdate,
+                                  ProductName = r.ProductName
+                              }).ToList<StockDto>();
+
+                if (result.Count > 0)
+                    return result;
+                return new List<StockDto>();
+            }
+        }
+
+        public List<StockDto> GetStockInformationTypeName(int ID, string Type)
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result_query = (from s in dbContext.Khoes
+                                    join p in dbContext.SanPhams on s.ID equals p.ID
+                                    where p.Loai.Equals(Type) && p.ID.Equals(ID)
+                                    select new StockDto()
+                                    {
+                                        ID = s.ID,
+                                        Category = p.Loai,
+                                        Inventories = s.SoLuong,
+                                        LastUpdate = s.NgayUpdated,
+                                        ProductName = p.Ten
+                                    }).ToList<StockDto>();
+
+                var result = (from r in result_query
+                              select new StockDto()
+                              {
+                                  ID = r.ID,
+                                  Category = Helper.GetTypeName(r.Category),
+                                  Inventories = r.Inventories,
+                                  LastUpdate = r.LastUpdate,
+                                  ProductName = r.ProductName
+                              }).ToList<StockDto>();
+
+                if (result.Count > 0)
+                    return result;
+                return new List<StockDto>();
+            }
+        }
+
+
         public List<ProductDto> GetAll(string type)
         {
             using (var dbContext = new XeNangEntities())
@@ -501,7 +569,7 @@ namespace Data.Repositories
         {
             using (var dbContext = new XeNangEntities())
             {
-                var result = (from o in dbContext.DatHangs
+                var resultQuery = (from o in dbContext.DatHangs
                               where o.TrangThai.Equals(Constant.STATUS_WAITING)
                               select new OrderDetailDto()
                               {
@@ -517,6 +585,20 @@ namespace Data.Repositories
                                   Status = o.TrangThai
                               }).ToList<OrderDetailDto>();
 
+                var result = (from p in resultQuery
+                              select new OrderDetailDto()
+                              {
+                                  CustomerAddr = p.CustomerAddr,
+                                  CustomerEmail = p.CustomerEmail,
+                                  CustomerName = p.CustomerName,
+                                  CustomerPhoneNo = p.CustomerPhoneNo,
+                                  DateOfDelivery = p.DateOfDelivery,
+                                  Description = p.Description,
+                                  ID = p.ID,
+                                  ProductName = p.ProductName,
+                                  Quantities = p.Quantities,
+                                  Status = Helper.checkStatus(p.Status)
+                              }).ToList<OrderDetailDto>();
 
                 if (result.Count > 0)
                     return result;
@@ -524,6 +606,51 @@ namespace Data.Repositories
                 return new List<OrderDetailDto>();
             }
         }
+
+        public List<OrderDetailDto> GetAllOrdersAreCENSORRED()
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var resultQuery = (from o in dbContext.DatHangs
+                              where o.TrangThai.Equals(Constant.STATUS_CENSORRED)
+                              select new OrderDetailDto()
+                              {
+                                  CustomerAddr = o.DiaChi,
+                                  CustomerEmail = o.MailZalo,
+                                  CustomerName = o.TenNguoiDat,
+                                  CustomerPhoneNo = o.SDT,
+                                  DateOfDelivery = o.ThoiGianCanLay,
+                                  Description = o.MoTa,
+                                  ID = o.ID,
+                                  ProductName = o.TenHang,
+                                  Quantities = o.SoLuong,
+                                  Status = o.TrangThai
+                              }).ToList<OrderDetailDto>();
+
+
+                var result = (from p in resultQuery
+                              select new OrderDetailDto()
+                              {
+                                  CustomerAddr = p.CustomerAddr,
+                                  CustomerEmail = p.CustomerEmail,
+                                  CustomerName = p.CustomerName,
+                                  CustomerPhoneNo = p.CustomerPhoneNo,
+                                  DateOfDelivery = p.DateOfDelivery,
+                                  Description = p.Description,
+                                  ID = p.ID,
+                                  ProductName = p.ProductName,
+                                  Quantities = p.Quantities,
+                                  Status = Helper.checkStatus(p.Status)
+                              }).ToList<OrderDetailDto>();
+
+
+                if (result.Count > 0)
+                    return result;
+
+                return new List<OrderDetailDto>();
+            }
+        }
+
 
         #endregion
 
@@ -545,10 +672,24 @@ namespace Data.Repositories
                     return true;
                 }
             }
-            // CATCH EXEPTION FOR DEBUG PURPOSE
             catch (Exception e)
             {
                 return false;
+            }
+        }
+
+        public string ChangeStatusOfOrder(int orderId, string status)
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result = (from o in dbContext.DatHangs
+                              where o.ID.Equals(orderId)
+                              select o).FirstOrDefault();
+                if (result == null)
+                    return Constant.MESSAGE_ERROR;
+                result.TrangThai = status;
+                dbContext.SaveChanges();
+                return Constant.MESSAGE_SUCCESS;
             }
         }
 
@@ -565,7 +706,7 @@ namespace Data.Repositories
                         return false;
                     product.Ten = vehicle.Ten;
                     product.Loai = vehicle.Loai;
-                    
+
 
                     var productInformation = (from i in dbContext.ThongTinSanPhams
                                               where i.ID.Equals(vehicle.ID)
@@ -579,11 +720,6 @@ namespace Data.Repositories
                     productInformation.MoTa = vehicle.MoTa;
                     productInformation.TinhTrang = vehicle.TinhTrang;
                     productInformation.PhanLoai = vehicle.PhanLoai;
-                    productInformation.Image1 = vehicle.Image1;
-                    productInformation.Image2 = vehicle.Image2;
-                    productInformation.Image3 = vehicle.Image3;
-                    productInformation.Image4 = vehicle.Image4;
-                    productInformation.Image5 = vehicle.Image5;
 
                     dbContext.SaveChanges();
                     return true;
@@ -636,7 +772,6 @@ namespace Data.Repositories
                     return Constant.MESSAGE_SUCCESS;
                 }
             }
-            // CATCH EXEPTION FOR DEBUG PURPOSE
             catch (DbEntityValidationException ex)
             {
                 foreach (var e in ex.EntityValidationErrors)
@@ -685,7 +820,6 @@ namespace Data.Repositories
                     return Constant.MESSAGE_SUCCESS;
                 }
             }
-            // CATCH EXEPTION FOR DEBUG PURPOSE
             catch (DbEntityValidationException ex)
             {
                 foreach (var e in ex.EntityValidationErrors)
@@ -707,19 +841,26 @@ namespace Data.Repositories
             }
         }
 
-        public string ChangeStatusOfOrder(int orderId, string status)
+        public void XuatExcel(DataGridView dgv, string DuongDan)
         {
-            using (var dbContext = new XeNangEntities())
+            app obj = new app();
+            obj.Application.Workbooks.Add(Type.Missing);
+            obj.Columns.ColumnWidth = 25;
+
+            for (int i = 1; i < dgv.Columns.Count + 1; i++)
+                obj.Cells[1, i] = dgv.Columns[i - 1].HeaderText;
+
+            for (int i = 0; i < dgv.Rows.Count; i++)
             {
-                var result = (from o in dbContext.DatHangs
-                              where o.ID.Equals(orderId)
-                              select o).FirstOrDefault();
-                if (result == null)
-                    return Constant.MESSAGE_ERROR;
-                result.TrangThai = status;
-                dbContext.SaveChanges();
-                return Constant.MESSAGE_SUCCESS;
+                for (int j = 0; j < dgv.Columns.Count; j++)
+                {
+                    if (dgv.Rows[i].Cells[j].Value != null)
+                        obj.Cells[i + 2, j + 1] = dgv.Rows[i].Cells[j].Value.ToString();
+                }
             }
+
+            obj.ActiveWorkbook.SaveCopyAs(DuongDan + ".xlsx");
+            obj.ActiveWorkbook.Saved = true;
         }
     }
 }
