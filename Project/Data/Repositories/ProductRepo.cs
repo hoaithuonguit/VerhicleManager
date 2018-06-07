@@ -60,6 +60,7 @@ namespace Data.Repositories
 
                 }
             }
+            // CATCH EXEPTION FOR DEBUG PURPOSE
             catch (DbEntityValidationException ex)
             {
                 foreach (var e in ex.EntityValidationErrors)
@@ -123,6 +124,7 @@ namespace Data.Repositories
                     return Constant.MESSAGE_SUCCESS;
                 }
             }
+            // CATCH EXEPTION FOR DEBUG PURPOSE
             catch (DbEntityValidationException ex)
             {
                 foreach (var e in ex.EntityValidationErrors)
@@ -543,6 +545,7 @@ namespace Data.Repositories
                     return true;
                 }
             }
+            // CATCH EXEPTION FOR DEBUG PURPOSE
             catch (Exception e)
             {
                 return false;
@@ -555,47 +558,55 @@ namespace Data.Repositories
             {
                 using (var dbContext = new XeNangEntities())
                 {
-                    var v = (from p in dbContext.SanPhams
-                             join d in dbContext.ThongTinSanPhams on p.ID equals d.ID
-                             where p.ID.Equals(vehicle.ID)
-                             select new ProductDto()
-                             {
-                                 ID = p.ID,
-                                 Ten = p.Ten,
-                                 Loai = p.Loai,
-                                 Hieu = d.Hieu,
-                                 Doi = d.Doi,
-                                 Hang = d.Hang,
-                                 MoTa = d.MoTa,
-                                 TinhTrang = d.TinhTrang,
-                                 PhanLoai = d.PhanLoai,
-                                 Image1 = d.Image1,
-                                 Image2 = d.Image2,
-                                 Image3 = d.Image3,
-                                 Image4 = d.Image4,
-                                 Image5 = d.Image5
-                             }).FirstOrDefault();
+                    var product = (from p in dbContext.SanPhams
+                                   where p.ID.Equals(vehicle.ID)
+                                   select p).FirstOrDefault();
+                    if (product == null)
+                        return false;
+                    product.Ten = vehicle.Ten;
+                    product.Loai = vehicle.Loai;
+                    
 
-                    // edit
-                    v.Ten = vehicle.Ten;
-                    v.Hieu = vehicle.Hieu;
-                    v.Loai = vehicle.Loai;
-                    v.Doi = vehicle.Doi;
-                    v.Hang = vehicle.Hang;
-                    v.MoTa = vehicle.MoTa;
-                    v.TinhTrang = vehicle.TinhTrang;
-                    v.PhanLoai = vehicle.PhanLoai;
-                    v.Image1 = vehicle.Image1;
-                    v.Image2 = vehicle.Image2;
-                    v.Image3 = vehicle.Image3;
-                    v.Image4 = vehicle.Image4;
-                    v.Image5 = vehicle.Image5;
+                    var productInformation = (from i in dbContext.ThongTinSanPhams
+                                              where i.ID.Equals(vehicle.ID)
+                                              select i).FirstOrDefault();
+
+                    if (productInformation == null) return false;
+
+                    productInformation.Hieu = vehicle.Hieu;
+                    productInformation.Doi = vehicle.Doi;
+                    productInformation.Hang = vehicle.Hang;
+                    productInformation.MoTa = vehicle.MoTa;
+                    productInformation.TinhTrang = vehicle.TinhTrang;
+                    productInformation.PhanLoai = vehicle.PhanLoai;
+                    productInformation.Image1 = vehicle.Image1;
+                    productInformation.Image2 = vehicle.Image2;
+                    productInformation.Image3 = vehicle.Image3;
+                    productInformation.Image4 = vehicle.Image4;
+                    productInformation.Image5 = vehicle.Image5;
 
                     dbContext.SaveChanges();
                     return true;
                 }
             }
-            catch (Exception ex)
+
+            // CATCH EXEPTION FOR DEBUG PURPOSE
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var e in ex.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        e.Entry.Entity.GetType().Name, e.Entry.State);
+                    foreach (var ve in e.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+
+                return false;
+            }
+            catch (DbUpdateException ex)
             {
                 return false;
             }
@@ -625,6 +636,7 @@ namespace Data.Repositories
                     return Constant.MESSAGE_SUCCESS;
                 }
             }
+            // CATCH EXEPTION FOR DEBUG PURPOSE
             catch (DbEntityValidationException ex)
             {
                 foreach (var e in ex.EntityValidationErrors)
@@ -673,6 +685,7 @@ namespace Data.Repositories
                     return Constant.MESSAGE_SUCCESS;
                 }
             }
+            // CATCH EXEPTION FOR DEBUG PURPOSE
             catch (DbEntityValidationException ex)
             {
                 foreach (var e in ex.EntityValidationErrors)
