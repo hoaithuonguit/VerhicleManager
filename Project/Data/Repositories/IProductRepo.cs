@@ -20,5 +20,6 @@ namespace Data.Repositories
         string SellProduct(SellProductDto sellInformation, DateTime dateCreate);
         string OrderProduct(OrderDetailDto order, DateTime dateCreate);
         List<OrderDetailDto> GetAllOrdersAreWaiting();
+        string ChangeStatusOfOrder(int orderId, string status);
     }
 }

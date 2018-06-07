@@ -658,7 +658,7 @@ namespace Data.Repositories
                         ID = ID,
                         DiaChi = order.CustomerAddr,
                         MailZalo = order.CustomerEmail,
-                        CreateDt = dateCreate,
+                        //CreateDt = dateCreate,
                         SDT = order.CustomerPhoneNo,
                         SoLuong = order.Quantities,
                         TenHang = order.ProductName,
@@ -694,5 +694,18 @@ namespace Data.Repositories
             }
         }
 
+        public string ChangeStatusOfOrder(int orderId, string status)
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result = (from o in dbContext.DatHangs
+                    where o.ID.Equals(orderId)
+                    select o.TrangThai).ToString();
+
+                result = status;
+                dbContext.SaveChanges();
+                return Constant.MESSAGE_SUCCESS;
+            }
+        }
     }
 }

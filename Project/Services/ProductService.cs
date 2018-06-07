@@ -106,6 +106,11 @@ namespace Services
             return _repository.GetAllOrdersAreWaiting();
         }
 
+        public string ChangeStatusOfOrder(int orderId, string status)
+        {
+            return _repository.ChangeStatusOfOrder(orderId, status);
+        }
+
         public List<ProductDto> GetTopCategory(int top)
         {
             return _repository.GetTopAccessories(top);

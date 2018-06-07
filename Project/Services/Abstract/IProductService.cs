@@ -38,6 +38,13 @@ namespace Services.Abstract
         string SellProduct(SellProductDto sellInformation, DateTime dateCreate);
         string OrderProduct(OrderDetailDto order, DateTime dateCreate);
         List<OrderDetailDto> GetAllOrdersAreWaiting();
+        /// <summary>
+        /// Change status of order
+        /// </summary>
+        /// <param name="OrderId"> ID of order in db</param>
+        /// <param name="status">use Constant.STATUS_CENSORRED and Constant.STATUS_WAITING</param>
+        /// <returns></returns>
+        string ChangeStatusOfOrder(int orderId, string status);
 
     }
 }
