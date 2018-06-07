@@ -699,10 +699,11 @@ namespace Data.Repositories
             using (var dbContext = new XeNangEntities())
             {
                 var result = (from o in dbContext.DatHangs
-                    where o.ID.Equals(orderId)
-                    select o.TrangThai).ToString();
-
-                result = status;
+                              where o.ID.Equals(orderId)
+                              select o).FirstOrDefault();
+                if (result == null)
+                    return Constant.MESSAGE_ERROR;
+                result.TrangThai = status;
                 dbContext.SaveChanges();
                 return Constant.MESSAGE_SUCCESS;
             }
