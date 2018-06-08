@@ -27,6 +27,11 @@ namespace Data.Infrastructure
             }
         }
 
+        // get all Value field in Master Data with "key" as parameter
+        public static List<string> GetAllValueInMasterData(string key)
+        {
+            return (from t in GetMasterData(key) select t.Value).ToList<string>();
+        }
         // get "Value" field  in MasterDate with "Name" as parameter
         public static string GetValueFromNameInMaster(string name)
         {
@@ -68,6 +73,43 @@ namespace Data.Infrastructure
         public static string GetTypeID(string type)
         {
             return type.Equals("Xe nâng") ? "01" : "02";
+        }
+
+        // gets/sets store informtion
+        public static string NameStore(ref string name)
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result = from n in dbContext.MasterDatas where n.Name.Equals("Name") select n.Value;
+                name = result.FirstOrDefault();
+                if (name != null)
+                    return name;
+                return "";
+            }
+        }
+
+        public static string TitleStore(ref string title)
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result = from n in dbContext.MasterDatas where n.Name.Equals("Title") select n.Value;
+                title = result.FirstOrDefault();
+                if (title != null)
+                    return title;
+                return "";
+            }
+        }
+
+        public static string AddressStore(ref string address)
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result = from n in dbContext.MasterDatas where n.Name.Equals("Address") select n.Value;
+                address = result.FirstOrDefault();
+                if (address != null)
+                    return address;
+                return "";
+            }
         }
 
     }

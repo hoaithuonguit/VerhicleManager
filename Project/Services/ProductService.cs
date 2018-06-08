@@ -71,6 +71,17 @@ namespace Services
         {
             return Helper.GetMasterData("Type");
         }
+
+        public string[] GetAllProductName()
+        {
+            return _repository.GetAllProductName();
+        }
+
+        public string[] GetAllProductName(string type)
+        {
+            return _repository.GetAllProductName(type);
+        }
+
         public int GetIDProduct(string productName)
         {
             return Helper.GetIDFromName(productName);
@@ -89,6 +100,36 @@ namespace Services
         public List<StockDto> LoadStockInformation()
         {
             return _repository.GetStockInformation();
+        }
+
+        public List<StockDto> GetStockInformationWithType(string type)
+        {
+            return _repository.GetStockInformationWithType(type);
+        }
+
+        public StockDto GetStockInformationOfProduct(int ID)
+        {
+            return _repository.GetStockInformationOfProduct(ID);
+        }
+
+        public List<string> GetAllClassification()
+        {
+            return Helper.GetAllValueInMasterData("Type");
+        }
+
+        public List<string> GetAllStatus()
+        {
+            return Helper.GetAllValueInMasterData("Status");
+        }
+
+        public string GetCodeNameOfClassification(string type)
+        {
+            return Helper.GetNameFromValueInMaster(type);
+        }
+
+        public string GetCodeNameOfStatus(string status)
+        {
+            return Helper.GetNameFromValueInMaster(status);
         }
 
         public string SellProduct(SellProductDto sellInformation, DateTime dateCreate)

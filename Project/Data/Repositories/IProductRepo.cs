@@ -11,10 +11,15 @@ namespace Data.Repositories
         List<ProductDto> GetTopAccessories(int top);
         List<ProductDto> GetAll(string type);
         ProductDto GetProduct(int id, string type);
+        string[] GetAllProductName();
+        // get all product name of "type"
+        string[] GetAllProductName(string type);
         List<ProductDto> GetTopVehicles(int top);
         List<ImportProductDto> GetImportInformation();
         List<SellProductDto> GetSellInformation();
         List<StockDto> GetStockInformation();
+        List<StockDto> GetStockInformationWithType(string type);
+        StockDto GetStockInformationOfProduct(int ID);
         bool ExportToCsvFile(List<ProductDto> products, string fileName);
         bool EditVehicle(ProductDto vehicle);
         string SellProduct(SellProductDto sellInformation, DateTime dateCreate);

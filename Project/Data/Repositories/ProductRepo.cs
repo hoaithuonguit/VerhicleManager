@@ -458,6 +458,31 @@ namespace Data.Repositories
             }
         }
 
+        public string[] GetAllProductName()
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result = (from p in dbContext.SanPhams
+                              select p.Ten).ToArray();
+                if (result.Length > 0)
+                    return result;
+                return new string[] { };
+            }
+        }
+
+        public string[] GetAllProductName(string type)
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result = (from p in dbContext.SanPhams
+                              where (p.Loai.Equals(type))
+                              select p.Ten).ToArray();
+                if (result.Length > 0)
+                    return result;
+                return new string[] { };
+            }
+        }
+
         public ProductDto GetProduct(int id, string type)
         {
             try
@@ -525,6 +550,60 @@ namespace Data.Repositories
             }
         }
 
+        public List<StockDto> GetStockInformationWithType(string type)
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result_query = (from s in dbContext.Khoes
+                                    join p in dbContext.SanPhams on s.ID equals p.ID
+                                    where p.Loai.Equals(type)
+                                    select new StockDto()
+                                    {
+                                        ID = s.ID,
+                                        Category = p.Loai,
+                                        Inventories = s.SoLuong,
+                                        LastUpdate = s.NgayUpdated,
+                                        ProductName = p.Ten
+                                    }).ToList<StockDto>();
+
+                var result = (from r in result_query
+                              select new StockDto()
+                              {
+                                  ID = r.ID,
+                                  Category = Helper.GetTypeName(r.Category),
+                                  Inventories = r.Inventories,
+                                  LastUpdate = r.LastUpdate,
+                                  ProductName = r.ProductName
+                              }).ToList<StockDto>();
+
+                if (result.Count > 0)
+                    return result;
+                return new List<StockDto>();
+            }
+        }
+
+        public StockDto GetStockInformationOfProduct(int ID)
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result = (from s in dbContext.Khoes
+                                    join p in dbContext.SanPhams on s.ID equals p.ID
+                                    where p.ID.Equals(ID)
+                                    select new StockDto()
+                                    {
+                                        ID = s.ID,
+                                        Category = p.Loai,
+                                        Inventories = s.SoLuong,
+                                        LastUpdate = s.NgayUpdated,
+                                        ProductName = p.Ten
+                                    }).FirstOrDefault();
+                if(result == null)
+                    return new StockDto();
+
+                result.Category = Helper.GetTypeName(result.Category);
+                return result;
+            }
+        }
         #endregion
 
         public bool ExportToCsvFile(List<ProductDto> products, string fileName)
@@ -561,11 +640,9 @@ namespace Data.Repositories
                     var product = (from p in dbContext.SanPhams
                                    where p.ID.Equals(vehicle.ID)
                                    select p).FirstOrDefault();
-                    if (product == null)
-                        return false;
+                    if (product == null) return false;
                     product.Ten = vehicle.Ten;
                     product.Loai = vehicle.Loai;
-                    
 
                     var productInformation = (from i in dbContext.ThongTinSanPhams
                                               where i.ID.Equals(vehicle.ID)
@@ -579,11 +656,6 @@ namespace Data.Repositories
                     productInformation.MoTa = vehicle.MoTa;
                     productInformation.TinhTrang = vehicle.TinhTrang;
                     productInformation.PhanLoai = vehicle.PhanLoai;
-                    productInformation.Image1 = vehicle.Image1;
-                    productInformation.Image2 = vehicle.Image2;
-                    productInformation.Image3 = vehicle.Image3;
-                    productInformation.Image4 = vehicle.Image4;
-                    productInformation.Image5 = vehicle.Image5;
 
                     dbContext.SaveChanges();
                     return true;
@@ -721,5 +793,7 @@ namespace Data.Repositories
                 return Constant.MESSAGE_SUCCESS;
             }
         }
+
+
     }
 }
