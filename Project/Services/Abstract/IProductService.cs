@@ -9,6 +9,7 @@ namespace Services.Abstract
         void AddProduct(ProductDto product, string tpye);
         void ImportProduct(ImportProductDto importInformation, DateTime dateCreate);
 
+        List<ProductDto> GetTopAccessories(int top);
         List<ProductDto> GetTopProduct(int top);
         List<ProductDto> GetAllProduct(string type);
         ProductDto GetProductByID(int ID, string type);
@@ -38,6 +39,7 @@ namespace Services.Abstract
         string SellProduct(SellProductDto sellInformation, DateTime dateCreate);
         string OrderProduct(OrderDetailDto order, DateTime dateCreate);
         List<OrderDetailDto> GetAllOrdersAreWaiting();
+        List<OrderDetailDto> GetAllOrdersAreCensorred();
         /// <summary>
         /// Change status of order
         /// </summary>
@@ -46,8 +48,24 @@ namespace Services.Abstract
         /// <returns></returns>
         string ChangeStatusOfOrder(int orderId, string status);
 
-        void ExportToCsv(List<ProductDto> products, string fileName);
+        #region ExportToCsv
+        bool ExportToCsvFile(List<ProductDto> products, string fileName);
+        bool ExportToCsvFile(List<ImportProductDto> products, string fileName);
+        bool ExportToCsvFile(List<OrderDetailDto> products, string fileName);
+        bool ExportToCsvFile(List<SellProductDto> products, string fileName);
+        bool ExportToCsvFile(List<StockDto> products, string fileName);
+        #endregion
 
         void EditVehicle(ProductDto vehicle);
+
+        #region GetAndSetStoreInformation
+        string GetNameStore();
+        void SetNameStore(string name);
+        string GetTitleStore();
+        void SetTitleStore(string title);
+        string GetAddressStore();
+        void SetAddressStore(string address);
+        #endregion
+
     }
 }

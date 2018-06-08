@@ -20,11 +20,17 @@ namespace Data.Repositories
         List<StockDto> GetStockInformation();
         List<StockDto> GetStockInformationWithType(string type);
         StockDto GetStockInformationOfProduct(int ID);
-        bool ExportToCsvFile(List<ProductDto> products, string fileName);
         bool EditVehicle(ProductDto vehicle);
         string SellProduct(SellProductDto sellInformation, DateTime dateCreate);
         string OrderProduct(OrderDetailDto order, DateTime dateCreate);
         List<OrderDetailDto> GetAllOrdersAreWaiting();
+        List<OrderDetailDto> GetAllOrdersAreCensorred();
         string ChangeStatusOfOrder(int orderId, string status);
+
+        bool ExportToCsvFile(List<ProductDto> products, string fileName);
+        bool ExportToCsvFile(List<ImportProductDto> products, string fileName);
+        bool ExportToCsvFile(List<OrderDetailDto> products, string fileName);
+        bool ExportToCsvFile(List<SellProductDto> products, string fileName);
+        bool ExportToCsvFile(List<StockDto> products, string fileName);
     }
 }

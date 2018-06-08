@@ -526,7 +526,7 @@ namespace Data.Repositories
         {
             using (var dbContext = new XeNangEntities())
             {
-                var result = (from o in dbContext.DatHangs
+                var resultQuery = (from o in dbContext.DatHangs
                               where o.TrangThai.Equals(Constant.STATUS_WAITING)
                               select new OrderDetailDto()
                               {
@@ -541,6 +541,64 @@ namespace Data.Repositories
                                   Quantities = o.SoLuong,
                                   Status = o.TrangThai
                               }).ToList<OrderDetailDto>();
+
+                var result = (from p in resultQuery
+                    select new OrderDetailDto()
+                    {
+                        CustomerAddr = p.CustomerAddr,
+                        CustomerEmail = p.CustomerEmail,
+                        CustomerName = p.CustomerName,
+                        CustomerPhoneNo = p.CustomerPhoneNo,
+                        DateOfDelivery = p.DateOfDelivery,
+                        Description = p.Description,
+                        ID = p.ID,
+                        ProductName = p.ProductName,
+                        Quantities = p.Quantities,
+                        Status = Helper.GetStatus(p.Status)
+                    }).ToList<OrderDetailDto>();
+
+                if (result.Count > 0)
+                    return result;
+
+                return new List<OrderDetailDto>();
+            }
+        }
+
+        public List<OrderDetailDto> GetAllOrdersAreCensorred()
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var resultQuery = (from o in dbContext.DatHangs
+                    where o.TrangThai.Equals(Constant.STATUS_CENSORRED)
+                    select new OrderDetailDto()
+                    {
+                        CustomerAddr = o.DiaChi,
+                        CustomerEmail = o.MailZalo,
+                        CustomerName = o.TenNguoiDat,
+                        CustomerPhoneNo = o.SDT,
+                        DateOfDelivery = o.ThoiGianCanLay,
+                        Description = o.MoTa,
+                        ID = o.ID,
+                        ProductName = o.TenHang,
+                        Quantities = o.SoLuong,
+                        Status = o.TrangThai
+                    }).ToList<OrderDetailDto>();
+
+
+                var result = (from p in resultQuery
+                    select new OrderDetailDto()
+                    {
+                        CustomerAddr = p.CustomerAddr,
+                        CustomerEmail = p.CustomerEmail,
+                        CustomerName = p.CustomerName,
+                        CustomerPhoneNo = p.CustomerPhoneNo,
+                        DateOfDelivery = p.DateOfDelivery,
+                        Description = p.Description,
+                        ID = p.ID,
+                        ProductName = p.ProductName,
+                        Quantities = p.Quantities,
+                        Status = Helper.GetStatus(p.Status)
+                    }).ToList<OrderDetailDto>();
 
 
                 if (result.Count > 0)
@@ -587,17 +645,17 @@ namespace Data.Repositories
             using (var dbContext = new XeNangEntities())
             {
                 var result = (from s in dbContext.Khoes
-                                    join p in dbContext.SanPhams on s.ID equals p.ID
-                                    where p.ID.Equals(ID)
-                                    select new StockDto()
-                                    {
-                                        ID = s.ID,
-                                        Category = p.Loai,
-                                        Inventories = s.SoLuong,
-                                        LastUpdate = s.NgayUpdated,
-                                        ProductName = p.Ten
-                                    }).FirstOrDefault();
-                if(result == null)
+                              join p in dbContext.SanPhams on s.ID equals p.ID
+                              where p.ID.Equals(ID)
+                              select new StockDto()
+                              {
+                                  ID = s.ID,
+                                  Category = p.Loai,
+                                  Inventories = s.SoLuong,
+                                  LastUpdate = s.NgayUpdated,
+                                  ProductName = p.Ten
+                              }).FirstOrDefault();
+                if (result == null)
                     return new StockDto();
 
                 result.Category = Helper.GetTypeName(result.Category);
@@ -613,11 +671,112 @@ namespace Data.Repositories
                 using (StreamWriter sw = new StreamWriter(new FileStream(fileName, FileMode.Create), Encoding.UTF8))
                 {
                     StringBuilder sb = new StringBuilder();
-                    sb.AppendLine("Tên,Loại,Hiệu,Đời,Hãng,Mô tả, Tình trạng, Phân loại");
+                    sb.AppendLine("Tên,Loại,Hiệu,Đời,Hãng,Mô tả,Tình trạng,Phân loại");
                     foreach (var p in products)
                     {
                         sb.AppendLine(string.Format("{0},{1},{2},{3},{4},{5},{6},{7}", p.Ten, p.Loai, p.Hieu, p.Doi,
                             p.Hang, p.MoTa, p.TinhTrang, p.PhanLoai));
+                    }
+
+                    sw.Write(sb.ToString());
+                    return true;
+                }
+            }
+            // CATCH EXEPTION FOR DEBUG PURPOSE
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool ExportToCsvFile(List<ImportProductDto> importProduct, string fileName)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(new FileStream(fileName, FileMode.Create), Encoding.UTF8))
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendLine("Tên,Loại,Ngày nhập,Số lượng,Trạng thái,Hãng,Phân loại,Mô tả");
+                    foreach (var p in importProduct)
+                    {
+                        sb.AppendLine(string.Format("{0},{1},{2},{3},{4},{5},{6},{7}", p.ProductName, p.Category, p.DateCreate.ToString("dd-MM-yyyy"), p.Quantities,
+                            p.Status, p.Label, p.Classification, p.Description
+                            ));
+                    }
+
+                    sw.Write(sb.ToString());
+                    return true;
+                }
+            }
+            // CATCH EXEPTION FOR DEBUG PURPOSE
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool ExportToCsvFile(List<OrderDetailDto> orderDetail, string fileName)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(new FileStream(fileName, FileMode.Create), Encoding.UTF8))
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendLine("Ngày đặt,Tên KH,Địa chỉ,SĐT,Email,Tên sản phẩm,Số lượng,Ngày lấy,Mô tả, Trạng thái");
+                    foreach (var p in orderDetail)
+                    {
+                        sb.AppendLine(string.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                            p.DateCreate.ToString("dd-MM-yyyy"), p.CustomerName, p.CustomerAddr, p.CustomerPhoneNo,
+                            p.CustomerEmail, p.ProductName, p.Quantities, p.DateOfDelivery.ToString("dd-MM-yyyy"),
+                            p.Description, p.Status));
+                    }
+
+                    sw.Write(sb.ToString());
+                    return true;
+                }
+            }
+            // CATCH EXEPTION FOR DEBUG PURPOSE
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool ExportToCsvFile(List<SellProductDto> sellProduct, string fileName)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(new FileStream(fileName, FileMode.Create), Encoding.UTF8))
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendLine("Tên sản phẩm,Loại,Số lượng,Ngày bán");
+                    foreach (var p in sellProduct)
+                    {
+                        sb.AppendLine(string.Format("{0},{1},{2},{3}", p.ProductName, p.Category, p.Quantities, p.DateOfSale.ToString("dd-MM-yyyy")));
+                    }
+
+                    sw.Write(sb.ToString());
+                    return true;
+                }
+            }
+            // CATCH EXEPTION FOR DEBUG PURPOSE
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool ExportToCsvFile(List<StockDto> stock, string fileName)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(new FileStream(fileName, FileMode.Create), Encoding.UTF8))
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendLine("Tên sản phẩm,Loại,Số lượng tồn,Ngày cập nhật");
+                    foreach (var p in stock)
+                    {
+                        sb.AppendLine(string.Format("{0},{1},{2},{3}", p.ProductName, p.Category, p.Inventories, p.LastUpdate.ToString("dd-MM-yyyy")));
                     }
 
                     sw.Write(sb.ToString());
