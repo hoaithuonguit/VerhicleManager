@@ -30,10 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_TenSanPham = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_Sua = new System.Windows.Forms.Button();
-            this.btn_Them = new System.Windows.Forms.Button();
-            this.btn_XuatExcel = new System.Windows.Forms.Button();
             this.cbb_Loai = new System.Windows.Forms.ComboBox();
             this.cbb_PhanLoai = new System.Windows.Forms.ComboBox();
             this.cbb_TinhTrang = new System.Windows.Forms.ComboBox();
@@ -53,10 +49,16 @@
             this.dgv_DuLieu = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.strip_Them = new System.Windows.Forms.ToolStripButton();
-            this.strip_Sua = new System.Windows.Forms.ToolStripButton();
-            this.strip_Luu = new System.Windows.Forms.ToolStripButton();
+            this.btn_Xuat = new System.Windows.Forms.ToolStripButton();
+            this.cl_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_TenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_PhanLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_NgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DuLieu)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -67,7 +69,6 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.tb_TenSanPham);
-            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.cbb_Loai);
             this.groupBox1.Controls.Add(this.cbb_PhanLoai);
             this.groupBox1.Controls.Add(this.cbb_TinhTrang);
@@ -100,46 +101,6 @@
             this.tb_TenSanPham.Size = new System.Drawing.Size(350, 35);
             this.tb_TenSanPham.TabIndex = 1;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btn_Sua);
-            this.groupBox3.Controls.Add(this.btn_Them);
-            this.groupBox3.Controls.Add(this.btn_XuatExcel);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox3.Location = new System.Drawing.Point(3, 514);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(651, 371);
-            this.groupBox3.TabIndex = 20;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Xuất dữ liệu";
-            // 
-            // btn_Sua
-            // 
-            this.btn_Sua.Location = new System.Drawing.Point(211, 64);
-            this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(149, 52);
-            this.btn_Sua.TabIndex = 2;
-            this.btn_Sua.Text = "Sửa";
-            this.btn_Sua.UseVisualStyleBackColor = true;
-            // 
-            // btn_Them
-            // 
-            this.btn_Them.Location = new System.Drawing.Point(35, 64);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(148, 52);
-            this.btn_Them.TabIndex = 1;
-            this.btn_Them.Text = "Thêm";
-            this.btn_Them.UseVisualStyleBackColor = true;
-            // 
-            // btn_XuatExcel
-            // 
-            this.btn_XuatExcel.Location = new System.Drawing.Point(399, 64);
-            this.btn_XuatExcel.Name = "btn_XuatExcel";
-            this.btn_XuatExcel.Size = new System.Drawing.Size(167, 52);
-            this.btn_XuatExcel.TabIndex = 0;
-            this.btn_XuatExcel.Text = "Xuất excel";
-            this.btn_XuatExcel.UseVisualStyleBackColor = true;
-            // 
             // cbb_Loai
             // 
             this.cbb_Loai.AutoCompleteCustomSource.AddRange(new string[] {
@@ -147,10 +108,14 @@
             "Phụ tùng"});
             this.cbb_Loai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_Loai.FormattingEnabled = true;
+            this.cbb_Loai.Items.AddRange(new object[] {
+            "Xe nâng",
+            "Phụ tùng"});
             this.cbb_Loai.Location = new System.Drawing.Point(235, 60);
             this.cbb_Loai.Name = "cbb_Loai";
             this.cbb_Loai.Size = new System.Drawing.Size(350, 37);
             this.cbb_Loai.TabIndex = 19;
+            this.cbb_Loai.SelectedIndexChanged += new System.EventHandler(this.cbb_Loai_SelectedIndexChanged);
             // 
             // cbb_PhanLoai
             // 
@@ -160,6 +125,7 @@
             this.cbb_PhanLoai.Name = "cbb_PhanLoai";
             this.cbb_PhanLoai.Size = new System.Drawing.Size(350, 37);
             this.cbb_PhanLoai.TabIndex = 18;
+            this.cbb_PhanLoai.SelectedIndexChanged += new System.EventHandler(this.cbb_PhanLoai_SelectedIndexChanged);
             // 
             // cbb_TinhTrang
             // 
@@ -169,6 +135,7 @@
             this.cbb_TinhTrang.Name = "cbb_TinhTrang";
             this.cbb_TinhTrang.Size = new System.Drawing.Size(350, 37);
             this.cbb_TinhTrang.TabIndex = 17;
+            this.cbb_TinhTrang.SelectedIndexChanged += new System.EventHandler(this.cbb_TinhTrang_SelectedIndexChanged);
             // 
             // tb_MoTa
             // 
@@ -190,6 +157,7 @@
             this.tb_SoLuong.Name = "tb_SoLuong";
             this.tb_SoLuong.Size = new System.Drawing.Size(350, 35);
             this.tb_SoLuong.TabIndex = 3;
+            this.tb_SoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ID_KeyPress);
             // 
             // dtp_NgayNhapHang
             // 
@@ -289,20 +257,29 @@
             // dgv_DuLieu
             // 
             this.dgv_DuLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_DuLieu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cl_ID,
+            this.cl_Loai,
+            this.cl_TenSanPham,
+            this.cl_SoLuong,
+            this.cl_Status,
+            this.cl_PhanLoai,
+            this.cl_MoTa,
+            this.cl_NgayNhap});
             this.dgv_DuLieu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_DuLieu.Location = new System.Drawing.Point(3, 63);
             this.dgv_DuLieu.Name = "dgv_DuLieu";
             this.dgv_DuLieu.RowTemplate.Height = 28;
             this.dgv_DuLieu.Size = new System.Drawing.Size(1149, 822);
             this.dgv_DuLieu.TabIndex = 2;
+            this.dgv_DuLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DuLieu_CellClick);
             // 
             // toolStrip1
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.strip_Them,
-            this.strip_Sua,
-            this.strip_Luu});
+            this.btn_Xuat});
             this.toolStrip1.Location = new System.Drawing.Point(3, 31);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1149, 32);
@@ -316,22 +293,65 @@
             this.strip_Them.Name = "strip_Them";
             this.strip_Them.Size = new System.Drawing.Size(84, 29);
             this.strip_Them.Text = "Thêm";
+            this.strip_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
-            // strip_Sua
+            // btn_Xuat
             // 
-            this.strip_Sua.Image = global::Desktop.Properties.Resources.icons8_pencil_40;
-            this.strip_Sua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.strip_Sua.Name = "strip_Sua";
-            this.strip_Sua.Size = new System.Drawing.Size(70, 29);
-            this.strip_Sua.Text = "Sửa";
+            this.btn_Xuat.Image = global::Desktop.Properties.Resources.icons8_export_csv_40;
+            this.btn_Xuat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Xuat.Name = "btn_Xuat";
+            this.btn_Xuat.Size = new System.Drawing.Size(119, 29);
+            this.btn_Xuat.Text = "Xuất Excel";
+            this.btn_Xuat.ToolTipText = "Xuất Excel";
+            this.btn_Xuat.Click += new System.EventHandler(this.btn_Xuat_Click);
             // 
-            // strip_Luu
+            // cl_ID
             // 
-            this.strip_Luu.Image = global::Desktop.Properties.Resources.BTluu;
-            this.strip_Luu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.strip_Luu.Name = "strip_Luu";
-            this.strip_Luu.Size = new System.Drawing.Size(69, 29);
-            this.strip_Luu.Text = "Lưu";
+            this.cl_ID.DataPropertyName = "ID";
+            this.cl_ID.HeaderText = "ID";
+            this.cl_ID.Name = "cl_ID";
+            // 
+            // cl_Loai
+            // 
+            this.cl_Loai.DataPropertyName = "Category";
+            this.cl_Loai.HeaderText = "Loại";
+            this.cl_Loai.Name = "cl_Loai";
+            // 
+            // cl_TenSanPham
+            // 
+            this.cl_TenSanPham.DataPropertyName = "ProductName";
+            this.cl_TenSanPham.HeaderText = "Tên sản phẩm";
+            this.cl_TenSanPham.Name = "cl_TenSanPham";
+            // 
+            // cl_SoLuong
+            // 
+            this.cl_SoLuong.DataPropertyName = "Quantities";
+            this.cl_SoLuong.HeaderText = "Số Lượng";
+            this.cl_SoLuong.Name = "cl_SoLuong";
+            // 
+            // cl_Status
+            // 
+            this.cl_Status.DataPropertyName = "Status";
+            this.cl_Status.HeaderText = "Trạng thái";
+            this.cl_Status.Name = "cl_Status";
+            // 
+            // cl_PhanLoai
+            // 
+            this.cl_PhanLoai.DataPropertyName = "Classification";
+            this.cl_PhanLoai.HeaderText = "Phân loại";
+            this.cl_PhanLoai.Name = "cl_PhanLoai";
+            // 
+            // cl_MoTa
+            // 
+            this.cl_MoTa.DataPropertyName = "Description";
+            this.cl_MoTa.HeaderText = "Mô tả";
+            this.cl_MoTa.Name = "cl_MoTa";
+            // 
+            // cl_NgayNhap
+            // 
+            this.cl_NgayNhap.DataPropertyName = "DateCreate";
+            this.cl_NgayNhap.HeaderText = "Ngày nhập hàng";
+            this.cl_NgayNhap.Name = "cl_NgayNhap";
             // 
             // frmNhapHang
             // 
@@ -345,7 +365,6 @@
             this.Load += new System.EventHandler(this.frmNhapHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DuLieu)).EndInit();
@@ -370,8 +389,6 @@
         private System.Windows.Forms.DataGridView dgv_DuLieu;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton strip_Them;
-        private System.Windows.Forms.ToolStripButton strip_Sua;
-        private System.Windows.Forms.ToolStripButton strip_Luu;
         private System.Windows.Forms.DateTimePicker dtp_NgayNhapHang;
         private System.Windows.Forms.ComboBox cbb_Loai;
         private System.Windows.Forms.ComboBox cbb_PhanLoai;
@@ -379,10 +396,15 @@
         private System.Windows.Forms.TextBox tb_MoTa;
         private System.Windows.Forms.TextBox tb_Hang;
         private System.Windows.Forms.TextBox tb_SoLuong;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btn_Sua;
-        private System.Windows.Forms.Button btn_Them;
-        private System.Windows.Forms.Button btn_XuatExcel;
         private System.Windows.Forms.TextBox tb_TenSanPham;
+        private System.Windows.Forms.ToolStripButton btn_Xuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_Loai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_TenSanPham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_PhanLoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_MoTa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_NgayNhap;
     }
 }

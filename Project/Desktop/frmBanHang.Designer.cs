@@ -37,18 +37,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_Sua = new System.Windows.Forms.Button();
-            this.btn_Them = new System.Windows.Forms.Button();
-            this.btn_XuatExcel = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_DuLieu = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.strip_Them = new System.Windows.Forms.ToolStripButton();
-            this.strip_Sua = new System.Windows.Forms.ToolStripButton();
-            this.strip_Luu = new System.Windows.Forms.ToolStripButton();
+            this.btn_Xuat = new System.Windows.Forms.ToolStripButton();
+            this.cl_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_NgayBans = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DuLieu)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -66,7 +65,6 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -88,10 +86,14 @@
             // 
             this.cbb_LoaiSanPham.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_LoaiSanPham.FormattingEnabled = true;
+            this.cbb_LoaiSanPham.Items.AddRange(new object[] {
+            "Xe nâng",
+            "Phụ tùng"});
             this.cbb_LoaiSanPham.Location = new System.Drawing.Point(214, 60);
             this.cbb_LoaiSanPham.Name = "cbb_LoaiSanPham";
             this.cbb_LoaiSanPham.Size = new System.Drawing.Size(432, 37);
             this.cbb_LoaiSanPham.TabIndex = 31;
+            this.cbb_LoaiSanPham.SelectedIndexChanged += new System.EventHandler(this.cbb_LoaiSanPham_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -116,6 +118,7 @@
             this.tb_SoLuong.Name = "tb_SoLuong";
             this.tb_SoLuong.Size = new System.Drawing.Size(432, 35);
             this.tb_SoLuong.TabIndex = 2;
+            this.tb_SoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ID_KeyPress);
             // 
             // label4
             // 
@@ -144,46 +147,6 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "Tên sản phẩm:";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btn_Sua);
-            this.groupBox3.Controls.Add(this.btn_Them);
-            this.groupBox3.Controls.Add(this.btn_XuatExcel);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox3.Location = new System.Drawing.Point(3, 289);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(703, 618);
-            this.groupBox3.TabIndex = 21;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Xuất dữ liệu";
-            // 
-            // btn_Sua
-            // 
-            this.btn_Sua.Location = new System.Drawing.Point(211, 64);
-            this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(149, 52);
-            this.btn_Sua.TabIndex = 2;
-            this.btn_Sua.Text = "Sửa";
-            this.btn_Sua.UseVisualStyleBackColor = true;
-            // 
-            // btn_Them
-            // 
-            this.btn_Them.Location = new System.Drawing.Point(35, 64);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(148, 52);
-            this.btn_Them.TabIndex = 1;
-            this.btn_Them.Text = "Thêm";
-            this.btn_Them.UseVisualStyleBackColor = true;
-            // 
-            // btn_XuatExcel
-            // 
-            this.btn_XuatExcel.Location = new System.Drawing.Point(399, 64);
-            this.btn_XuatExcel.Name = "btn_XuatExcel";
-            this.btn_XuatExcel.Size = new System.Drawing.Size(167, 52);
-            this.btn_XuatExcel.TabIndex = 0;
-            this.btn_XuatExcel.Text = "Xuất excel";
-            this.btn_XuatExcel.UseVisualStyleBackColor = true;
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -202,6 +165,12 @@
             // dgv_DuLieu
             // 
             this.dgv_DuLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_DuLieu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cl_ID,
+            this.cl_Loai,
+            this.cl_Ten,
+            this.cl_SoLuong,
+            this.cl_NgayBans});
             this.dgv_DuLieu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_DuLieu.Location = new System.Drawing.Point(3, 63);
             this.dgv_DuLieu.Name = "dgv_DuLieu";
@@ -214,8 +183,7 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.strip_Them,
-            this.strip_Sua,
-            this.strip_Luu});
+            this.btn_Xuat});
             this.toolStrip1.Location = new System.Drawing.Point(3, 31);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1042, 32);
@@ -229,22 +197,56 @@
             this.strip_Them.Name = "strip_Them";
             this.strip_Them.Size = new System.Drawing.Size(84, 29);
             this.strip_Them.Text = "Thêm";
+            this.strip_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
-            // strip_Sua
+            // btn_Xuat
             // 
-            this.strip_Sua.Image = global::Desktop.Properties.Resources.icons8_pencil_40;
-            this.strip_Sua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.strip_Sua.Name = "strip_Sua";
-            this.strip_Sua.Size = new System.Drawing.Size(70, 29);
-            this.strip_Sua.Text = "Sửa";
+            this.btn_Xuat.Image = global::Desktop.Properties.Resources.icons8_export_csv_40;
+            this.btn_Xuat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Xuat.Name = "btn_Xuat";
+            this.btn_Xuat.Size = new System.Drawing.Size(119, 29);
+            this.btn_Xuat.Text = "Xuất Excel";
+            this.btn_Xuat.Click += new System.EventHandler(this.btn_Xuat_Click);
             // 
-            // strip_Luu
+            // cl_ID
             // 
-            this.strip_Luu.Image = global::Desktop.Properties.Resources.BTluu;
-            this.strip_Luu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.strip_Luu.Name = "strip_Luu";
-            this.strip_Luu.Size = new System.Drawing.Size(69, 29);
-            this.strip_Luu.Text = "Lưu";
+            this.cl_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_ID.DataPropertyName = "ID";
+            this.cl_ID.HeaderText = "ID";
+            this.cl_ID.Name = "cl_ID";
+            this.cl_ID.Width = 72;
+            // 
+            // cl_Loai
+            // 
+            this.cl_Loai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_Loai.DataPropertyName = "Category";
+            this.cl_Loai.HeaderText = "Loại";
+            this.cl_Loai.Name = "cl_Loai";
+            this.cl_Loai.Width = 95;
+            // 
+            // cl_Ten
+            // 
+            this.cl_Ten.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_Ten.DataPropertyName = "ProductName";
+            this.cl_Ten.HeaderText = "Tên sản phẩm";
+            this.cl_Ten.Name = "cl_Ten";
+            this.cl_Ten.Width = 202;
+            // 
+            // cl_SoLuong
+            // 
+            this.cl_SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_SoLuong.DataPropertyName = "Quantities";
+            this.cl_SoLuong.HeaderText = "Số lượng";
+            this.cl_SoLuong.Name = "cl_SoLuong";
+            this.cl_SoLuong.Width = 145;
+            // 
+            // cl_NgayBans
+            // 
+            this.cl_NgayBans.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_NgayBans.DataPropertyName = "DateOfSale";
+            this.cl_NgayBans.HeaderText = "Ngày bán";
+            this.cl_NgayBans.Name = "cl_NgayBans";
+            this.cl_NgayBans.Width = 151;
             // 
             // frmBanHang
             // 
@@ -258,7 +260,6 @@
             this.Load += new System.EventHandler(this.frmBanHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DuLieu)).EndInit();
@@ -272,10 +273,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btn_Sua;
-        private System.Windows.Forms.Button btn_Them;
-        private System.Windows.Forms.Button btn_XuatExcel;
         private System.Windows.Forms.DateTimePicker dtp_NgayBan;
         private System.Windows.Forms.TextBox tb_SoLuong;
         private System.Windows.Forms.Label label4;
@@ -284,10 +281,14 @@
         private System.Windows.Forms.DataGridView dgv_DuLieu;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton strip_Them;
-        private System.Windows.Forms.ToolStripButton strip_Sua;
-        private System.Windows.Forms.ToolStripButton strip_Luu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_TenSanPham;
         private System.Windows.Forms.ComboBox cbb_LoaiSanPham;
+        private System.Windows.Forms.ToolStripButton btn_Xuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_Loai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_Ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_NgayBans;
     }
 }
