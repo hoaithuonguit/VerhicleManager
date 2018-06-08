@@ -72,6 +72,7 @@ namespace Desktop
             PhanLoai = sv.GetCodeNameOfClassification(cbb_PhanLoai.Text.ToString());
         }
         #endregion
+        #region Event
         private void frmNhapHang_Load(object sender, EventArgs e)
         {
             HelperUI.loadData_cbbTinhTrang(cbb_TinhTrang);
@@ -182,5 +183,6 @@ namespace Desktop
 
             }
         }
+        #endregion
     }
 }

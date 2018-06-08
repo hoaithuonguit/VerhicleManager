@@ -307,51 +307,67 @@
             // 
             // cl_ID
             // 
+            this.cl_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_ID.DataPropertyName = "ID";
             this.cl_ID.HeaderText = "ID";
             this.cl_ID.Name = "cl_ID";
+            this.cl_ID.Width = 72;
             // 
             // cl_Loai
             // 
+            this.cl_Loai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_Loai.DataPropertyName = "Category";
             this.cl_Loai.HeaderText = "Loại";
             this.cl_Loai.Name = "cl_Loai";
+            this.cl_Loai.Width = 95;
             // 
             // cl_TenSanPham
             // 
+            this.cl_TenSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_TenSanPham.DataPropertyName = "ProductName";
             this.cl_TenSanPham.HeaderText = "Tên sản phẩm";
             this.cl_TenSanPham.Name = "cl_TenSanPham";
+            this.cl_TenSanPham.Width = 202;
             // 
             // cl_SoLuong
             // 
+            this.cl_SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_SoLuong.DataPropertyName = "Quantities";
             this.cl_SoLuong.HeaderText = "Số Lượng";
             this.cl_SoLuong.Name = "cl_SoLuong";
+            this.cl_SoLuong.Width = 152;
             // 
             // cl_Status
             // 
+            this.cl_Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_Status.DataPropertyName = "Status";
             this.cl_Status.HeaderText = "Trạng thái";
             this.cl_Status.Name = "cl_Status";
+            this.cl_Status.Width = 157;
             // 
             // cl_PhanLoai
             // 
+            this.cl_PhanLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_PhanLoai.DataPropertyName = "Classification";
             this.cl_PhanLoai.HeaderText = "Phân loại";
             this.cl_PhanLoai.Name = "cl_PhanLoai";
+            this.cl_PhanLoai.Width = 149;
             // 
             // cl_MoTa
             // 
+            this.cl_MoTa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_MoTa.DataPropertyName = "Description";
             this.cl_MoTa.HeaderText = "Mô tả";
             this.cl_MoTa.Name = "cl_MoTa";
+            this.cl_MoTa.Width = 108;
             // 
             // cl_NgayNhap
             // 
+            this.cl_NgayNhap.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_NgayNhap.DataPropertyName = "DateCreate";
             this.cl_NgayNhap.HeaderText = "Ngày nhập hàng";
             this.cl_NgayNhap.Name = "cl_NgayNhap";
+            this.cl_NgayNhap.Width = 204;
             // 
             // frmNhapHang
             // 

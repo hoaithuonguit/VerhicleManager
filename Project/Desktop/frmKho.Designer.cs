@@ -160,33 +160,43 @@
             // 
             // cl_ID
             // 
+            this.cl_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_ID.DataPropertyName = "ID";
             this.cl_ID.HeaderText = "ID";
             this.cl_ID.Name = "cl_ID";
+            this.cl_ID.Width = 72;
             // 
             // cl_Loai
             // 
+            this.cl_Loai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_Loai.DataPropertyName = "Category";
             this.cl_Loai.HeaderText = "Loại";
             this.cl_Loai.Name = "cl_Loai";
+            this.cl_Loai.Width = 95;
             // 
             // cl_TenSanPham
             // 
+            this.cl_TenSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_TenSanPham.DataPropertyName = "ProductName";
             this.cl_TenSanPham.HeaderText = "Tên sản phẩm";
             this.cl_TenSanPham.Name = "cl_TenSanPham";
+            this.cl_TenSanPham.Width = 202;
             // 
             // cl_SoLuongTon
             // 
+            this.cl_SoLuongTon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_SoLuongTon.DataPropertyName = "Inventories";
             this.cl_SoLuongTon.HeaderText = "Số lượng tồn";
             this.cl_SoLuongTon.Name = "cl_SoLuongTon";
+            this.cl_SoLuongTon.Width = 184;
             // 
             // cl_NgayUpdate
             // 
+            this.cl_NgayUpdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_NgayUpdate.DataPropertyName = "LastUpdate";
             this.cl_NgayUpdate.HeaderText = "Ngày cập nhật ";
             this.cl_NgayUpdate.Name = "cl_NgayUpdate";
+            this.cl_NgayUpdate.Width = 207;
             // 
             // frmKho
             // 

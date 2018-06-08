@@ -62,6 +62,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_DuLieu = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.strip_Them = new System.Windows.Forms.ToolStripButton();
+            this.strip_Sua = new System.Windows.Forms.ToolStripButton();
+            this.btn_XuatExcel = new System.Windows.Forms.ToolStripButton();
             this.cl_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,10 +75,6 @@
             this.cl_MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_PhanLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.strip_Them = new System.Windows.Forms.ToolStripButton();
-            this.strip_Sua = new System.Windows.Forms.ToolStripButton();
-            this.btn_XuatExcel = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DuLieu)).BeginInit();
@@ -441,60 +441,6 @@
             this.dgv_DuLieu.TabIndex = 2;
             this.dgv_DuLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DuLieu_CellClick);
             // 
-            // cl_ID
-            // 
-            this.cl_ID.DataPropertyName = "ID";
-            this.cl_ID.HeaderText = "ID";
-            this.cl_ID.Name = "cl_ID";
-            // 
-            // cl_Loai
-            // 
-            this.cl_Loai.DataPropertyName = "Loai";
-            this.cl_Loai.HeaderText = "Loại";
-            this.cl_Loai.Name = "cl_Loai";
-            // 
-            // cl_Ten
-            // 
-            this.cl_Ten.DataPropertyName = "Ten";
-            this.cl_Ten.HeaderText = "Tên sản phẩm";
-            this.cl_Ten.Name = "cl_Ten";
-            // 
-            // cl_Hieu
-            // 
-            this.cl_Hieu.DataPropertyName = "Hieu";
-            this.cl_Hieu.HeaderText = "Hiệu";
-            this.cl_Hieu.Name = "cl_Hieu";
-            // 
-            // cl_Doi
-            // 
-            this.cl_Doi.DataPropertyName = "Doi";
-            this.cl_Doi.HeaderText = "Đời";
-            this.cl_Doi.Name = "cl_Doi";
-            // 
-            // cl_Hang
-            // 
-            this.cl_Hang.DataPropertyName = "Hang";
-            this.cl_Hang.HeaderText = "Hãng";
-            this.cl_Hang.Name = "cl_Hang";
-            // 
-            // cl_MoTa
-            // 
-            this.cl_MoTa.DataPropertyName = "MoTa";
-            this.cl_MoTa.HeaderText = "Mô tả";
-            this.cl_MoTa.Name = "cl_MoTa";
-            // 
-            // cl_TinhTrang
-            // 
-            this.cl_TinhTrang.DataPropertyName = "TinhTrang";
-            this.cl_TinhTrang.HeaderText = "Tình trạng";
-            this.cl_TinhTrang.Name = "cl_TinhTrang";
-            // 
-            // cl_PhanLoai
-            // 
-            this.cl_PhanLoai.DataPropertyName = "PhanLoai";
-            this.cl_PhanLoai.HeaderText = "Phân loại";
-            this.cl_PhanLoai.Name = "cl_PhanLoai";
-            // 
             // toolStrip1
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -535,6 +481,78 @@
             this.btn_XuatExcel.Text = "Xuất Excel";
             this.btn_XuatExcel.Click += new System.EventHandler(this.btn_XuatExcel_Click);
             // 
+            // cl_ID
+            // 
+            this.cl_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_ID.DataPropertyName = "ID";
+            this.cl_ID.HeaderText = "ID";
+            this.cl_ID.Name = "cl_ID";
+            this.cl_ID.Width = 72;
+            // 
+            // cl_Loai
+            // 
+            this.cl_Loai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_Loai.DataPropertyName = "Loai";
+            this.cl_Loai.HeaderText = "Loại";
+            this.cl_Loai.Name = "cl_Loai";
+            this.cl_Loai.Width = 95;
+            // 
+            // cl_Ten
+            // 
+            this.cl_Ten.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_Ten.DataPropertyName = "Ten";
+            this.cl_Ten.HeaderText = "Tên sản phẩm";
+            this.cl_Ten.Name = "cl_Ten";
+            this.cl_Ten.Width = 202;
+            // 
+            // cl_Hieu
+            // 
+            this.cl_Hieu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_Hieu.DataPropertyName = "Hieu";
+            this.cl_Hieu.HeaderText = "Hiệu";
+            this.cl_Hieu.Name = "cl_Hieu";
+            this.cl_Hieu.Width = 99;
+            // 
+            // cl_Doi
+            // 
+            this.cl_Doi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_Doi.DataPropertyName = "Doi";
+            this.cl_Doi.HeaderText = "Đời";
+            this.cl_Doi.Name = "cl_Doi";
+            this.cl_Doi.Width = 86;
+            // 
+            // cl_Hang
+            // 
+            this.cl_Hang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_Hang.DataPropertyName = "Hang";
+            this.cl_Hang.HeaderText = "Hãng";
+            this.cl_Hang.Name = "cl_Hang";
+            this.cl_Hang.Width = 106;
+            // 
+            // cl_MoTa
+            // 
+            this.cl_MoTa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_MoTa.DataPropertyName = "MoTa";
+            this.cl_MoTa.HeaderText = "Mô tả";
+            this.cl_MoTa.Name = "cl_MoTa";
+            this.cl_MoTa.Width = 108;
+            // 
+            // cl_TinhTrang
+            // 
+            this.cl_TinhTrang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_TinhTrang.DataPropertyName = "TinhTrang";
+            this.cl_TinhTrang.HeaderText = "Tình trạng";
+            this.cl_TinhTrang.Name = "cl_TinhTrang";
+            this.cl_TinhTrang.Width = 157;
+            // 
+            // cl_PhanLoai
+            // 
+            this.cl_PhanLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_PhanLoai.DataPropertyName = "PhanLoai";
+            this.cl_PhanLoai.HeaderText = "Phân loại";
+            this.cl_PhanLoai.Name = "cl_PhanLoai";
+            this.cl_PhanLoai.Width = 149;
+            // 
             // frmThongTinSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -544,6 +562,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmThongTinSanPham";
             this.Text = "Thông tin sản phẩm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmThongTinSanPham_FormClosing);
             this.Load += new System.EventHandler(this.frmThongTinSanPham_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

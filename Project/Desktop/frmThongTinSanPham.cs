@@ -161,6 +161,8 @@ namespace Desktop
 
         }
 
+
+
         private void frmThongTinSanPham_Load(object sender, EventArgs e)
         {
             HelperUI.loadData_cbbTinhTrang(cbb_TinhTrang);
@@ -340,6 +342,10 @@ namespace Desktop
             }
         }
 
+        private void frmThongTinSanPham_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
         #endregion
     }
 
