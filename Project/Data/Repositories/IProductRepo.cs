@@ -19,7 +19,7 @@ namespace Data.Repositories
         List<SellProductDto> GetSellInformation();
         List<StockDto> GetStockInformation();
         List<StockDto> GetStockInformationWithType(string type);
-        StockDto GetStockInformationOfProduct(int ID);
+        List<StockDto> GetStockInformationOfProduct(int ID);
         bool EditVehicle(ProductDto vehicle);
         string SellProduct(SellProductDto sellInformation, DateTime dateCreate);
         string OrderProduct(OrderDetailDto order, DateTime dateCreate);

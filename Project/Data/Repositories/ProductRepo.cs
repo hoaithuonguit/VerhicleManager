@@ -527,35 +527,35 @@ namespace Data.Repositories
             using (var dbContext = new XeNangEntities())
             {
                 var resultQuery = (from o in dbContext.DatHangs
-                              where o.TrangThai.Equals(Constant.STATUS_WAITING)
-                              select new OrderDetailDto()
-                              {
-                                  CustomerAddr = o.DiaChi,
-                                  CustomerEmail = o.MailZalo,
-                                  CustomerName = o.TenNguoiDat,
-                                  CustomerPhoneNo = o.SDT,
-                                  DateOfDelivery = o.ThoiGianCanLay,
-                                  Description = o.MoTa,
-                                  ID = o.ID,
-                                  ProductName = o.TenHang,
-                                  Quantities = o.SoLuong,
-                                  Status = o.TrangThai
-                              }).ToList<OrderDetailDto>();
+                                   where o.TrangThai.Equals(Constant.STATUS_WAITING)
+                                   select new OrderDetailDto()
+                                   {
+                                       CustomerAddr = o.DiaChi,
+                                       CustomerEmail = o.MailZalo,
+                                       CustomerName = o.TenNguoiDat,
+                                       CustomerPhoneNo = o.SDT,
+                                       DateOfDelivery = o.ThoiGianCanLay,
+                                       Description = o.MoTa,
+                                       ID = o.ID,
+                                       ProductName = o.TenHang,
+                                       Quantities = o.SoLuong,
+                                       Status = o.TrangThai
+                                   }).ToList<OrderDetailDto>();
 
                 var result = (from p in resultQuery
-                    select new OrderDetailDto()
-                    {
-                        CustomerAddr = p.CustomerAddr,
-                        CustomerEmail = p.CustomerEmail,
-                        CustomerName = p.CustomerName,
-                        CustomerPhoneNo = p.CustomerPhoneNo,
-                        DateOfDelivery = p.DateOfDelivery,
-                        Description = p.Description,
-                        ID = p.ID,
-                        ProductName = p.ProductName,
-                        Quantities = p.Quantities,
-                        Status = Helper.GetStatus(p.Status)
-                    }).ToList<OrderDetailDto>();
+                              select new OrderDetailDto()
+                              {
+                                  CustomerAddr = p.CustomerAddr,
+                                  CustomerEmail = p.CustomerEmail,
+                                  CustomerName = p.CustomerName,
+                                  CustomerPhoneNo = p.CustomerPhoneNo,
+                                  DateOfDelivery = p.DateOfDelivery,
+                                  Description = p.Description,
+                                  ID = p.ID,
+                                  ProductName = p.ProductName,
+                                  Quantities = p.Quantities,
+                                  Status = Helper.GetStatus(p.Status)
+                              }).ToList<OrderDetailDto>();
 
                 if (result.Count > 0)
                     return result;
@@ -569,36 +569,36 @@ namespace Data.Repositories
             using (var dbContext = new XeNangEntities())
             {
                 var resultQuery = (from o in dbContext.DatHangs
-                    where o.TrangThai.Equals(Constant.STATUS_CENSORRED)
-                    select new OrderDetailDto()
-                    {
-                        CustomerAddr = o.DiaChi,
-                        CustomerEmail = o.MailZalo,
-                        CustomerName = o.TenNguoiDat,
-                        CustomerPhoneNo = o.SDT,
-                        DateOfDelivery = o.ThoiGianCanLay,
-                        Description = o.MoTa,
-                        ID = o.ID,
-                        ProductName = o.TenHang,
-                        Quantities = o.SoLuong,
-                        Status = o.TrangThai
-                    }).ToList<OrderDetailDto>();
+                                   where o.TrangThai.Equals(Constant.STATUS_CENSORRED)
+                                   select new OrderDetailDto()
+                                   {
+                                       CustomerAddr = o.DiaChi,
+                                       CustomerEmail = o.MailZalo,
+                                       CustomerName = o.TenNguoiDat,
+                                       CustomerPhoneNo = o.SDT,
+                                       DateOfDelivery = o.ThoiGianCanLay,
+                                       Description = o.MoTa,
+                                       ID = o.ID,
+                                       ProductName = o.TenHang,
+                                       Quantities = o.SoLuong,
+                                       Status = o.TrangThai
+                                   }).ToList<OrderDetailDto>();
 
 
                 var result = (from p in resultQuery
-                    select new OrderDetailDto()
-                    {
-                        CustomerAddr = p.CustomerAddr,
-                        CustomerEmail = p.CustomerEmail,
-                        CustomerName = p.CustomerName,
-                        CustomerPhoneNo = p.CustomerPhoneNo,
-                        DateOfDelivery = p.DateOfDelivery,
-                        Description = p.Description,
-                        ID = p.ID,
-                        ProductName = p.ProductName,
-                        Quantities = p.Quantities,
-                        Status = Helper.GetStatus(p.Status)
-                    }).ToList<OrderDetailDto>();
+                              select new OrderDetailDto()
+                              {
+                                  CustomerAddr = p.CustomerAddr,
+                                  CustomerEmail = p.CustomerEmail,
+                                  CustomerName = p.CustomerName,
+                                  CustomerPhoneNo = p.CustomerPhoneNo,
+                                  DateOfDelivery = p.DateOfDelivery,
+                                  Description = p.Description,
+                                  ID = p.ID,
+                                  ProductName = p.ProductName,
+                                  Quantities = p.Quantities,
+                                  Status = Helper.GetStatus(p.Status)
+                              }).ToList<OrderDetailDto>();
 
 
                 if (result.Count > 0)
@@ -640,25 +640,32 @@ namespace Data.Repositories
             }
         }
 
-        public StockDto GetStockInformationOfProduct(int ID)
+        public List<StockDto> GetStockInformationOfProduct(int ID)
         {
             using (var dbContext = new XeNangEntities())
             {
-                var result = (from s in dbContext.Khoes
-                              join p in dbContext.SanPhams on s.ID equals p.ID
-                              where p.ID.Equals(ID)
+                var resultQuery = (from s in dbContext.Khoes
+                                   join p in dbContext.SanPhams on s.ID equals p.ID
+                                   where p.ID.Equals(ID)
+                                   select new StockDto()
+                                   {
+                                       ID = s.ID,
+                                       Category = p.Loai,
+                                       Inventories = s.SoLuong,
+                                       LastUpdate = s.NgayUpdated,
+                                       ProductName = p.Ten
+                                   });
+
+                var result = (from s in resultQuery
                               select new StockDto()
                               {
                                   ID = s.ID,
-                                  Category = p.Loai,
-                                  Inventories = s.SoLuong,
-                                  LastUpdate = s.NgayUpdated,
-                                  ProductName = p.Ten
-                              }).FirstOrDefault();
-                if (result == null)
-                    return new StockDto();
+                                  Category = Helper.GetTypeName(s.Category),
+                                  Inventories = s.Inventories,
+                                  LastUpdate = s.LastUpdate,
+                                  ProductName = s.ProductName
+                              }).ToList<StockDto>();
 
-                result.Category = Helper.GetTypeName(result.Category);
                 return result;
             }
         }

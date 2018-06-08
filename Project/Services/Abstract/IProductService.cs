@@ -28,7 +28,7 @@ namespace Services.Abstract
 
         List<StockDto> LoadStockInformation();
         List<StockDto> GetStockInformationWithType(string type);
-        StockDto GetStockInformationOfProduct(int ID);
+        List<StockDto> GetStockInformationOfProduct(int ID);
 
         List<string> GetAllClassification();
         List<string> GetAllStatus();

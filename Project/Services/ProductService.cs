@@ -119,7 +119,7 @@ namespace Services
         {
             return _repository.GetStockInformationWithType(type);
         }
-        public StockDto GetStockInformationOfProduct(int ID)
+        public List<StockDto> GetStockInformationOfProduct(int ID)
         {
             return _repository.GetStockInformationOfProduct(ID);
         }
