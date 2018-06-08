@@ -654,7 +654,7 @@ namespace Data.Repositories
                                        Inventories = s.SoLuong,
                                        LastUpdate = s.NgayUpdated,
                                        ProductName = p.Ten
-                                   });
+                                   }).ToList();
 
                 var result = (from s in resultQuery
                               select new StockDto()
@@ -664,7 +664,7 @@ namespace Data.Repositories
                                   Inventories = s.Inventories,
                                   LastUpdate = s.LastUpdate,
                                   ProductName = s.ProductName
-                              }).ToList<StockDto>();
+                              }).ToList();
 
                 return result;
             }
