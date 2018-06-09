@@ -55,26 +55,19 @@ namespace Services
         {
             return Helper.GetNameStore();
         }
-        public void SetNameStore(string name)
-        {
-            Helper.SetNameStore(name);
-        }
         public string GetTitleStore()
         {
             return Helper.GetTitleStore();
-        }
-        public void SetTitleStore(string title)
-        {
-            Helper.SetTitleStore(title);
         }
         public string GetAddressStore()
         {
             return Helper.GetAddrStore();
         }
-        public void SetAddressStore(string address)
+        public void SetStoreInformation(string name, string title, string address)
         {
-            Helper.SetAddrStore(address);
+            Helper.SetStoreInformation(name, title, address);
         }
+
 
         public List<MasterDataDto> GetAllStatusOfProduct()
         {
