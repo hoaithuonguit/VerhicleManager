@@ -29,34 +29,51 @@ namespace Services
             _repository.ImportProduct(importInformation, dateCreate);
         }
 
+        public List<ProductDto> GetTopAccessories(int top)
+        {
+            return _repository.GetTopAccessories(top);
+        }
+        public List<ProductDto> GetTopVehicles(int top)
+        {
+            return _repository.GetTopVehicles(top);
+        }
         public List<ProductDto> GetTopProduct(int top)
         {
             return _repository.GetTopAccessories(top);
         }
-
         public List<ProductDto> GetAllProduct(string type)
         {
             return _repository.GetAll(type);
         }
-
         public ProductDto GetProductByID(int ID, string type)
         {
             return _repository.GetProduct(ID, type);
         }
 
-        public void ExportToCsv(List<ProductDto> products, string fileName)
-        {
-            _repository.ExportToCsvFile(products, fileName);
-        }
 
-        public List<ProductDto> GetTopVehicles(int top)
+        public string GetNameStore()
         {
-            return _repository.GetTopVehicles(top);
+            return Helper.GetNameStore();
         }
-
-        public void EditVehicle(ProductDto vehicle)
+        public void SetNameStore(string name)
         {
-            _repository.EditVehicle(vehicle);
+            Helper.SetNameStore(name);
+        }
+        public string GetTitleStore()
+        {
+            return Helper.GetTitleStore();
+        }
+        public void SetTitleStore(string title)
+        {
+            Helper.SetTitleStore(title);
+        }
+        public string GetAddressStore()
+        {
+            return Helper.GetAddrStore();
+        }
+        public void SetAddressStore(string address)
+        {
+            Helper.SetAddrStore(address);
         }
 
         public List<MasterDataDto> GetAllStatusOfProduct()
@@ -71,6 +88,15 @@ namespace Services
         {
             return Helper.GetMasterData("Type");
         }
+
+        public string[] GetAllProductName()
+        {
+            return _repository.GetAllProductName();
+        }
+        public string[] GetAllProductName(string type)
+        {
+            return _repository.GetAllProductName(type);
+        }
         public int GetIDProduct(string productName)
         {
             return Helper.GetIDFromName(productName);
@@ -80,15 +106,43 @@ namespace Services
         {
             return _repository.GetImportInformation();
         }
-
         public List<SellProductDto> LoadAllSellInformation()
         {
             return _repository.GetSellInformation();
         }
-
         public List<StockDto> LoadStockInformation()
         {
             return _repository.GetStockInformation();
+        }
+
+        public List<StockDto> LoadStockInformation(int top)
+        {
+            return _repository.GetStockInformation(top);
+        }
+
+        public List<StockDto> GetStockInformationWithType(string type)
+        {
+            return _repository.GetStockInformationWithType(type);
+        }
+        public List<StockDto> GetStockInformationOfProduct(int ID)
+        {
+            return _repository.GetStockInformationOfProduct(ID);
+        }
+        public List<string> GetAllClassification()
+        {
+            return Helper.GetAllValueInMasterData("Type");
+        }
+        public List<string> GetAllStatus()
+        {
+            return Helper.GetAllValueInMasterData("Status");
+        }
+        public string GetCodeNameOfClassification(string type)
+        {
+            return Helper.GetNameFromValueInMaster(type);
+        }
+        public string GetCodeNameOfStatus(string status)
+        {
+            return Helper.GetNameFromValueInMaster(status);
         }
 
         public string SellProduct(SellProductDto sellInformation, DateTime dateCreate)
@@ -106,10 +160,41 @@ namespace Services
             return _repository.GetAllOrdersAreWaiting();
         }
 
-        public List<ProductDto> GetTopCategory(int top)
+        public List<OrderDetailDto> GetAllOrdersAreCensorred()
         {
-            return _repository.GetTopAccessories(top);
+            return _repository.GetAllOrdersAreCensorred();
         }
 
+        public string ChangeStatusOfOrder(int orderId, string status)
+        {
+            return _repository.ChangeStatusOfOrder(orderId, status);
+        }
+
+        public bool ExportToCsvFile(List<ProductDto> products, string fileName)
+        {
+            return _repository.ExportToCsvFile(products, fileName);
+        }
+
+        public bool ExportToCsvFile(List<ImportProductDto> products, string fileName)
+        {
+            return _repository.ExportToCsvFile(products, fileName);
+        }
+        public bool ExportToCsvFile(List<OrderDetailDto> products, string fileName)
+        {
+            return _repository.ExportToCsvFile(products, fileName);
+        }
+        public bool ExportToCsvFile(List<SellProductDto> products, string fileName)
+        {
+            return _repository.ExportToCsvFile(products, fileName);
+        }
+        public bool ExportToCsvFile(List<StockDto> products, string fileName)
+        {
+            return _repository.ExportToCsvFile(products, fileName);
+        }
+
+        public void EditVehicle(ProductDto vehicle)
+        {
+            _repository.EditVehicle(vehicle);
+        }
     }
 }

@@ -27,6 +27,11 @@ namespace Data.Infrastructure
             }
         }
 
+        // get all Value field in Master Data with "key" as parameter
+        public static List<string> GetAllValueInMasterData(string key)
+        {
+            return (from t in GetMasterData(key) select t.Value).ToList<string>();
+        }
         // get "Value" field  in MasterDate with "Name" as parameter
         public static string GetValueFromNameInMaster(string name)
         {
@@ -69,6 +74,78 @@ namespace Data.Infrastructure
         {
             return type.Equals("Xe nâng") ? "01" : "02";
         }
+
+        public static string GetStatus(string stt)
+        {
+            return stt.Equals("01") ? "Đã duyệt" : "Đang chờ";
+        }
+
+        // gets/sets store informtion
+        public static string GetNameStore()
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                string result = (from n in dbContext.MasterDatas
+                                 where n.Name.Equals("Name")
+                                 select n.Value.FirstOrDefault()).ToString();
+
+                return result;
+            }
+        }
+        public static void SetNameStore(string name)
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result = (from n in dbContext.MasterDatas
+                              where n.Name.Equals("Name")
+                              select n).FirstOrDefault();
+                if (result != null)
+                    result.Value = name;
+            }
+        }
+        public static string GetTitleStore()
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                string result = (from n in dbContext.MasterDatas
+                                 where n.Name.Equals("Title")
+                                 select n.Value.FirstOrDefault()).ToString();
+                return result;
+            }
+        }
+        public static void SetTitleStore(string title)
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result = (from n in dbContext.MasterDatas
+                    where n.Name.Equals("Title")
+                    select n).FirstOrDefault();
+                if (result != null)
+                    result.Value = title;
+            }
+        }
+        public static string GetAddrStore()
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                string result = (from n in dbContext.MasterDatas
+                    where n.Name.Equals("Address")
+                    select n.Value.FirstOrDefault()).ToString();
+                return result;
+            }
+        }
+        public static void SetAddrStore(string address)
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var result = (from n in dbContext.MasterDatas
+                    where n.Name.Equals("Address")
+                    select n).FirstOrDefault();
+                if (result != null)
+                    result.Value = address;
+            }
+        }
+
 
     }
 }
