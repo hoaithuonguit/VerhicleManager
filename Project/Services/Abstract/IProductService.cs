@@ -15,7 +15,7 @@ namespace Services.Abstract
         ProductDto GetProductByID(int ID, string type);
         int GetIDProduct(string productName);
         List<ProductDto> GetTopVehicles(int top);
-        
+
         List<MasterDataDto> GetAllStatusOfProduct();
         List<MasterDataDto> GetAllTypeOfVehicle();
         List<MasterDataDto> GetAllTypeOfAccessory();
@@ -27,6 +27,7 @@ namespace Services.Abstract
         List<SellProductDto> LoadAllSellInformation();
 
         List<StockDto> LoadStockInformation();
+        List<StockDto> LoadStockInformation(int top);
         List<StockDto> GetStockInformationWithType(string type);
         List<StockDto> GetStockInformationOfProduct(int ID);
 

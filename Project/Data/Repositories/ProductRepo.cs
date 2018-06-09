@@ -409,6 +409,59 @@ namespace Data.Repositories
             }
         }
 
+        public List<StockDto> GetStockInformation(int top)
+        {
+            using (var dbContext = new XeNangEntities())
+            {
+                var date = DateTime.Now.AddDays(-7).Date;
+                var result_query = ((from b in dbContext.BanHangs
+                                     join s in dbContext.Khoes on b.ID_Product equals s.ID
+                                     join p in dbContext.SanPhams on s.ID equals p.ID
+                                     where b.NgayBan > date
+                                     select new
+                                     {
+                                         Product = new
+                                         {
+                                             s.ID,
+                                             Category = p.Loai,
+                                             Inventories = s.SoLuong,
+                                             LastUpdate = s.NgayUpdated,
+                                             ProductName = p.Ten
+                                         },
+                                         Quantities = b.SoLuong
+                                     }
+                    into productQuantity
+                                     group productQuantity by productQuantity.Product
+                    into pg
+                                     let total = pg.Sum(prod => prod.Quantities)
+                                     orderby total descending
+                                     select new StockDto()
+                                     {
+                                         ID = pg.Key.ID,
+                                         Category = pg.Key.Category,
+                                         Inventories = pg.Key.Inventories,
+                                         LastUpdate = pg.Key.LastUpdate,
+                                         ProductName = pg.Key.ProductName,
+
+                                     }).Take(top)).ToList<StockDto>();
+
+                var result = (from r in result_query
+                              select new StockDto()
+                              {
+                                  ID = r.ID,
+                                  Category = Helper.GetTypeName(r.Category),
+                                  Inventories = r.Inventories,
+                                  LastUpdate = r.LastUpdate,
+                                  ProductName = r.ProductName
+                              }).ToList<StockDto>();
+
+                if (result.Count > 0)
+                    return result;
+                return new List<StockDto>();
+
+            }
+        }
+
         public List<ProductDto> GetAll(string type)
         {
             using (var dbContext = new XeNangEntities())

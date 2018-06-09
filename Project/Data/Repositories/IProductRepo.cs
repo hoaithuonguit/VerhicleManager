@@ -8,16 +8,18 @@ namespace Data.Repositories
     {
         string AddProduct(ProductDto product, string type);
         string ImportProduct(ImportProductDto importInformation, DateTime dateCreate);
-        List<ProductDto> GetTopAccessories(int top);
+
         List<ProductDto> GetAll(string type);
         ProductDto GetProduct(int id, string type);
         string[] GetAllProductName();
         // get all product name of "type"
         string[] GetAllProductName(string type);
+        List<ProductDto> GetTopAccessories(int top);
         List<ProductDto> GetTopVehicles(int top);
         List<ImportProductDto> GetImportInformation();
         List<SellProductDto> GetSellInformation();
         List<StockDto> GetStockInformation();
+        List<StockDto> GetStockInformation(int top);
         List<StockDto> GetStockInformationWithType(string type);
         List<StockDto> GetStockInformationOfProduct(int ID);
         bool EditVehicle(ProductDto vehicle);

@@ -49,8 +49,8 @@ namespace Services
         {
             return _repository.GetProduct(ID, type);
         }
-        
-        
+
+
         public string GetNameStore()
         {
             return Helper.GetNameStore();
@@ -113,6 +113,11 @@ namespace Services
         public List<StockDto> LoadStockInformation()
         {
             return _repository.GetStockInformation();
+        }
+
+        public List<StockDto> LoadStockInformation(int top)
+        {
+            return _repository.GetStockInformation(top);
         }
 
         public List<StockDto> GetStockInformationWithType(string type)
@@ -186,7 +191,7 @@ namespace Services
         {
             return _repository.ExportToCsvFile(products, fileName);
         }
-        
+
         public void EditVehicle(ProductDto vehicle)
         {
             _repository.EditVehicle(vehicle);
