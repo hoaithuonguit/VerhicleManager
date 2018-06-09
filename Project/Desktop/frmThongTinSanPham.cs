@@ -47,9 +47,8 @@ namespace Desktop
             using (var dlg = new OpenFileDialog())
             {
                 dlg.CheckFileExists = false;
-
                 dlg.ShowDialog();
-                lb_ChonHinh1.Text = dlg.SafeFileName;
+                btn_ChonHinh1.Text = "Chọn lại";
                 Image1 = dlg.FileName;
             }
         }
@@ -59,9 +58,8 @@ namespace Desktop
             using (var dlg = new OpenFileDialog())
             {
                 dlg.CheckFileExists = false;
-
                 dlg.ShowDialog();
-                lb_ChonHinh2.Text = dlg.SafeFileName;
+                btn_ChonHinh2.Text = "Chọn lại";
                 Image2 = dlg.FileName;
             }
         }
@@ -71,9 +69,8 @@ namespace Desktop
             using (var dlg = new OpenFileDialog())
             {
                 dlg.CheckFileExists = false;
-
                 dlg.ShowDialog();
-                lb_ChonHinh3.Text = dlg.SafeFileName;
+                btn_ChonHinh3.Text = "Chọn lại";
                 Image3 = dlg.FileName;
             }
         }
@@ -83,9 +80,8 @@ namespace Desktop
             using (var dlg = new OpenFileDialog())
             {
                 dlg.CheckFileExists = false;
-
                 dlg.ShowDialog();
-                lb_ChonHinh4.Text = dlg.SafeFileName;
+                btn_ChonHinh4.Text = "Chọn lại";
                 Image4 = dlg.FileName;
             }
         }
@@ -95,9 +91,8 @@ namespace Desktop
             using (var dlg = new OpenFileDialog())
             {
                 dlg.CheckFileExists = false;
-
                 dlg.ShowDialog();
-                lb_ChonHinh5.Text = dlg.SafeFileName;
+                btn_ChonHinh5.Text = "Chọn lại";
                 Image5 = dlg.FileName;
             }
         }

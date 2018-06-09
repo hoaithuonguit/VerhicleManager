@@ -58,6 +58,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbb_TrangThai = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tb_Email = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DuLieu)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -102,63 +104,83 @@
             // 
             // cl_ID
             // 
+            this.cl_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_ID.DataPropertyName = "ID";
             this.cl_ID.HeaderText = "ID";
             this.cl_ID.Name = "cl_ID";
+            this.cl_ID.Width = 72;
             // 
             // cl_TenNguoiDat
             // 
+            this.cl_TenNguoiDat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_TenNguoiDat.DataPropertyName = "CustomerName";
             this.cl_TenNguoiDat.HeaderText = "Tên người đặt";
             this.cl_TenNguoiDat.Name = "cl_TenNguoiDat";
+            this.cl_TenNguoiDat.Width = 151;
             // 
             // cl_SDT
             // 
+            this.cl_SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_SDT.DataPropertyName = "CustomerPhoneNo";
             this.cl_SDT.HeaderText = "Số điện thoại";
             this.cl_SDT.Name = "cl_SDT";
+            this.cl_SDT.Width = 174;
             // 
             // cl_Email
             // 
+            this.cl_Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_Email.DataPropertyName = "CustomerEmail";
             this.cl_Email.HeaderText = "Email";
             this.cl_Email.Name = "cl_Email";
+            this.cl_Email.Width = 110;
             // 
             // cl_DiaChi
             // 
+            this.cl_DiaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_DiaChi.DataPropertyName = "CustomerAddr";
             this.cl_DiaChi.HeaderText = "Địa chỉ";
             this.cl_DiaChi.Name = "cl_DiaChi";
+            this.cl_DiaChi.Width = 85;
             // 
             // cl_TenSanPham
             // 
+            this.cl_TenSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_TenSanPham.DataPropertyName = "ProductName";
             this.cl_TenSanPham.HeaderText = "Tên sản phẩm";
             this.cl_TenSanPham.Name = "cl_TenSanPham";
+            this.cl_TenSanPham.Width = 185;
             // 
             // cl_NgayLay
             // 
+            this.cl_NgayLay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_NgayLay.DataPropertyName = "DateOfDelivery";
             this.cl_NgayLay.HeaderText = "Ngày nhận hàng";
             this.cl_NgayLay.Name = "cl_NgayLay";
+            this.cl_NgayLay.Width = 203;
             // 
             // cl_SoLuong
             // 
+            this.cl_SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_SoLuong.DataPropertyName = "Quantities";
             this.cl_SoLuong.HeaderText = "Số lượng";
             this.cl_SoLuong.Name = "cl_SoLuong";
+            this.cl_SoLuong.Width = 134;
             // 
             // cl_MoTa
             // 
+            this.cl_MoTa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_MoTa.DataPropertyName = "Description";
             this.cl_MoTa.HeaderText = "Mô tả";
             this.cl_MoTa.Name = "cl_MoTa";
+            this.cl_MoTa.Width = 83;
             // 
             // cl_TrangThai
             // 
+            this.cl_TrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.cl_TrangThai.DataPropertyName = "Status";
             this.cl_TrangThai.HeaderText = "Trạng thái";
             this.cl_TrangThai.Name = "cl_TrangThai";
+            this.cl_TrangThai.Width = 144;
             // 
             // groupBox2
             // 
@@ -179,6 +201,8 @@
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox3.Controls.Add(this.tb_Email);
+            this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.btn_Xuat);
             this.groupBox3.Controls.Add(this.btn_Duyet);
             this.groupBox3.Controls.Add(this.tb_TenNguoiDat);
@@ -202,7 +226,7 @@
             // 
             // btn_Xuat
             // 
-            this.btn_Xuat.Location = new System.Drawing.Point(223, 476);
+            this.btn_Xuat.Location = new System.Drawing.Point(223, 514);
             this.btn_Xuat.Name = "btn_Xuat";
             this.btn_Xuat.Size = new System.Drawing.Size(198, 53);
             this.btn_Xuat.TabIndex = 13;
@@ -212,7 +236,7 @@
             // 
             // btn_Duyet
             // 
-            this.btn_Duyet.Location = new System.Drawing.Point(223, 397);
+            this.btn_Duyet.Location = new System.Drawing.Point(223, 435);
             this.btn_Duyet.Name = "btn_Duyet";
             this.btn_Duyet.Size = new System.Drawing.Size(198, 50);
             this.btn_Duyet.TabIndex = 12;
@@ -226,7 +250,7 @@
             this.tb_TenNguoiDat.Location = new System.Drawing.Point(223, 64);
             this.tb_TenNguoiDat.Name = "tb_TenNguoiDat";
             this.tb_TenNguoiDat.Size = new System.Drawing.Size(368, 35);
-            this.tb_TenNguoiDat.TabIndex = 11;
+            this.tb_TenNguoiDat.TabIndex = 2;
             // 
             // tb_DiaChi
             // 
@@ -234,44 +258,44 @@
             this.tb_DiaChi.Location = new System.Drawing.Point(223, 115);
             this.tb_DiaChi.Name = "tb_DiaChi";
             this.tb_DiaChi.Size = new System.Drawing.Size(368, 35);
-            this.tb_DiaChi.TabIndex = 10;
+            this.tb_DiaChi.TabIndex = 3;
             // 
             // tb_SDT
             // 
             this.tb_SDT.Enabled = false;
-            this.tb_SDT.Location = new System.Drawing.Point(223, 168);
+            this.tb_SDT.Location = new System.Drawing.Point(223, 166);
             this.tb_SDT.Name = "tb_SDT";
             this.tb_SDT.Size = new System.Drawing.Size(368, 35);
-            this.tb_SDT.TabIndex = 9;
+            this.tb_SDT.TabIndex = 4;
             // 
             // tb_TenHang
             // 
             this.tb_TenHang.Enabled = false;
-            this.tb_TenHang.Location = new System.Drawing.Point(223, 222);
+            this.tb_TenHang.Location = new System.Drawing.Point(223, 260);
             this.tb_TenHang.Name = "tb_TenHang";
             this.tb_TenHang.Size = new System.Drawing.Size(368, 35);
-            this.tb_TenHang.TabIndex = 8;
+            this.tb_TenHang.TabIndex = 5;
             // 
             // tb_SoLuong
             // 
             this.tb_SoLuong.Enabled = false;
-            this.tb_SoLuong.Location = new System.Drawing.Point(223, 273);
+            this.tb_SoLuong.Location = new System.Drawing.Point(223, 311);
             this.tb_SoLuong.Name = "tb_SoLuong";
             this.tb_SoLuong.Size = new System.Drawing.Size(368, 35);
-            this.tb_SoLuong.TabIndex = 7;
+            this.tb_SoLuong.TabIndex = 6;
             // 
             // tb_ThoiGian
             // 
             this.tb_ThoiGian.Enabled = false;
-            this.tb_ThoiGian.Location = new System.Drawing.Point(223, 325);
+            this.tb_ThoiGian.Location = new System.Drawing.Point(223, 363);
             this.tb_ThoiGian.Name = "tb_ThoiGian";
             this.tb_ThoiGian.Size = new System.Drawing.Size(368, 35);
-            this.tb_ThoiGian.TabIndex = 6;
+            this.tb_ThoiGian.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 328);
+            this.label7.Location = new System.Drawing.Point(17, 366);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(200, 29);
             this.label7.TabIndex = 5;
@@ -280,7 +304,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 276);
+            this.label6.Location = new System.Drawing.Point(17, 314);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 29);
             this.label6.TabIndex = 4;
@@ -289,7 +313,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 225);
+            this.label5.Location = new System.Drawing.Point(17, 263);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 29);
             this.label5.TabIndex = 3;
@@ -298,7 +322,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 171);
+            this.label4.Location = new System.Drawing.Point(17, 169);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 29);
             this.label4.TabIndex = 2;
@@ -343,6 +367,22 @@
             this.label1.Size = new System.Drawing.Size(215, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Xem đơn đặt hàng:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 216);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(80, 29);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Email:";
+            // 
+            // tb_Email
+            // 
+            this.tb_Email.Location = new System.Drawing.Point(223, 213);
+            this.tb_Email.Name = "tb_Email";
+            this.tb_Email.Size = new System.Drawing.Size(368, 35);
+            this.tb_Email.TabIndex = 15;
             // 
             // frmDonDatHang
             // 
@@ -397,5 +437,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_MoTa;
         private System.Windows.Forms.DataGridViewTextBoxColumn cl_TrangThai;
+        private System.Windows.Forms.TextBox tb_Email;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -92,6 +92,7 @@ namespace Desktop
                 tb_SoLuong.Text = dgv_DuLieu.Rows[numrow].Cells[7].Value.ToString();
                 tb_SDT.Text = dgv_DuLieu.Rows[numrow].Cells[2].Value.ToString();
                 tb_DiaChi.Text = dgv_DuLieu.Rows[numrow].Cells[4].Value.ToString();
+                tb_Email.Text= dgv_DuLieu.Rows[numrow].Cells[3].Value.ToString();
             }
             catch
             {

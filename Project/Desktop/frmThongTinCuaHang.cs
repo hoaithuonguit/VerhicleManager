@@ -19,6 +19,9 @@ namespace Desktop
         }
 
         #region Value
+        string Name;
+        string Title;
+        string Address;
         #endregion
 
         private void frmThongTinCuaHang_Load(object sender, EventArgs e)

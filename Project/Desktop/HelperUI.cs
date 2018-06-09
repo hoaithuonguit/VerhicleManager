@@ -15,6 +15,7 @@ namespace Desktop
 {
     class HelperUI
     {
+        #region Function
         public static void ResetAllControls(Control form)
         {
             foreach (Control control in form.Controls)
@@ -67,11 +68,23 @@ namespace Desktop
             return type.Equals("Xe nâng") ? "01" : "02";
         }
 
+        public static string checkStatus(string status)
+        {
+            return status.Equals("01") ? "Đã duyệt" : "Đang chờ";
+        }
+
+        public static string checkLoai(string type)
+        {
+            return type.Equals("Xe nâng") ? "01" : "02";
+        }
+
+        #endregion
+
+        #region Load Combobox
         public static void loadData_cbbPhanLoai(ComboBox cbb)
         {
             List<string> itemList = new List<string>();
             ProductService sv = new ProductService();
-            //var query = from a in conText.MasterDatas where a.Keys.Equals(Type) select a.Value;
             itemList = sv.GetAllClassification();
             cbb.DataSource = itemList;
         }
@@ -94,35 +107,27 @@ namespace Desktop
             cbb.DataSource = itemList;
         }
 
+
+        #endregion
+
+        #region AutoComplete
         public static void autoCompleteTenSanPham(TextBox tb, string Loai)
         {
             AutoCompleteStringCollection itemList = new AutoCompleteStringCollection();
-            XeNangEntities conText = new XeNangEntities();
-            var query = (from a in conText.SanPhams
-                         where (a.Loai.Equals(Loai))
-                         select a.Ten);
-            itemList.AddRange(query.ToArray());
+            ProductService sv = new ProductService();
+            itemList.AddRange(sv.GetAllProductName(Loai));
             tb.AutoCompleteCustomSource = itemList;
         }
 
         public static void autoCompleteTenSanPham(TextBox tb)
         {
             AutoCompleteStringCollection itemList = new AutoCompleteStringCollection();
-            XeNangEntities conText = new XeNangEntities();
-            var query = (from a in conText.SanPhams
-                         select a.Ten);
-            itemList.AddRange(query.ToArray());
+            ProductService sv = new ProductService();
+            itemList.AddRange(sv.GetAllProductName());
             tb.AutoCompleteCustomSource = itemList;
         }
 
-        public static string checkLoai(string type)
-        {
-            return type.Equals("Xe nâng") ? "01" : "02";
-        }
+        #endregion
 
-        public static string checkStatus(string status)
-        {
-            return status.Equals("01") ? "Đã duyệt" : "Đang chờ";
-        }
     }
 }

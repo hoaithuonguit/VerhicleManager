@@ -32,7 +32,7 @@ namespace Desktop
             ProductService sv = new ProductService();
             dgv_DuLieu.AutoGenerateColumns = false;
             HelperUI.autoCompleteTenSanPham(tb_TenSanPham,HelperUI.checkLoai(cbb_PhanLoai.Text.ToString()));
-            dgv_DuLieu.DataSource= sv.LoadStockInformation();
+            dgv_DuLieu.DataSource = sv.LoadStockInformation(10);
         }
 
         private void cbb_PhanLoai_SelectedIndexChanged(object sender, EventArgs e)
