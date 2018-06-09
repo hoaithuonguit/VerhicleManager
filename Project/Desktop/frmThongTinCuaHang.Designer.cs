@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Sua = new System.Windows.Forms.Button();
             this.tb_SoDienThoai = new System.Windows.Forms.TextBox();
             this.tb_DiaChi = new System.Windows.Forms.TextBox();
             this.tb_SanPham = new System.Windows.Forms.TextBox();
@@ -43,7 +43,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btn_Sua);
             this.groupBox1.Controls.Add(this.tb_SoDienThoai);
             this.groupBox1.Controls.Add(this.tb_DiaChi);
             this.groupBox1.Controls.Add(this.tb_SanPham);
@@ -62,16 +62,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin cửa hàng";
             // 
-            // button1
+            // btn_Sua
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(346, 270);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 45);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Sửa";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Sua.ForeColor = System.Drawing.Color.Black;
+            this.btn_Sua.Location = new System.Drawing.Point(346, 270);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(99, 45);
+            this.btn_Sua.TabIndex = 8;
+            this.btn_Sua.Text = "Sửa";
+            this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // tb_SoDienThoai
             // 
@@ -173,7 +174,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.TextBox tb_SoDienThoai;
         private System.Windows.Forms.TextBox tb_DiaChi;
         private System.Windows.Forms.TextBox tb_SanPham;
