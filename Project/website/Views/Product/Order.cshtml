@@ -4,7 +4,7 @@
 }
 @using website.Models
 @model website.Models.OrderProductModel
-
+<div class="clearfix"></div>
 <div class="container_fullwidth">
     <div class="container">
         <div class="row">
@@ -99,30 +99,30 @@
                                         </div>
                                         @*<input class="inputfild" type="email" name="">*@
                                     </div>
-                                    </div>
+                                </div>
                                 <br />
-                                    <div class="row">
-                                       
-                                            <div class="col-md-12">
-                                                <label>
-                                                    Số điện thoại
-                                                    <strong class="red">
-                                                        *
-                                                    </strong>
-                                                </label>
+                                <div class="row">
 
-                                                @Html.TextBoxFor(m => m.Sdt, new { @class = "form-control" })
-                                                <div class="red">
-                                                    <br />
+                                    <div class="col-md-12">
+                                        <label>
+                                            Số điện thoại
+                                            <strong class="red">
+                                                *
+                                            </strong>
+                                        </label>
 
-                                                    @Html.ValidationMessageFor(m => m.Sdt)
-                                                    <br />
-                                                </div>
-                                                @*<input class="inputfild" type="email" name="">*@
-                                            </div>
-                                       
+                                        @Html.TextBoxFor(m => m.Sdt, new { @class = "form-control" })
+                                        <div class="red">
+                                            <br />
+
+                                            @Html.ValidationMessageFor(m => m.Sdt)
+                                            <br />
+                                        </div>
+                                        @*<input class="inputfild" type="email" name="">*@
                                     </div>
-                               <br />
+
+                                </div>
+                                <br />
                                 <div class="row">
                                     <div class="col-md-12">
                                         <label>
