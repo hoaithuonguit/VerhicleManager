@@ -156,32 +156,48 @@ namespace Desktop
 
         private void dgv_DuLieu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int numrow;
-            numrow = e.RowIndex;
-            ID = Int32.Parse(dgv_DuLieu.Rows[numrow].Cells[0].Value.ToString());
+            try
+            {
+                int numrow;
+                numrow = e.RowIndex;
+                ID = Int32.Parse(dgv_DuLieu.Rows[numrow].Cells[0].Value.ToString());
+            }
+            catch
+            {
+
+            }
+
         }
 
         private void btn_Xuat_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog sfd = new SaveFileDialog())
+            try
             {
-                sfd.Filter = "csv File (*.csv)|*.csv|All files (*.*)|*.*";
-                sfd.Title = "Save an Excel File";
-                sfd.ShowDialog();
-
-                string DuongDan;
-                DuongDan = sfd.FileName;
-                List<ImportProductDto> ls = new List<ImportProductDto>();
-                ProductService pro = new ProductService();
-                ls = pro.LoadAllImportInformation();
-                DialogResult dlg = MessageBox.Show("Bạn có chắc chắn xuất CSV!!", "Thông báo!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                if (dlg.Equals(DialogResult.OK))
+                using (SaveFileDialog sfd = new SaveFileDialog())
                 {
-                    pro.ExportToCsvFile(ls, DuongDan);
-                    MessageBox.Show("Xuất thành công!!", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    sfd.Filter = "csv File (*.csv)|*.csv|All files (*.*)|*.*";
+                    sfd.Title = "Save an Excel File";
+                    sfd.ShowDialog();
+
+                    string DuongDan;
+                    DuongDan = sfd.FileName;
+                    List<ImportProductDto> ls = new List<ImportProductDto>();
+                    ProductService pro = new ProductService();
+                    ls = pro.LoadAllImportInformation();
+                    DialogResult dlg = MessageBox.Show("Bạn có chắc chắn xuất CSV!!", "Thông báo!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (dlg.Equals(DialogResult.OK))
+                    {
+                        pro.ExportToCsvFile(ls, DuongDan);
+                        MessageBox.Show("Xuất thành công!!", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                 }
+            }
+            catch
+            {
 
             }
+
         }
         #endregion
     }

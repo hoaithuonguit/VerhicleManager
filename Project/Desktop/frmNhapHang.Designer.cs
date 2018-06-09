@@ -47,9 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_DuLieu = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.strip_Them = new System.Windows.Forms.ToolStripButton();
-            this.btn_Xuat = new System.Windows.Forms.ToolStripButton();
             this.cl_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_TenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +55,9 @@
             this.cl_PhanLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_NgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.strip_Them = new System.Windows.Forms.ToolStripButton();
+            this.btn_Xuat = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DuLieu)).BeginInit();
@@ -99,7 +99,7 @@
             this.tb_TenSanPham.Location = new System.Drawing.Point(235, 113);
             this.tb_TenSanPham.Name = "tb_TenSanPham";
             this.tb_TenSanPham.Size = new System.Drawing.Size(350, 35);
-            this.tb_TenSanPham.TabIndex = 1;
+            this.tb_TenSanPham.TabIndex = 2;
             // 
             // cbb_Loai
             // 
@@ -114,7 +114,7 @@
             this.cbb_Loai.Location = new System.Drawing.Point(235, 60);
             this.cbb_Loai.Name = "cbb_Loai";
             this.cbb_Loai.Size = new System.Drawing.Size(350, 37);
-            this.cbb_Loai.TabIndex = 19;
+            this.cbb_Loai.TabIndex = 1;
             this.cbb_Loai.SelectedIndexChanged += new System.EventHandler(this.cbb_Loai_SelectedIndexChanged);
             // 
             // cbb_PhanLoai
@@ -124,7 +124,7 @@
             this.cbb_PhanLoai.Location = new System.Drawing.Point(235, 438);
             this.cbb_PhanLoai.Name = "cbb_PhanLoai";
             this.cbb_PhanLoai.Size = new System.Drawing.Size(350, 37);
-            this.cbb_PhanLoai.TabIndex = 18;
+            this.cbb_PhanLoai.TabIndex = 8;
             this.cbb_PhanLoai.SelectedIndexChanged += new System.EventHandler(this.cbb_PhanLoai_SelectedIndexChanged);
             // 
             // cbb_TinhTrang
@@ -134,7 +134,7 @@
             this.cbb_TinhTrang.Location = new System.Drawing.Point(235, 272);
             this.cbb_TinhTrang.Name = "cbb_TinhTrang";
             this.cbb_TinhTrang.Size = new System.Drawing.Size(350, 37);
-            this.cbb_TinhTrang.TabIndex = 17;
+            this.cbb_TinhTrang.TabIndex = 5;
             this.cbb_TinhTrang.SelectedIndexChanged += new System.EventHandler(this.cbb_TinhTrang_SelectedIndexChanged);
             // 
             // tb_MoTa
@@ -142,21 +142,21 @@
             this.tb_MoTa.Location = new System.Drawing.Point(235, 383);
             this.tb_MoTa.Name = "tb_MoTa";
             this.tb_MoTa.Size = new System.Drawing.Size(350, 35);
-            this.tb_MoTa.TabIndex = 5;
+            this.tb_MoTa.TabIndex = 7;
             // 
             // tb_Hang
             // 
             this.tb_Hang.Location = new System.Drawing.Point(235, 325);
             this.tb_Hang.Name = "tb_Hang";
             this.tb_Hang.Size = new System.Drawing.Size(350, 35);
-            this.tb_Hang.TabIndex = 4;
+            this.tb_Hang.TabIndex = 6;
             // 
             // tb_SoLuong
             // 
             this.tb_SoLuong.Location = new System.Drawing.Point(235, 219);
             this.tb_SoLuong.Name = "tb_SoLuong";
             this.tb_SoLuong.Size = new System.Drawing.Size(350, 35);
-            this.tb_SoLuong.TabIndex = 3;
+            this.tb_SoLuong.TabIndex = 4;
             this.tb_SoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ID_KeyPress);
             // 
             // dtp_NgayNhapHang
@@ -165,7 +165,7 @@
             this.dtp_NgayNhapHang.Location = new System.Drawing.Point(235, 164);
             this.dtp_NgayNhapHang.Name = "dtp_NgayNhapHang";
             this.dtp_NgayNhapHang.Size = new System.Drawing.Size(350, 35);
-            this.dtp_NgayNhapHang.TabIndex = 2;
+            this.dtp_NgayNhapHang.TabIndex = 3;
             // 
             // label9
             // 
@@ -274,6 +274,70 @@
             this.dgv_DuLieu.TabIndex = 2;
             this.dgv_DuLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DuLieu_CellClick);
             // 
+            // cl_ID
+            // 
+            this.cl_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_ID.DataPropertyName = "ID";
+            this.cl_ID.HeaderText = "ID";
+            this.cl_ID.Name = "cl_ID";
+            this.cl_ID.Width = 72;
+            // 
+            // cl_Loai
+            // 
+            this.cl_Loai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_Loai.DataPropertyName = "Category";
+            this.cl_Loai.HeaderText = "Loại";
+            this.cl_Loai.Name = "cl_Loai";
+            this.cl_Loai.Width = 95;
+            // 
+            // cl_TenSanPham
+            // 
+            this.cl_TenSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_TenSanPham.DataPropertyName = "ProductName";
+            this.cl_TenSanPham.HeaderText = "Tên sản phẩm";
+            this.cl_TenSanPham.Name = "cl_TenSanPham";
+            this.cl_TenSanPham.Width = 185;
+            // 
+            // cl_SoLuong
+            // 
+            this.cl_SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_SoLuong.DataPropertyName = "Quantities";
+            this.cl_SoLuong.HeaderText = "Số Lượng";
+            this.cl_SoLuong.Name = "cl_SoLuong";
+            this.cl_SoLuong.Width = 140;
+            // 
+            // cl_Status
+            // 
+            this.cl_Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_Status.DataPropertyName = "Status";
+            this.cl_Status.HeaderText = "Trạng thái";
+            this.cl_Status.Name = "cl_Status";
+            this.cl_Status.Width = 144;
+            // 
+            // cl_PhanLoai
+            // 
+            this.cl_PhanLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_PhanLoai.DataPropertyName = "Classification";
+            this.cl_PhanLoai.HeaderText = "Phân loại";
+            this.cl_PhanLoai.Name = "cl_PhanLoai";
+            this.cl_PhanLoai.Width = 137;
+            // 
+            // cl_MoTa
+            // 
+            this.cl_MoTa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_MoTa.DataPropertyName = "Description";
+            this.cl_MoTa.HeaderText = "Mô tả";
+            this.cl_MoTa.Name = "cl_MoTa";
+            this.cl_MoTa.Width = 83;
+            // 
+            // cl_NgayNhap
+            // 
+            this.cl_NgayNhap.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cl_NgayNhap.DataPropertyName = "DateCreate";
+            this.cl_NgayNhap.HeaderText = "Ngày nhập hàng";
+            this.cl_NgayNhap.Name = "cl_NgayNhap";
+            this.cl_NgayNhap.Width = 204;
+            // 
             // toolStrip1
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -304,70 +368,6 @@
             this.btn_Xuat.Text = "Xuất Excel";
             this.btn_Xuat.ToolTipText = "Xuất Excel";
             this.btn_Xuat.Click += new System.EventHandler(this.btn_Xuat_Click);
-            // 
-            // cl_ID
-            // 
-            this.cl_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cl_ID.DataPropertyName = "ID";
-            this.cl_ID.HeaderText = "ID";
-            this.cl_ID.Name = "cl_ID";
-            this.cl_ID.Width = 72;
-            // 
-            // cl_Loai
-            // 
-            this.cl_Loai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cl_Loai.DataPropertyName = "Category";
-            this.cl_Loai.HeaderText = "Loại";
-            this.cl_Loai.Name = "cl_Loai";
-            this.cl_Loai.Width = 95;
-            // 
-            // cl_TenSanPham
-            // 
-            this.cl_TenSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cl_TenSanPham.DataPropertyName = "ProductName";
-            this.cl_TenSanPham.HeaderText = "Tên sản phẩm";
-            this.cl_TenSanPham.Name = "cl_TenSanPham";
-            this.cl_TenSanPham.Width = 202;
-            // 
-            // cl_SoLuong
-            // 
-            this.cl_SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cl_SoLuong.DataPropertyName = "Quantities";
-            this.cl_SoLuong.HeaderText = "Số Lượng";
-            this.cl_SoLuong.Name = "cl_SoLuong";
-            this.cl_SoLuong.Width = 152;
-            // 
-            // cl_Status
-            // 
-            this.cl_Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cl_Status.DataPropertyName = "Status";
-            this.cl_Status.HeaderText = "Trạng thái";
-            this.cl_Status.Name = "cl_Status";
-            this.cl_Status.Width = 157;
-            // 
-            // cl_PhanLoai
-            // 
-            this.cl_PhanLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cl_PhanLoai.DataPropertyName = "Classification";
-            this.cl_PhanLoai.HeaderText = "Phân loại";
-            this.cl_PhanLoai.Name = "cl_PhanLoai";
-            this.cl_PhanLoai.Width = 149;
-            // 
-            // cl_MoTa
-            // 
-            this.cl_MoTa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cl_MoTa.DataPropertyName = "Description";
-            this.cl_MoTa.HeaderText = "Mô tả";
-            this.cl_MoTa.Name = "cl_MoTa";
-            this.cl_MoTa.Width = 108;
-            // 
-            // cl_NgayNhap
-            // 
-            this.cl_NgayNhap.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cl_NgayNhap.DataPropertyName = "DateCreate";
-            this.cl_NgayNhap.HeaderText = "Ngày nhập hàng";
-            this.cl_NgayNhap.Name = "cl_NgayNhap";
-            this.cl_NgayNhap.Width = 204;
             // 
             // frmNhapHang
             // 

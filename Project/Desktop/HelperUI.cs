@@ -15,6 +15,7 @@ namespace Desktop
 {
     class HelperUI
     {
+        #region Function
         public static void ResetAllControls(Control form)
         {
             foreach (Control control in form.Controls)
@@ -67,6 +68,19 @@ namespace Desktop
             return type.Equals("Xe nâng") ? "01" : "02";
         }
 
+        public static string checkStatus(string status)
+        {
+            return status.Equals("01") ? "Đã duyệt" : "Đang chờ";
+        }
+
+        public static string checkLoai(string type)
+        {
+            return type.Equals("Xe nâng") ? "01" : "02";
+        }
+
+        #endregion
+
+        #region Load Combobox
         public static void loadData_cbbPhanLoai(ComboBox cbb)
         {
             List<string> itemList = new List<string>();
@@ -93,6 +107,10 @@ namespace Desktop
             cbb.DataSource = itemList;
         }
 
+
+        #endregion
+
+        #region AutoComplete
         public static void autoCompleteTenSanPham(TextBox tb, string Loai)
         {
             AutoCompleteStringCollection itemList = new AutoCompleteStringCollection();
@@ -109,14 +127,7 @@ namespace Desktop
             tb.AutoCompleteCustomSource = itemList;
         }
 
-        public static string checkLoai(string type)
-        {
-            return type.Equals("Xe nâng") ? "01" : "02";
-        }
+        #endregion
 
-        public static string checkStatus(string status)
-        {
-            return status.Equals("01") ? "Đã duyệt" : "Đang chờ";
-        }
     }
 }

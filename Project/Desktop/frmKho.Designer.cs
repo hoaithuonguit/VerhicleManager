@@ -82,7 +82,7 @@
             this.tb_TenSanPham.Location = new System.Drawing.Point(197, 107);
             this.tb_TenSanPham.Name = "tb_TenSanPham";
             this.tb_TenSanPham.Size = new System.Drawing.Size(369, 35);
-            this.tb_TenSanPham.TabIndex = 1;
+            this.tb_TenSanPham.TabIndex = 2;
             // 
             // cbb_PhanLoai
             // 
@@ -97,7 +97,7 @@
             this.cbb_PhanLoai.Location = new System.Drawing.Point(197, 60);
             this.cbb_PhanLoai.Name = "cbb_PhanLoai";
             this.cbb_PhanLoai.Size = new System.Drawing.Size(369, 37);
-            this.cbb_PhanLoai.TabIndex = 28;
+            this.cbb_PhanLoai.TabIndex = 1;
             this.cbb_PhanLoai.SelectedIndexChanged += new System.EventHandler(this.cbb_PhanLoai_SelectedIndexChanged);
             // 
             // label3

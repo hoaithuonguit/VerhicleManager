@@ -38,7 +38,9 @@ namespace Desktop
             frm.Parent = tp;
             frm.Dock = DockStyle.Fill;
             tabControl_Main.SelectedTab = tp;
+            frm.Closed += Form_Closed;
             frm.Show();
+            
         }
 
         private void strip_ChinhSuaThongTinCuaHang_Click(object sender, EventArgs e)
@@ -57,6 +59,7 @@ namespace Desktop
             frm.Parent = tp;
             frm.Dock = DockStyle.Fill;
             tabControl_Main.SelectedTab = tp;
+            frm.Closed += Form_Closed;
             frm.Show();
         }
 
@@ -70,6 +73,7 @@ namespace Desktop
             frm.Parent = tp;
             frm.Dock = DockStyle.Fill;
             tabControl_Main.SelectedTab = tp;
+            frm.Closed += Form_Closed;
             frm.Show();
         }
 
@@ -83,6 +87,7 @@ namespace Desktop
             frm.Parent = tp;
             frm.Dock = DockStyle.Fill;
             tabControl_Main.SelectedTab = tp;
+            frm.Closed += Form_Closed;
             frm.Show();
         }
 
@@ -97,6 +102,7 @@ namespace Desktop
             frm.Parent = tp;
             frm.Dock = DockStyle.Fill;
             tabControl_Main.SelectedTab = tp;
+            frm.Closed += Form_Closed;
             frm.Show();
         }
         #endregion
@@ -106,5 +112,11 @@ namespace Desktop
             toolStrip_Time.Text = DateTime.Now.ToString();
         }
 
+        #region Function 
+        void Form_Closed(object sender, EventArgs e)
+        {
+            tabControl_Main.TabPages.Remove(tabControl_Main.SelectedTab);
+        }
+        #endregion
     }
 }

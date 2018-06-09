@@ -62,10 +62,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_DuLieu = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.strip_Them = new System.Windows.Forms.ToolStripButton();
-            this.strip_Sua = new System.Windows.Forms.ToolStripButton();
-            this.btn_XuatExcel = new System.Windows.Forms.ToolStripButton();
             this.cl_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +71,10 @@
             this.cl_MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cl_PhanLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.strip_Them = new System.Windows.Forms.ToolStripButton();
+            this.strip_Sua = new System.Windows.Forms.ToolStripButton();
+            this.btn_XuatExcel = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DuLieu)).BeginInit();
@@ -134,7 +134,7 @@
             this.cbb_Loai.Location = new System.Drawing.Point(244, 60);
             this.cbb_Loai.Name = "cbb_Loai";
             this.cbb_Loai.Size = new System.Drawing.Size(511, 37);
-            this.cbb_Loai.TabIndex = 34;
+            this.cbb_Loai.TabIndex = 1;
             this.cbb_Loai.SelectedIndexChanged += new System.EventHandler(this.cbb_Loai_SelectedIndexChanged);
             // 
             // label14
@@ -153,6 +153,7 @@
             this.cbb_PhanLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_PhanLoai.FormattingEnabled = true;
             this.cbb_PhanLoai.Location = new System.Drawing.Point(244, 349);
+            this.cbb_PhanLoai.MaxDropDownItems = 7;
             this.cbb_PhanLoai.Name = "cbb_PhanLoai";
             this.cbb_PhanLoai.Size = new System.Drawing.Size(511, 37);
             this.cbb_PhanLoai.TabIndex = 32;
@@ -174,7 +175,7 @@
             this.tb_TenSanPham.Location = new System.Drawing.Point(244, 110);
             this.tb_TenSanPham.Name = "tb_TenSanPham";
             this.tb_TenSanPham.Size = new System.Drawing.Size(511, 35);
-            this.tb_TenSanPham.TabIndex = 1;
+            this.tb_TenSanPham.TabIndex = 2;
             // 
             // lb_ChonHinh5
             // 
@@ -221,7 +222,7 @@
             this.btn_ChonHinh5.Location = new System.Drawing.Point(244, 641);
             this.btn_ChonHinh5.Name = "btn_ChonHinh5";
             this.btn_ChonHinh5.Size = new System.Drawing.Size(185, 40);
-            this.btn_ChonHinh5.TabIndex = 24;
+            this.btn_ChonHinh5.TabIndex = 13;
             this.btn_ChonHinh5.Text = "Chọn hình ảnh";
             this.btn_ChonHinh5.UseVisualStyleBackColor = true;
             this.btn_ChonHinh5.Click += new System.EventHandler(this.btn_ChonHinh5_Click);
@@ -231,7 +232,7 @@
             this.btn_ChonHinh3.Location = new System.Drawing.Point(244, 543);
             this.btn_ChonHinh3.Name = "btn_ChonHinh3";
             this.btn_ChonHinh3.Size = new System.Drawing.Size(185, 40);
-            this.btn_ChonHinh3.TabIndex = 23;
+            this.btn_ChonHinh3.TabIndex = 11;
             this.btn_ChonHinh3.Text = "Chọn hình ảnh";
             this.btn_ChonHinh3.UseVisualStyleBackColor = true;
             this.btn_ChonHinh3.Click += new System.EventHandler(this.btn_ChonHinh3_Click);
@@ -241,7 +242,7 @@
             this.btn_ChonHinh4.Location = new System.Drawing.Point(244, 592);
             this.btn_ChonHinh4.Name = "btn_ChonHinh4";
             this.btn_ChonHinh4.Size = new System.Drawing.Size(185, 40);
-            this.btn_ChonHinh4.TabIndex = 22;
+            this.btn_ChonHinh4.TabIndex = 12;
             this.btn_ChonHinh4.Text = "Chọn hình ảnh";
             this.btn_ChonHinh4.UseVisualStyleBackColor = true;
             this.btn_ChonHinh4.Click += new System.EventHandler(this.btn_ChonHinh4_Click);
@@ -251,7 +252,7 @@
             this.btn_ChonHinh2.Location = new System.Drawing.Point(244, 494);
             this.btn_ChonHinh2.Name = "btn_ChonHinh2";
             this.btn_ChonHinh2.Size = new System.Drawing.Size(185, 40);
-            this.btn_ChonHinh2.TabIndex = 21;
+            this.btn_ChonHinh2.TabIndex = 10;
             this.btn_ChonHinh2.Text = "Chọn hình ảnh";
             this.btn_ChonHinh2.UseVisualStyleBackColor = true;
             this.btn_ChonHinh2.Click += new System.EventHandler(this.btn_ChonHinh2_Click);
@@ -261,7 +262,7 @@
             this.btn_ChonHinh1.Location = new System.Drawing.Point(244, 445);
             this.btn_ChonHinh1.Name = "btn_ChonHinh1";
             this.btn_ChonHinh1.Size = new System.Drawing.Size(185, 40);
-            this.btn_ChonHinh1.TabIndex = 20;
+            this.btn_ChonHinh1.TabIndex = 9;
             this.btn_ChonHinh1.Text = "Chọn hình ảnh";
             this.btn_ChonHinh1.UseVisualStyleBackColor = true;
             this.btn_ChonHinh1.Click += new System.EventHandler(this.btn_ChonHinh1_Click);
@@ -283,28 +284,28 @@
             this.tb_MoTa.Location = new System.Drawing.Point(244, 302);
             this.tb_MoTa.Name = "tb_MoTa";
             this.tb_MoTa.Size = new System.Drawing.Size(511, 35);
-            this.tb_MoTa.TabIndex = 5;
+            this.tb_MoTa.TabIndex = 6;
             // 
             // tb_HangSanXuat
             // 
             this.tb_HangSanXuat.Location = new System.Drawing.Point(244, 254);
             this.tb_HangSanXuat.Name = "tb_HangSanXuat";
             this.tb_HangSanXuat.Size = new System.Drawing.Size(511, 35);
-            this.tb_HangSanXuat.TabIndex = 4;
+            this.tb_HangSanXuat.TabIndex = 5;
             // 
             // tb_Doi
             // 
             this.tb_Doi.Location = new System.Drawing.Point(244, 206);
             this.tb_Doi.Name = "tb_Doi";
             this.tb_Doi.Size = new System.Drawing.Size(511, 35);
-            this.tb_Doi.TabIndex = 3;
+            this.tb_Doi.TabIndex = 4;
             // 
             // tb_Hieu
             // 
             this.tb_Hieu.Location = new System.Drawing.Point(244, 158);
             this.tb_Hieu.Name = "tb_Hieu";
             this.tb_Hieu.Size = new System.Drawing.Size(511, 35);
-            this.tb_Hieu.TabIndex = 2;
+            this.tb_Hieu.TabIndex = 3;
             // 
             // label12
             // 
@@ -441,46 +442,6 @@
             this.dgv_DuLieu.TabIndex = 2;
             this.dgv_DuLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DuLieu_CellClick);
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.strip_Them,
-            this.strip_Sua,
-            this.btn_XuatExcel});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 31);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(961, 32);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // strip_Them
-            // 
-            this.strip_Them.Image = global::Desktop.Properties.Resources.icons8_plus_48;
-            this.strip_Them.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.strip_Them.Name = "strip_Them";
-            this.strip_Them.Size = new System.Drawing.Size(84, 29);
-            this.strip_Them.Text = "Thêm";
-            this.strip_Them.Click += new System.EventHandler(this.strip_Them_Click);
-            // 
-            // strip_Sua
-            // 
-            this.strip_Sua.Image = global::Desktop.Properties.Resources.icons8_pencil_40;
-            this.strip_Sua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.strip_Sua.Name = "strip_Sua";
-            this.strip_Sua.Size = new System.Drawing.Size(70, 29);
-            this.strip_Sua.Text = "Sửa";
-            this.strip_Sua.Click += new System.EventHandler(this.strip_Sua_Click);
-            // 
-            // btn_XuatExcel
-            // 
-            this.btn_XuatExcel.Image = global::Desktop.Properties.Resources.icons8_export_csv_40;
-            this.btn_XuatExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_XuatExcel.Name = "btn_XuatExcel";
-            this.btn_XuatExcel.Size = new System.Drawing.Size(119, 29);
-            this.btn_XuatExcel.Text = "Xuất Excel";
-            this.btn_XuatExcel.Click += new System.EventHandler(this.btn_XuatExcel_Click);
-            // 
             // cl_ID
             // 
             this.cl_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -553,6 +514,46 @@
             this.cl_PhanLoai.Name = "cl_PhanLoai";
             this.cl_PhanLoai.Width = 149;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.strip_Them,
+            this.strip_Sua,
+            this.btn_XuatExcel});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 31);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(961, 32);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // strip_Them
+            // 
+            this.strip_Them.Image = global::Desktop.Properties.Resources.icons8_plus_48;
+            this.strip_Them.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.strip_Them.Name = "strip_Them";
+            this.strip_Them.Size = new System.Drawing.Size(84, 29);
+            this.strip_Them.Text = "Thêm";
+            this.strip_Them.Click += new System.EventHandler(this.strip_Them_Click);
+            // 
+            // strip_Sua
+            // 
+            this.strip_Sua.Image = global::Desktop.Properties.Resources.icons8_pencil_40;
+            this.strip_Sua.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.strip_Sua.Name = "strip_Sua";
+            this.strip_Sua.Size = new System.Drawing.Size(70, 29);
+            this.strip_Sua.Text = "Sửa";
+            this.strip_Sua.Click += new System.EventHandler(this.strip_Sua_Click);
+            // 
+            // btn_XuatExcel
+            // 
+            this.btn_XuatExcel.Image = global::Desktop.Properties.Resources.icons8_export_csv_40;
+            this.btn_XuatExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_XuatExcel.Name = "btn_XuatExcel";
+            this.btn_XuatExcel.Size = new System.Drawing.Size(119, 29);
+            this.btn_XuatExcel.Text = "Xuất Excel";
+            this.btn_XuatExcel.Click += new System.EventHandler(this.btn_XuatExcel_Click);
+            // 
             // frmThongTinSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -562,7 +563,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmThongTinSanPham";
             this.Text = "Thông tin sản phẩm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmThongTinSanPham_FormClosing);
             this.Load += new System.EventHandler(this.frmThongTinSanPham_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
