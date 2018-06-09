@@ -344,7 +344,10 @@ namespace Desktop
 
         private void frmThongTinSanPham_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            if (MessageBox.Show("Thoát ??", "Thoát !!", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
         #endregion
     }

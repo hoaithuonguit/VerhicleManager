@@ -143,7 +143,7 @@ namespace Desktop
                     {
                         sv.ImportProduct(pro, NgayNhap);
                         fillData();
-                        MessageBox.Show("Đã thêm thông tin sản phẩm!!", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Đã thêm thông tin nhập hàng!!", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         HelperUI.ResetAllControls(groupBox1);
                     }
                 }

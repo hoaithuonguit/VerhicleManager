@@ -71,7 +71,6 @@ namespace Desktop
         {
             List<string> itemList = new List<string>();
             ProductService sv = new ProductService();
-            //var query = from a in conText.MasterDatas where a.Keys.Equals(Type) select a.Value;
             itemList = sv.GetAllClassification();
             cbb.DataSource = itemList;
         }
@@ -97,21 +96,16 @@ namespace Desktop
         public static void autoCompleteTenSanPham(TextBox tb, string Loai)
         {
             AutoCompleteStringCollection itemList = new AutoCompleteStringCollection();
-            XeNangEntities conText = new XeNangEntities();
-            var query = (from a in conText.SanPhams
-                         where (a.Loai.Equals(Loai))
-                         select a.Ten);
-            itemList.AddRange(query.ToArray());
+            ProductService sv = new ProductService();
+            itemList.AddRange(sv.GetAllProductName(Loai));
             tb.AutoCompleteCustomSource = itemList;
         }
 
         public static void autoCompleteTenSanPham(TextBox tb)
         {
             AutoCompleteStringCollection itemList = new AutoCompleteStringCollection();
-            XeNangEntities conText = new XeNangEntities();
-            var query = (from a in conText.SanPhams
-                         select a.Ten);
-            itemList.AddRange(query.ToArray());
+            ProductService sv = new ProductService();
+            itemList.AddRange(sv.GetAllProductName());
             tb.AutoCompleteCustomSource = itemList;
         }
 
