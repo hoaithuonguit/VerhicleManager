@@ -30,5 +30,26 @@ namespace Desktop
             tb_TenCuaHang.Text = Helper.GetNameStore();
             tb_SanPham.Text = Helper.GetTitleStore();
         }
+
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult dlg = MessageBox.Show("Xác nhận thay đổi thông tin cửa hàng!!", "Thông báo!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (dlg.Equals(DialogResult.OK))
+                {
+                    Name = tb_TenCuaHang.Text.ToString();
+                    Address = tb_DiaChi.Text.ToString();
+                    Title = tb_SanPham.Text.ToString();
+                    Helper.SetStoreInformation(Name, Title, Address);
+                    MessageBox.Show("Thay đổi thành công !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch
+            {
+
+            }
+
+        }
     }
 }
