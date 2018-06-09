@@ -42,6 +42,8 @@
             this.cl_TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tb_Email = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btn_Xuat = new System.Windows.Forms.Button();
             this.btn_Duyet = new System.Windows.Forms.Button();
             this.tb_TenNguoiDat = new System.Windows.Forms.TextBox();
@@ -58,8 +60,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbb_TrangThai = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tb_Email = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DuLieu)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -224,6 +224,23 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Duyệt đơn hàng:";
             // 
+            // tb_Email
+            // 
+            this.tb_Email.Enabled = false;
+            this.tb_Email.Location = new System.Drawing.Point(223, 213);
+            this.tb_Email.Name = "tb_Email";
+            this.tb_Email.Size = new System.Drawing.Size(368, 35);
+            this.tb_Email.TabIndex = 15;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 216);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(80, 29);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Email:";
+            // 
             // btn_Xuat
             // 
             this.btn_Xuat.Location = new System.Drawing.Point(223, 514);
@@ -367,22 +384,6 @@
             this.label1.Size = new System.Drawing.Size(215, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Xem đơn đặt hàng:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 216);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 29);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Email:";
-            // 
-            // tb_Email
-            // 
-            this.tb_Email.Location = new System.Drawing.Point(223, 213);
-            this.tb_Email.Name = "tb_Email";
-            this.tb_Email.Size = new System.Drawing.Size(368, 35);
-            this.tb_Email.TabIndex = 15;
             // 
             // frmDonDatHang
             // 
