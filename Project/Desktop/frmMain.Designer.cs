@@ -36,18 +36,18 @@
             this.strip_ThemThongTinSanPham = new System.Windows.Forms.ToolStripMenuItem();
             this.strip_NhapHang = new System.Windows.Forms.ToolStripMenuItem();
             this.strip_BanHang = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_XemDonDatHang = new System.Windows.Forms.ToolStripMenuItem();
             this.strip_QuanLiKho = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip_Time = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl_Main = new System.Windows.Forms.TabControl();
-            this.btn_XemDonDatHang = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hệThốngToolStripMenuItem,
@@ -55,7 +55,7 @@
             this.strip_QuanLiKho});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1781, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(1527, 49);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,14 +66,14 @@
             this.strip_Thoat});
             this.hệThốngToolStripMenuItem.Image = global::Desktop.Properties.Resources.agt_update_drivers;
             this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
-            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(152, 36);
+            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(179, 45);
             this.hệThốngToolStripMenuItem.Text = "Hệ thống";
             // 
             // strip_ChinhSuaThongTinCuaHang
             // 
             this.strip_ChinhSuaThongTinCuaHang.Image = global::Desktop.Properties.Resources.icons8_pencil_40;
             this.strip_ChinhSuaThongTinCuaHang.Name = "strip_ChinhSuaThongTinCuaHang";
-            this.strip_ChinhSuaThongTinCuaHang.Size = new System.Drawing.Size(419, 36);
+            this.strip_ChinhSuaThongTinCuaHang.Size = new System.Drawing.Size(499, 46);
             this.strip_ChinhSuaThongTinCuaHang.Text = "Chỉnh sửa thông tin cửa hàng";
             this.strip_ChinhSuaThongTinCuaHang.Click += new System.EventHandler(this.strip_ChinhSuaThongTinCuaHang_Click);
             // 
@@ -81,7 +81,7 @@
             // 
             this.strip_Thoat.Image = global::Desktop.Properties.Resources.icons8_shutdown_80;
             this.strip_Thoat.Name = "strip_Thoat";
-            this.strip_Thoat.Size = new System.Drawing.Size(419, 36);
+            this.strip_Thoat.Size = new System.Drawing.Size(499, 46);
             this.strip_Thoat.Text = "Thoát";
             this.strip_Thoat.Click += new System.EventHandler(this.strip_Thoat_Click);
             // 
@@ -94,14 +94,14 @@
             this.btn_XemDonDatHang});
             this.cậpNhậtDữLiệuToolStripMenuItem.Image = global::Desktop.Properties.Resources.icons8_plus_48;
             this.cậpNhậtDữLiệuToolStripMenuItem.Name = "cậpNhậtDữLiệuToolStripMenuItem";
-            this.cậpNhậtDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(228, 36);
+            this.cậpNhậtDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(272, 45);
             this.cậpNhậtDữLiệuToolStripMenuItem.Text = "Cập nhật dữ liệu";
             // 
             // strip_ThemThongTinSanPham
             // 
             this.strip_ThemThongTinSanPham.Image = global::Desktop.Properties.Resources.lorrygreen1;
             this.strip_ThemThongTinSanPham.Name = "strip_ThemThongTinSanPham";
-            this.strip_ThemThongTinSanPham.Size = new System.Drawing.Size(380, 36);
+            this.strip_ThemThongTinSanPham.Size = new System.Drawing.Size(450, 46);
             this.strip_ThemThongTinSanPham.Text = "Thêm thông tin sản phẩm";
             this.strip_ThemThongTinSanPham.Click += new System.EventHandler(this.strip_ThemThongTinSanPham_Click);
             // 
@@ -109,7 +109,7 @@
             // 
             this.strip_NhapHang.Image = global::Desktop.Properties.Resources.icons8_input_48;
             this.strip_NhapHang.Name = "strip_NhapHang";
-            this.strip_NhapHang.Size = new System.Drawing.Size(380, 36);
+            this.strip_NhapHang.Size = new System.Drawing.Size(450, 46);
             this.strip_NhapHang.Text = "Nhập hàng";
             this.strip_NhapHang.Click += new System.EventHandler(this.strip_NhapHang_Click);
             // 
@@ -117,15 +117,23 @@
             // 
             this.strip_BanHang.Image = global::Desktop.Properties.Resources.sell_icon;
             this.strip_BanHang.Name = "strip_BanHang";
-            this.strip_BanHang.Size = new System.Drawing.Size(380, 36);
+            this.strip_BanHang.Size = new System.Drawing.Size(450, 46);
             this.strip_BanHang.Text = "Bán hàng";
             this.strip_BanHang.Click += new System.EventHandler(this.strip_BanHang_Click);
+            // 
+            // btn_XemDonDatHang
+            // 
+            this.btn_XemDonDatHang.Image = global::Desktop.Properties.Resources.BTmoi;
+            this.btn_XemDonDatHang.Name = "btn_XemDonDatHang";
+            this.btn_XemDonDatHang.Size = new System.Drawing.Size(450, 46);
+            this.btn_XemDonDatHang.Text = "Xem đơn đặt hàng";
+            this.btn_XemDonDatHang.Click += new System.EventHandler(this.btn_XemDonDatHang_Click);
             // 
             // strip_QuanLiKho
             // 
             this.strip_QuanLiKho.Image = global::Desktop.Properties.Resources.find;
             this.strip_QuanLiKho.Name = "strip_QuanLiKho";
-            this.strip_QuanLiKho.Size = new System.Drawing.Size(175, 36);
+            this.strip_QuanLiKho.Size = new System.Drawing.Size(206, 45);
             this.strip_QuanLiKho.Text = "Quản lí kho";
             this.strip_QuanLiKho.Click += new System.EventHandler(this.strip_QuanLiKho_Click);
             // 
@@ -137,7 +145,7 @@
             this.toolStrip_Time});
             this.statusStrip1.Location = new System.Drawing.Point(0, 935);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1781, 37);
+            this.statusStrip1.Size = new System.Drawing.Size(1527, 37);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -151,25 +159,17 @@
             // tabControl_Main
             // 
             this.tabControl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl_Main.Location = new System.Drawing.Point(0, 40);
+            this.tabControl_Main.Location = new System.Drawing.Point(0, 49);
             this.tabControl_Main.Name = "tabControl_Main";
             this.tabControl_Main.SelectedIndex = 0;
-            this.tabControl_Main.Size = new System.Drawing.Size(1781, 895);
+            this.tabControl_Main.Size = new System.Drawing.Size(1527, 886);
             this.tabControl_Main.TabIndex = 5;
-            // 
-            // btn_XemDonDatHang
-            // 
-            this.btn_XemDonDatHang.Image = global::Desktop.Properties.Resources.BTmoi;
-            this.btn_XemDonDatHang.Name = "btn_XemDonDatHang";
-            this.btn_XemDonDatHang.Size = new System.Drawing.Size(380, 36);
-            this.btn_XemDonDatHang.Text = "Xem đơn đặt hàng";
-            this.btn_XemDonDatHang.Click += new System.EventHandler(this.btn_XemDonDatHang_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1781, 972);
+            this.ClientSize = new System.Drawing.Size(1527, 972);
             this.Controls.Add(this.tabControl_Main);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);

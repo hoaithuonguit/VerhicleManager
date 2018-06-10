@@ -77,6 +77,7 @@ namespace Desktop
             dgv_DuLieu.AutoGenerateColumns = false;
             ls = sv.GetAllOrdersAreWaiting();
             dgv_DuLieu.DataSource = ls;
+            dgv_DuLieu.ForeColor = Color.Black;
         }
 
         private void dgv_DuLieu_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -57,17 +57,17 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btn_KiemTra);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(595, 928);
+            this.groupBox1.Size = new System.Drawing.Size(652, 928);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin kho";
             // 
             // btn_Xuat
             // 
-            this.btn_Xuat.Location = new System.Drawing.Point(197, 262);
+            this.btn_Xuat.Location = new System.Drawing.Point(239, 282);
             this.btn_Xuat.Name = "btn_Xuat";
             this.btn_Xuat.Size = new System.Drawing.Size(168, 45);
             this.btn_Xuat.TabIndex = 29;
@@ -79,9 +79,9 @@
             // 
             this.tb_TenSanPham.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.tb_TenSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.tb_TenSanPham.Location = new System.Drawing.Point(197, 107);
+            this.tb_TenSanPham.Location = new System.Drawing.Point(239, 125);
             this.tb_TenSanPham.Name = "tb_TenSanPham";
-            this.tb_TenSanPham.Size = new System.Drawing.Size(369, 35);
+            this.tb_TenSanPham.Size = new System.Drawing.Size(369, 41);
             this.tb_TenSanPham.TabIndex = 2;
             // 
             // cbb_PhanLoai
@@ -94,9 +94,9 @@
             this.cbb_PhanLoai.Items.AddRange(new object[] {
             "Xe nâng",
             "Phụ tùng"});
-            this.cbb_PhanLoai.Location = new System.Drawing.Point(197, 60);
+            this.cbb_PhanLoai.Location = new System.Drawing.Point(239, 60);
             this.cbb_PhanLoai.Name = "cbb_PhanLoai";
-            this.cbb_PhanLoai.Size = new System.Drawing.Size(369, 37);
+            this.cbb_PhanLoai.Size = new System.Drawing.Size(369, 44);
             this.cbb_PhanLoai.TabIndex = 1;
             this.cbb_PhanLoai.SelectedIndexChanged += new System.EventHandler(this.cbb_PhanLoai_SelectedIndexChanged);
             // 
@@ -105,13 +105,13 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(16, 63);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 29);
+            this.label3.Size = new System.Drawing.Size(217, 36);
             this.label3.TabIndex = 27;
             this.label3.Text = "Loại sản phẩm:";
             // 
             // btn_KiemTra
             // 
-            this.btn_KiemTra.Location = new System.Drawing.Point(197, 173);
+            this.btn_KiemTra.Location = new System.Drawing.Point(239, 197);
             this.btn_KiemTra.Name = "btn_KiemTra";
             this.btn_KiemTra.Size = new System.Drawing.Size(168, 52);
             this.btn_KiemTra.TabIndex = 25;
@@ -122,9 +122,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 110);
+            this.label1.Location = new System.Drawing.Point(16, 128);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 29);
+            this.label1.Size = new System.Drawing.Size(211, 36);
             this.label1.TabIndex = 23;
             this.label1.Text = "Tên sản phẩm:";
             // 
@@ -134,10 +134,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dgv_DuLieu);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(613, 12);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(670, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(899, 928);
+            this.groupBox2.Size = new System.Drawing.Size(842, 928);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dữ liệu kho";
@@ -152,10 +152,10 @@
             this.cl_SoLuongTon,
             this.cl_NgayUpdate});
             this.dgv_DuLieu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_DuLieu.Location = new System.Drawing.Point(3, 31);
+            this.dgv_DuLieu.Location = new System.Drawing.Point(3, 37);
             this.dgv_DuLieu.Name = "dgv_DuLieu";
             this.dgv_DuLieu.RowTemplate.Height = 28;
-            this.dgv_DuLieu.Size = new System.Drawing.Size(893, 894);
+            this.dgv_DuLieu.Size = new System.Drawing.Size(836, 888);
             this.dgv_DuLieu.TabIndex = 3;
             // 
             // cl_ID
@@ -164,7 +164,7 @@
             this.cl_ID.DataPropertyName = "ID";
             this.cl_ID.HeaderText = "ID";
             this.cl_ID.Name = "cl_ID";
-            this.cl_ID.Width = 72;
+            this.cl_ID.Width = 80;
             // 
             // cl_Loai
             // 
@@ -172,7 +172,7 @@
             this.cl_Loai.DataPropertyName = "Category";
             this.cl_Loai.HeaderText = "Loại";
             this.cl_Loai.Name = "cl_Loai";
-            this.cl_Loai.Width = 95;
+            this.cl_Loai.Width = 108;
             // 
             // cl_TenSanPham
             // 
@@ -180,7 +180,7 @@
             this.cl_TenSanPham.DataPropertyName = "ProductName";
             this.cl_TenSanPham.HeaderText = "Tên sản phẩm";
             this.cl_TenSanPham.Name = "cl_TenSanPham";
-            this.cl_TenSanPham.Width = 202;
+            this.cl_TenSanPham.Width = 239;
             // 
             // cl_SoLuongTon
             // 
@@ -188,7 +188,7 @@
             this.cl_SoLuongTon.DataPropertyName = "Inventories";
             this.cl_SoLuongTon.HeaderText = "Số lượng tồn";
             this.cl_SoLuongTon.Name = "cl_SoLuongTon";
-            this.cl_SoLuongTon.Width = 184;
+            this.cl_SoLuongTon.Width = 221;
             // 
             // cl_NgayUpdate
             // 
@@ -196,12 +196,13 @@
             this.cl_NgayUpdate.DataPropertyName = "LastUpdate";
             this.cl_NgayUpdate.HeaderText = "Ngày cập nhật ";
             this.cl_NgayUpdate.Name = "cl_NgayUpdate";
-            this.cl_NgayUpdate.Width = 207;
+            this.cl_NgayUpdate.Width = 251;
             // 
             // frmKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(1524, 952);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
