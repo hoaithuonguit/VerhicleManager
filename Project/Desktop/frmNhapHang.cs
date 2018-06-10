@@ -78,6 +78,7 @@ namespace Desktop
             HelperUI.loadData_cbbTinhTrang(cbb_TinhTrang);
             dgv_DuLieu.AutoGenerateColumns = false;
             fillData();
+            dgv_DuLieu.ForeColor = Color.Black;
         }
 
         private void btn_Them_Click(object sender, EventArgs e)

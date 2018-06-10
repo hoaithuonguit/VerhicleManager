@@ -46,7 +46,7 @@ namespace Desktop
             HelperUI.autoCompleteTenSanPham(tb_TenSanPham, HelperUI.checkLoai(cbb_LoaiSanPham.Text.ToString()));
             dgv_DuLieu.AutoGenerateColumns = false;
             fillData();
-
+            dgv_DuLieu.ForeColor = Color.Black;
         }
 
         private void btn_Them_Click(object sender, EventArgs e)
@@ -126,6 +126,5 @@ namespace Desktop
         }
 
         #endregion
-
     }
 }

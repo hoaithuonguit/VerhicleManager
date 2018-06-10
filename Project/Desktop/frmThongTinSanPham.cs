@@ -53,6 +53,16 @@ namespace Desktop
             Image4 = string.Empty;
             Image5 = string.Empty;
         }
+        public void resetControl()
+        {
+            tb_Doi.Text = string.Empty;
+            tb_HangSanXuat.Text = string.Empty;
+            tb_Hieu.Text = string.Empty;
+            tb_MoTa.Text = string.Empty;
+            tb_TenSanPham.Text = string.Empty;
+            cbb_PhanLoai.Text = string.Empty;
+            cbb_TinhTrang.Text = string.Empty;
+        }
         #endregion
         #region btnChonHinh
         private void btn_ChonHinh1_Click(object sender, EventArgs e)
@@ -61,8 +71,8 @@ namespace Desktop
             {
                 dlg.CheckFileExists = false;
                 dlg.ShowDialog();
-                btn_ChonHinh1.Text = "Chọn lại";
                 Image1 = dlg.FileName;
+                if(!string.IsNullOrEmpty(Image1)) btn_ChonHinh1.Text = "Chọn lại";                
             }
         }
 
@@ -72,8 +82,10 @@ namespace Desktop
             {
                 dlg.CheckFileExists = false;
                 dlg.ShowDialog();
-                btn_ChonHinh2.Text = "Chọn lại";
                 Image2 = dlg.FileName;
+                if (!string.IsNullOrEmpty(Image2)) btn_ChonHinh2.Text = "Chọn lại";
+
+
             }
         }
 
@@ -83,8 +95,8 @@ namespace Desktop
             {
                 dlg.CheckFileExists = false;
                 dlg.ShowDialog();
-                btn_ChonHinh3.Text = "Chọn lại";
                 Image3 = dlg.FileName;
+                if (!string.IsNullOrEmpty(Image3)) btn_ChonHinh3.Text = "Chọn lại";
             }
         }
 
@@ -94,8 +106,8 @@ namespace Desktop
             {
                 dlg.CheckFileExists = false;
                 dlg.ShowDialog();
-                btn_ChonHinh4.Text = "Chọn lại";
                 Image4 = dlg.FileName;
+                if (!string.IsNullOrEmpty(Image4)) btn_ChonHinh4.Text = "Chọn lại";
             }
         }
 
@@ -105,8 +117,8 @@ namespace Desktop
             {
                 dlg.CheckFileExists = false;
                 dlg.ShowDialog();
-                btn_ChonHinh5.Text = "Chọn lại";
                 Image5 = dlg.FileName;
+                if (!string.IsNullOrEmpty(Image5)) btn_ChonHinh5.Text = "Chọn lại";
             }
         }
 
@@ -145,6 +157,7 @@ namespace Desktop
         }
         #endregion
         #region Envent
+        //Fix MoTa 10/06/2018 4:34pm - Done
         private void btn_XuatExcel_Click(object sender, EventArgs e)
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
@@ -174,7 +187,7 @@ namespace Desktop
             HelperUI.loadData_cbbTinhTrang(cbb_TinhTrang);
             //HelperUI.loadData_cbbPhanLoai(cbb_PhanLoai);
             dgv_DuLieu.AutoGenerateColumns = false;
-            
+            dgv_DuLieu.ForeColor = Color.Black;
         }
 
         private void strip_Them_Click(object sender, EventArgs e)
@@ -208,11 +221,6 @@ namespace Desktop
                     MessageBox.Show("Vui lòng điền hãng sản phẩm!!", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tb_HangSanXuat.Focus();
                 }
-                else if (string.IsNullOrEmpty(tb_MoTa.Text))
-                {
-                    MessageBox.Show("Vui lòng điền mô tả sản phẩm!!", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    tb_MoTa.Focus();
-                }
                 else if (string.IsNullOrEmpty(cbb_PhanLoai.Text))
                 {
                     MessageBox.Show("Vui lòng chọn phân loại sản phẩm!!", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -231,7 +239,7 @@ namespace Desktop
                     pro.Loai = Loai;
                     pro.PhanLoai = PhanLoai;
                     pro.TinhTrang = TinhTrang;
-                    pro.Image1 = Image1;
+                    if (!string.IsNullOrEmpty(Image1)) pro.Image1 = Image1;
                     if (!string.IsNullOrEmpty(Image2)) pro.Image2 = Image2;
                     if (!string.IsNullOrEmpty(Image3)) pro.Image3 = Image3;
                     if (!string.IsNullOrEmpty(Image4)) pro.Image4 = Image4;
@@ -242,8 +250,8 @@ namespace Desktop
                         sv.AddProduct(pro, Loai);
                         MessageBox.Show("Đã thêm sản phẩm!!", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         fillData();
-                        HelperUI.ResetAllControls(groupBox1);
                         resetTextBtn();
+                        resetControl();
                     }
                 }
                               
