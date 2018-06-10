@@ -50,9 +50,9 @@ namespace Data.Repositories
                         ID = ID
                     };
                     if (product.Image2 != null) productInfomation.Image2 = product.Image2;
-                    if (product.Image3 != null) productInfomation.Image2 = product.Image3;
-                    if (product.Image4 != null) productInfomation.Image2 = product.Image4;
-                    if (product.Image5 != null) productInfomation.Image2 = product.Image5;
+                    if (product.Image3 != null) productInfomation.Image3 = product.Image3;
+                    if (product.Image4 != null) productInfomation.Image4 = product.Image4;
+                    if (product.Image5 != null) productInfomation.Image5 = product.Image5;
                     dbContext.ThongTinSanPhams.Add(productInfomation);
 
                     dbContext.SaveChanges();
@@ -1012,7 +1012,6 @@ namespace Data.Repositories
                 return Constant.MESSAGE_SUCCESS;
             }
         }
-
 
     }
 }

@@ -61,11 +61,9 @@ namespace Services.Abstract
 
         #region GetAndSetStoreInformation
         string GetNameStore();
-        void SetNameStore(string name);
         string GetTitleStore();
-        void SetTitleStore(string title);
         string GetAddressStore();
-        void SetAddressStore(string address);
+        void SetStoreInformation(string name, string title, string address);
         #endregion
 
     }
