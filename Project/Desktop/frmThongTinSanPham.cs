@@ -40,6 +40,19 @@ namespace Desktop
             ls = sv.GetAllProduct(Loai);
             dgv_DuLieu.DataSource = ls;
         }
+        public void resetTextBtn()
+        {
+            btn_ChonHinh1.Text = "Chọn hình ảnh";
+            btn_ChonHinh2.Text = "Chọn hình ảnh";
+            btn_ChonHinh3.Text = "Chọn hình ảnh";
+            btn_ChonHinh4.Text = "Chọn hình ảnh";
+            btn_ChonHinh5.Text = "Chọn hình ảnh";
+            Image1 = string.Empty;
+            Image2 = string.Empty;
+            Image3 = string.Empty;
+            Image4 = string.Empty;
+            Image5 = string.Empty;
+        }
         #endregion
         #region btnChonHinh
         private void btn_ChonHinh1_Click(object sender, EventArgs e)
@@ -230,6 +243,7 @@ namespace Desktop
                         MessageBox.Show("Đã thêm sản phẩm!!", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         fillData();
                         HelperUI.ResetAllControls(groupBox1);
+                        resetTextBtn();
                     }
                 }
                               
