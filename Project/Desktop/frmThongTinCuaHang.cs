@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Data.Infrastructure;
+using Services;
 
 namespace Desktop
 {
@@ -26,22 +27,24 @@ namespace Desktop
 
         private void frmThongTinCuaHang_Load(object sender, EventArgs e)
         {
-            tb_DiaChi.Text = Helper.GetAddrStore();
-            tb_TenCuaHang.Text = Helper.GetNameStore();
-            tb_SanPham.Text = Helper.GetTitleStore();
+            ProductService sv = new ProductService();
+            tb_DiaChi.Text = sv.GetAddressStore();
+            tb_TenCuaHang.Text = sv.GetNameStore();
+            tb_SanPham.Text = sv.GetTitleStore();
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
             try
             {
+                ProductService sv = new ProductService();
                 DialogResult dlg = MessageBox.Show("Xác nhận thay đổi thông tin cửa hàng!!", "Thông báo!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (dlg.Equals(DialogResult.OK))
                 {
                     Name = tb_TenCuaHang.Text.ToString();
                     Address = tb_DiaChi.Text.ToString();
                     Title = tb_SanPham.Text.ToString();
-                    Helper.SetStoreInformation(Name, Title, Address);
+                    sv.SetStoreInformation(Name, Title, Address);
                     MessageBox.Show("Thay đổi thành công !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
