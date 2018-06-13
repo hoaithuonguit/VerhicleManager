@@ -1,0 +1,204 @@
+﻿
+@{
+    ViewBag.Title = "Đặt hàng";
+}
+@using website.Models
+@model website.Models.OrderProductModel
+<div class="clearfix"></div>
+<div class="container_fullwidth">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h5 class="title contact-title">
+                    Đặt hàng của chúng tôi
+                </h5>
+                <div class="clearfix">
+                </div>
+                <div class="clearfix">
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="contact-infoormation">
+                            <h5>
+                                Thông tin cửa hàng
+                            </h5>
+
+                            <h5>Cửa Hàng Trung - Lộc - Phát</h5>
+                            <h6>Chuyên kinh doanh</h6>
+                            <br />
+                            <h6>Phốt ben thủy lợi</h6>
+                            <br />
+                            <h6>Phốt dầu lò xo, phốt bơm</h6>
+                            <br />
+                            <h6>Sin hộp xe cơ giới, sin bơm</h6>
+                        </div>
+                    </div>
+
+                    @using (Html.BeginForm())
+                    {
+                        <div class="col-md-8">
+                            <div class="ContactForm">
+                                <h5>
+                                    Để lại thông tin của bạn
+                                </h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>
+                                            Tên bạn
+                                            <strong class="red">
+                                                *
+                                            </strong>
+                                        </label>
+
+                                        <div>
+                                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                                            <div class="red">
+                                                <br />
+
+                                                @Html.ValidationMessageFor(m => m.Name)
+                                                <br />
+                                            </div>
+                                        </div>
+                                        @*<input class="inputfild" type="text" name="">*@
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>
+                                            Email của bạn/ Zalo
+                                            <strong class="red">
+                                                *
+                                            </strong>
+                                        </label>
+
+                                        <div>
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                            <div class="red">
+                                                <br />
+
+                                                @Html.ValidationMessageFor(m => m.Email)
+                                                <br />
+                                            </div>
+                                        </div>
+                                        @*<input class="inputfild" type="email" name="">*@
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>
+                                            Địa chỉ
+                                            <strong class="red">
+                                                *
+                                            </strong>
+                                        </label>
+
+                                        @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                                        <div class="red">
+                                            <br />
+                                            @Html.ValidationMessageFor(m => m.Address)
+                                            <br />
+                                        </div>
+                                        @*<input class="inputfild" type="email" name="">*@
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <label>
+                                            Số điện thoại
+                                            <strong class="red">
+                                                *
+                                            </strong>
+                                        </label>
+
+                                        @Html.TextBoxFor(m => m.Sdt, new { @class = "form-control" })
+                                        <div class="red">
+                                            <br />
+
+                                            @Html.ValidationMessageFor(m => m.Sdt)
+                                            <br />
+                                        </div>
+                                        @*<input class="inputfild" type="email" name="">*@
+                                    </div>
+
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>
+                                            Tên sản phẩm mong muốn
+                                            <strong class="red">
+                                                *
+                                            </strong>
+                                        </label>
+                                        @*<input class="inputfild" type="text" name="">*@
+
+                                        @Html.TextBoxFor(m => m.ProductName, new { @class = "form-control" })
+                                        <div class="red">
+                                            <br />
+                                            @Html.ValidationMessageFor(m => m.ProductName)
+                                            <br />
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>
+                                            Số lượng
+                                            <strong class="red">
+                                                *
+                                            </strong>
+                                        </label>
+                                        @*<input class="inputfild" type="number" />*@
+
+                                        @Html.TextBoxFor(m => m.Count, new { @class = "form-control", @type = "number" })
+                                        <div class="red">
+                                            <br />
+                                            @Html.ValidationMessageFor(m => m.Count)
+                                            <br />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label>
+                                            Ngày cần lấy
+                                            <strong class="red">*</strong>
+                                        </label>
+
+                                        @Html.TextBoxFor(m => m.DateRecieved, new { @class = "form-control", @type = "date" })
+                                        <br />
+                                        <div class="red">
+                                            @Html.ValidationMessageFor(m => m.DateRecieved)
+                                            <br />
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>
+                                            Ghi chú ngắn gọn
+                                        </label>
+                                        @Html.TextAreaFor(m => m.Description, new { @class = "form-control", @rows = "8" })
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <label class="text-center">Chúng tôi sẽ liên hệ với bạn ngay khi có sản phẩm</label>
+                                </div>
+
+
+                                <div class="button_group">
+                                    <input type="submit" class="pull-right" value="Đặt hàng">
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+        </div>
+    </div>
+</div>
