@@ -28,6 +28,7 @@
           <Property Name="SoLuong" Type="int" Nullable="false" />
           <Property Name="MoTa" Type="nvarchar(max)" />
           <Property Name="TrangThai" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="CreateDt" Type="date" />
         </EntityType>
         <EntityType Name="Kho">
           <Key>
@@ -89,11 +90,6 @@
           <Property Name="MoTa" Type="nvarchar(max)" />
           <Property Name="TinhTrang" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="PhanLoai" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="Image1" Type="varchar(max)" Nullable="false" />
-          <Property Name="Image2" Type="varchar(max)" />
-          <Property Name="Image3" Type="varchar(max)" />
-          <Property Name="Image4" Type="varchar(max)" />
-          <Property Name="Image5" Type="varchar(max)" />
         </EntityType>
         <EntityContainer Name="XeNangModelStoreContainer">
           <EntitySet Name="BanHang" EntityType="Self.BanHang" Schema="dbo" store:Type="Tables" />
@@ -142,6 +138,7 @@
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
           <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TrangThai" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDt" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Kho">
           <Key>
@@ -203,13 +200,8 @@
           <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TinhTrang" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="PhanLoai" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="Image1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Image2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Image3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Image4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Image5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -228,6 +220,7 @@
           <EntitySetMapping Name="DatHangs">
             <EntityTypeMapping TypeName="XeNangModel.DatHang">
               <MappingFragment StoreEntitySet="DatHang">
+                <ScalarProperty Name="CreateDt" ColumnName="CreateDt" />
                 <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="MoTa" ColumnName="MoTa" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
@@ -298,11 +291,6 @@
           <EntitySetMapping Name="ThongTinSanPhams">
             <EntityTypeMapping TypeName="XeNangModel.ThongTinSanPham">
               <MappingFragment StoreEntitySet="ThongTinSanPham">
-                <ScalarProperty Name="Image5" ColumnName="Image5" />
-                <ScalarProperty Name="Image4" ColumnName="Image4" />
-                <ScalarProperty Name="Image3" ColumnName="Image3" />
-                <ScalarProperty Name="Image2" ColumnName="Image2" />
-                <ScalarProperty Name="Image1" ColumnName="Image1" />
                 <ScalarProperty Name="PhanLoai" ColumnName="PhanLoai" />
                 <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
                 <ScalarProperty Name="MoTa" ColumnName="MoTa" />

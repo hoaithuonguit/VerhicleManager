@@ -46,13 +46,8 @@ namespace Data.Repositories
                         MoTa = product.MoTa,
                         TinhTrang = product.TinhTrang,
                         PhanLoai = product.PhanLoai,
-                        Image1 = product.Image1,
                         ID = ID
                     };
-                    if (product.Image2 != null) productInfomation.Image2 = product.Image2;
-                    if (product.Image3 != null) productInfomation.Image3 = product.Image3;
-                    if (product.Image4 != null) productInfomation.Image4 = product.Image4;
-                    if (product.Image5 != null) productInfomation.Image5 = product.Image5;
                     dbContext.ThongTinSanPhams.Add(productInfomation);
 
                     dbContext.SaveChanges();
@@ -169,12 +164,7 @@ namespace Data.Repositories
                                             d.Hang,
                                             d.MoTa,
                                             d.TinhTrang,
-                                            d.PhanLoai,
-                                            d.Image1,
-                                            d.Image2,
-                                            d.Image3,
-                                            d.Image4,
-                                            d.Image5
+                                            d.PhanLoai                                        
                                         },
                                         Quantity = b.SoLuong
                                     }
@@ -193,12 +183,7 @@ namespace Data.Repositories
                                         Hang = pg.Key.Hang,
                                         MoTa = pg.Key.MoTa,
                                         TinhTrang = pg.Key.TinhTrang,
-                                        PhanLoai = pg.Key.PhanLoai,
-                                        Image1 = pg.Key.Image1,
-                                        Image2 = pg.Key.Image2,
-                                        Image3 = pg.Key.Image3,
-                                        Image4 = pg.Key.Image4,
-                                        Image5 = pg.Key.Image5
+                                        PhanLoai = pg.Key.PhanLoai                                      
                                     }).Take(top)).ToList<ProductDto>();
 
                 var result = (from p in resultQuery
@@ -212,12 +197,7 @@ namespace Data.Repositories
                                   Doi = p.Doi,
                                   MoTa = p.MoTa,
                                   TinhTrang = Helper.GetValueFromNameInMaster(p.TinhTrang),
-                                  PhanLoai = Helper.GetValueFromNameInMaster(p.PhanLoai),
-                                  Image1 = p.Image1,
-                                  Image2 = p.Image2,
-                                  Image3 = p.Image3,
-                                  Image4 = p.Image4,
-                                  Image5 = p.Image5,
+                                  PhanLoai = Helper.GetValueFromNameInMaster(p.PhanLoai)
                               }).ToList<ProductDto>();
 
                 if (result.Count > 0)
@@ -246,12 +226,7 @@ namespace Data.Repositories
                                             d.Hang,
                                             d.MoTa,
                                             d.TinhTrang,
-                                            d.PhanLoai,
-                                            d.Image1,
-                                            d.Image2,
-                                            d.Image3,
-                                            d.Image4,
-                                            d.Image5
+                                            d.PhanLoai
                                         },
                                         Quantity = b.SoLuong
                                     }
@@ -270,12 +245,7 @@ namespace Data.Repositories
                                         Hang = pg.Key.Hang,
                                         MoTa = pg.Key.MoTa,
                                         TinhTrang = pg.Key.TinhTrang,
-                                        PhanLoai = pg.Key.PhanLoai,
-                                        Image1 = pg.Key.Image1,
-                                        Image2 = pg.Key.Image2,
-                                        Image3 = pg.Key.Image3,
-                                        Image4 = pg.Key.Image4,
-                                        Image5 = pg.Key.Image5
+                                        PhanLoai = pg.Key.PhanLoai
                                     }).Take(top)).ToList<ProductDto>();
 
                 var result = (from p in resultQuery
@@ -289,12 +259,7 @@ namespace Data.Repositories
                                   Doi = p.Doi,
                                   MoTa = p.MoTa,
                                   TinhTrang = Helper.GetValueFromNameInMaster(p.TinhTrang),
-                                  PhanLoai = Helper.GetValueFromNameInMaster(p.PhanLoai),
-                                  Image1 = p.Image1,
-                                  Image2 = p.Image2,
-                                  Image3 = p.Image3,
-                                  Image4 = p.Image4,
-                                  Image5 = p.Image5,
+                                  PhanLoai = Helper.GetValueFromNameInMaster(p.PhanLoai)                                 
                               }).ToList<ProductDto>();
 
                 if (result.Count > 0)
@@ -479,12 +444,7 @@ namespace Data.Repositories
                                        Doi = d.Doi,
                                        MoTa = d.MoTa,
                                        TinhTrang = d.TinhTrang,
-                                       PhanLoai = d.PhanLoai,
-                                       Image1 = d.Image1,
-                                       Image2 = d.Image2,
-                                       Image3 = d.Image3,
-                                       Image4 = d.Image4,
-                                       Image5 = d.Image5,
+                                       PhanLoai = d.PhanLoai
                                    }).ToList<ProductDto>();
 
                 var result = (from p in resultQuery
@@ -555,11 +515,6 @@ namespace Data.Repositories
                                       Hieu = d.Hieu,
                                       TinhTrang = d.TinhTrang,
                                       PhanLoai = d.PhanLoai,
-                                      Image1 = d.Image1,
-                                      Image2 = d.Image2,
-                                      Image3 = d.Image3,
-                                      Image4 = d.Image4,
-                                      Image5 = d.Image5,
                                       MoTa = d.MoTa,
                                   }).FirstOrDefault();
                     result.Loai = Helper.GetTypeName(result.Loai);
