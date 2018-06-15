@@ -28,7 +28,6 @@ namespace Desktop
         string Loai;
         string PhanLoai;
         string TinhTrang;
-        string Image1, Image2, Image3, Image4, Image5;
         string Type;
         #endregion
         #region Function
@@ -40,19 +39,7 @@ namespace Desktop
             ls = sv.GetAllProduct(Loai);
             dgv_DuLieu.DataSource = ls;
         }
-        public void resetTextBtn()
-        {
-            btn_ChonHinh1.Text = "Chọn hình ảnh";
-            btn_ChonHinh2.Text = "Chọn hình ảnh";
-            btn_ChonHinh3.Text = "Chọn hình ảnh";
-            btn_ChonHinh4.Text = "Chọn hình ảnh";
-            btn_ChonHinh5.Text = "Chọn hình ảnh";
-            Image1 = string.Empty;
-            Image2 = string.Empty;
-            Image3 = string.Empty;
-            Image4 = string.Empty;
-            Image5 = string.Empty;
-        }
+  
         public void resetControl()
         {
             tb_Doi.Text = string.Empty;
@@ -64,65 +51,7 @@ namespace Desktop
             cbb_TinhTrang.Text = string.Empty;
         }
         #endregion
-        #region btnChonHinh
-        private void btn_ChonHinh1_Click(object sender, EventArgs e)
-        {
-            using (var dlg = new OpenFileDialog())
-            {
-                dlg.CheckFileExists = false;
-                dlg.ShowDialog();
-                Image1 = dlg.FileName;
-                if(!string.IsNullOrEmpty(Image1)) btn_ChonHinh1.Text = "Chọn lại";                
-            }
-        }
-
-        private void btn_ChonHinh2_Click(object sender, EventArgs e)
-        {
-            using (var dlg = new OpenFileDialog())
-            {
-                dlg.CheckFileExists = false;
-                dlg.ShowDialog();
-                Image2 = dlg.FileName;
-                if (!string.IsNullOrEmpty(Image2)) btn_ChonHinh2.Text = "Chọn lại";
-
-
-            }
-        }
-
-        private void btn_ChonHinh3_Click(object sender, EventArgs e)
-        {
-            using (var dlg = new OpenFileDialog())
-            {
-                dlg.CheckFileExists = false;
-                dlg.ShowDialog();
-                Image3 = dlg.FileName;
-                if (!string.IsNullOrEmpty(Image3)) btn_ChonHinh3.Text = "Chọn lại";
-            }
-        }
-
-        private void btn_ChonHinh4_Click(object sender, EventArgs e)
-        {
-            using (var dlg = new OpenFileDialog())
-            {
-                dlg.CheckFileExists = false;
-                dlg.ShowDialog();
-                Image4 = dlg.FileName;
-                if (!string.IsNullOrEmpty(Image4)) btn_ChonHinh4.Text = "Chọn lại";
-            }
-        }
-
-        private void btn_ChonHinh5_Click(object sender, EventArgs e)
-        {
-            using (var dlg = new OpenFileDialog())
-            {
-                dlg.CheckFileExists = false;
-                dlg.ShowDialog();
-                Image5 = dlg.FileName;
-                if (!string.IsNullOrEmpty(Image5)) btn_ChonHinh5.Text = "Chọn lại";
-            }
-        }
-
-        #endregion
+     
         #region GetCbb
         //Không thay đổi trừ Admin
         //Lấy Value - Key ""
@@ -239,18 +168,12 @@ namespace Desktop
                     pro.Loai = Loai;
                     pro.PhanLoai = PhanLoai;
                     pro.TinhTrang = TinhTrang;
-                    if (!string.IsNullOrEmpty(Image1)) pro.Image1 = Image1;
-                    if (!string.IsNullOrEmpty(Image2)) pro.Image2 = Image2;
-                    if (!string.IsNullOrEmpty(Image3)) pro.Image3 = Image3;
-                    if (!string.IsNullOrEmpty(Image4)) pro.Image4 = Image4;
-                    if (!string.IsNullOrEmpty(Image5)) pro.Image5 = Image5;
                     DialogResult dlg = MessageBox.Show("Xác nhận thông tin sản phẩm đã chính xác!!", "Thông báo!!", MessageBoxButtons.OKCancel , MessageBoxIcon.Information);
                     if(dlg.Equals(DialogResult.OK))
                     {
                         sv.AddProduct(pro, Loai);
                         MessageBox.Show("Đã thêm sản phẩm!!", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         fillData();
-                        resetTextBtn();
                         resetControl();
                     }
                 }

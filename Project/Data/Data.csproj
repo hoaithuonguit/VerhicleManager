@@ -51,11 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dtos\ImportProductDto.cs" />
     <Compile Include="Dtos\MasterDataDto.cs" />
-    <Compile Include="Dtos\MasterInfoDto.cs" />
-    <Compile Include="Dtos\ProductTypeDto.cs" />
+    <Compile Include="Dtos\OrderDetailDto.cs" />
     <Compile Include="Dtos\ProductDto.cs" />
-    <Compile Include="Dtos\ProductStatusDto.cs" />
+    <Compile Include="Dtos\SellProductDto.cs" />
+    <Compile Include="Dtos\StockDto.cs" />
     <Compile Include="Infrastructure\Constant.cs" />
     <Compile Include="Infrastructure\Helper.cs" />
     <Compile Include="Model\BanHang.cs">
