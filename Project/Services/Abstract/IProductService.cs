@@ -23,7 +23,9 @@ namespace Services.Abstract
 
         string[] GetAllProductName();
         string[] GetAllProductName(string type);
-        string[] GetAllProd
+
+        string[] GetAllProductNameLike(string type, string key);
+        List<string> GetListProductNameLike(string type, string key);
 
         List<ImportProductDto> LoadAllImportInformation();
         List<SellProductDto> LoadAllSellInformation();
