@@ -93,9 +93,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Blue;
             this.groupBox1.Location = new System.Drawing.Point(8, 8);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(549, 612);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -109,7 +109,7 @@
             "Xe nâng",
             "Phụ tùng"});
             this.cbb_Loai.Location = new System.Drawing.Point(174, 37);
-            this.cbb_Loai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbb_Loai.Margin = new System.Windows.Forms.Padding(2);
             this.cbb_Loai.Name = "cbb_Loai";
             this.cbb_Loai.Size = new System.Drawing.Size(342, 33);
             this.cbb_Loai.TabIndex = 1;
@@ -128,12 +128,11 @@
             // 
             // cbb_PhanLoai
             // 
-            this.cbb_PhanLoai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbb_PhanLoai.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbb_PhanLoai.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbb_PhanLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_PhanLoai.FormattingEnabled = true;
             this.cbb_PhanLoai.Location = new System.Drawing.Point(174, 254);
-            this.cbb_PhanLoai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbb_PhanLoai.Margin = new System.Windows.Forms.Padding(2);
             this.cbb_PhanLoai.MaxDropDownItems = 7;
             this.cbb_PhanLoai.Name = "cbb_PhanLoai";
             this.cbb_PhanLoai.Size = new System.Drawing.Size(342, 33);
@@ -156,14 +155,17 @@
             this.tb_TenSanPham.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.tb_TenSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tb_TenSanPham.Location = new System.Drawing.Point(174, 75);
-            this.tb_TenSanPham.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_TenSanPham.Margin = new System.Windows.Forms.Padding(2);
             this.tb_TenSanPham.Name = "tb_TenSanPham";
             this.tb_TenSanPham.Size = new System.Drawing.Size(342, 30);
             this.tb_TenSanPham.TabIndex = 2;
             // 
             // btn_ChonHinh5
             // 
-       
+            this.btn_ChonHinh5.Location = new System.Drawing.Point(0, 0);
+            this.btn_ChonHinh5.Name = "btn_ChonHinh5";
+            this.btn_ChonHinh5.Size = new System.Drawing.Size(75, 23);
+            this.btn_ChonHinh5.TabIndex = 34;
             // 
             // cbb_TinhTrang
             // 
@@ -172,7 +174,7 @@
             this.cbb_TinhTrang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_TinhTrang.FormattingEnabled = true;
             this.cbb_TinhTrang.Location = new System.Drawing.Point(174, 291);
-            this.cbb_TinhTrang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbb_TinhTrang.Margin = new System.Windows.Forms.Padding(2);
             this.cbb_TinhTrang.Name = "cbb_TinhTrang";
             this.cbb_TinhTrang.Size = new System.Drawing.Size(342, 33);
             this.cbb_TinhTrang.TabIndex = 18;
@@ -181,7 +183,7 @@
             // tb_MoTa
             // 
             this.tb_MoTa.Location = new System.Drawing.Point(174, 218);
-            this.tb_MoTa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_MoTa.Margin = new System.Windows.Forms.Padding(2);
             this.tb_MoTa.Name = "tb_MoTa";
             this.tb_MoTa.Size = new System.Drawing.Size(342, 30);
             this.tb_MoTa.TabIndex = 6;
@@ -189,7 +191,7 @@
             // tb_HangSanXuat
             // 
             this.tb_HangSanXuat.Location = new System.Drawing.Point(174, 184);
-            this.tb_HangSanXuat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_HangSanXuat.Margin = new System.Windows.Forms.Padding(2);
             this.tb_HangSanXuat.Name = "tb_HangSanXuat";
             this.tb_HangSanXuat.Size = new System.Drawing.Size(342, 30);
             this.tb_HangSanXuat.TabIndex = 5;
@@ -197,7 +199,7 @@
             // tb_Doi
             // 
             this.tb_Doi.Location = new System.Drawing.Point(174, 150);
-            this.tb_Doi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_Doi.Margin = new System.Windows.Forms.Padding(2);
             this.tb_Doi.Name = "tb_Doi";
             this.tb_Doi.Size = new System.Drawing.Size(342, 30);
             this.tb_Doi.TabIndex = 4;
@@ -205,7 +207,7 @@
             // tb_Hieu
             // 
             this.tb_Hieu.Location = new System.Drawing.Point(174, 113);
-            this.tb_Hieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_Hieu.Margin = new System.Windows.Forms.Padding(2);
             this.tb_Hieu.Name = "tb_Hieu";
             this.tb_Hieu.Size = new System.Drawing.Size(342, 30);
             this.tb_Hieu.TabIndex = 3;
@@ -297,9 +299,9 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Blue;
             this.groupBox2.Location = new System.Drawing.Point(561, 8);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(645, 612);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -320,7 +322,7 @@
             this.cl_PhanLoai});
             this.dgv_DuLieu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_DuLieu.Location = new System.Drawing.Point(2, 56);
-            this.dgv_DuLieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_DuLieu.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_DuLieu.Name = "dgv_DuLieu";
             this.dgv_DuLieu.RowTemplate.Height = 28;
             this.dgv_DuLieu.Size = new System.Drawing.Size(641, 554);
@@ -454,7 +456,7 @@
             this.ClientSize = new System.Drawing.Size(913, 487);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmThongTinSanPham";
             this.Text = "Thông tin sản phẩm";
             this.Load += new System.EventHandler(this.frmThongTinSanPham_Load);

@@ -43,12 +43,7 @@ namespace Desktop
             
         }
 
-        private void strip_ChinhSuaThongTinCuaHang_Click(object sender, EventArgs e)
-        {
-            frmThongTinCuaHang frm = new frmThongTinCuaHang();
-            frm.ShowDialog();
-        }
-
+      
         private void strip_NhapHang_Click(object sender, EventArgs e)
         {
             frmNhapHang frm = new frmNhapHang();            //child form
@@ -92,19 +87,7 @@ namespace Desktop
         }
 
 
-        private void btn_XemDonDatHang_Click(object sender, EventArgs e)
-        {
-            frmDonDatHang frm = new frmDonDatHang();            //child form
-            frm.TopLevel = false;
-            TabPage tp = new TabPage(frm.Text);
-            tabControl_Main.TabPages.Add(tp);
-            frm.Activate();
-            frm.Parent = tp;
-            frm.Dock = DockStyle.Fill;
-            tabControl_Main.SelectedTab = tp;
-            frm.Closed += Form_Closed;
-            frm.Show();
-        }
+      
 
         private void thêmLoạiSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {

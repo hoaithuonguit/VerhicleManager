@@ -96,7 +96,11 @@ namespace Desktop
             XeNangEntities conText = new XeNangEntities();
             var query = from a in conText.MasterDatas where a.Keys.Equals(Type) select a.Value;
             itemList = query.ToList();
-            cbb.DataSource = itemList;
+           // cbb.DataSource = itemList;
+           foreach (var item in itemList)
+            {
+                cbb.Items.Add(item);
+            }
         }
 
         public static void loadData_cbbTinhTrang(ComboBox cbb)
