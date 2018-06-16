@@ -22,9 +22,57 @@ namespace Services
         public void AddProduct(ProductDto product, string type)
         {
             // TODO replace this path with absolute path of your PC
-  
+            string path = @"E:\Project\VehicleManager\Project\website\Image";
+
+            DirectoryInfo dir = new DirectoryInfo(path);
+            if (dir.Exists)
+            {
+                string img1 = Path.GetFileName(product.Image1);
+                string desImg1 = Path.Combine(path, img1);
+                if (!File.Exists(desImg1))
+                    File.Copy(product.Image1, desImg1, true);
+                product.Image1 = desImg1;
+
+                if (product.Image2 != null)
+                {
+                    string img2 = Path.GetFileName(product.Image2);
+                    string desImg2 = Path.Combine(path, img2);
+                    if (!File.Exists(desImg2))
+                        File.Copy(product.Image2, desImg2, true);
+                    product.Image2 = desImg2;
+                }
+                if (product.Image3 != null)
+                {
+                    string img3 = Path.GetFileName(product.Image3);
+                    string desImg3 = Path.Combine(path, img3);
+                    if (!File.Exists(desImg3))
+                        File.Copy(product.Image3, desImg3, true);
+                    product.Image3 = desImg3;
+                }
+                if (product.Image4 != null)
+                {
+                    string img4 = Path.GetFileName(product.Image4);
+                    string desImg4 = Path.Combine(path, img4);
+                    if (!File.Exists(desImg4))
+                        File.Copy(product.Image4, desImg4, true);
+                    product.Image4 = desImg4;
+                }
+                if (product.Image5 != null)
+                {
+                    string img5 = Path.GetFileName(product.Image5);
+                    string desImg5 = Path.Combine(path, img5);
+                    if (!File.Exists(desImg5))
+                        File.Copy(product.Image5, desImg5, true);
+                    product.Image5 = desImg5;
+                }
+            }
 
             _repository.AddProduct(product, type);
+        }
+
+        public void AddType(string typeOfProduct, string newTypeName)
+        {
+            this._repository.AddType(typeOfProduct, newTypeName);
         }
 
         public void ImportProduct(ImportProductDto importInformation, DateTime dateCreate)
@@ -94,6 +142,17 @@ namespace Services
         {
             return _repository.GetAllProductName(type);
         }
+
+        public string[] GetAllProductNameLike(string type, string key)
+        {
+            return _repository.GetAllProductNameLike(type, key);
+        }
+
+        public List<string> GetListProductNameLike(string type, string key)
+        {
+            return _repository.GetListProductNameLike(type, key);
+        }
+
         public int GetIDProduct(string productName)
         {
             return Helper.GetIDFromName(productName);
