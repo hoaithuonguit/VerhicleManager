@@ -7,6 +7,7 @@ namespace Services.Abstract
     public interface IProductService
     {
         void AddProduct(ProductDto product, string tpye);
+        void AddType(string typeOfProduct, string newTypeName);
         void ImportProduct(ImportProductDto importInformation, DateTime dateCreate);
 
         List<ProductDto> GetTopAccessories(int top);
@@ -22,6 +23,7 @@ namespace Services.Abstract
 
         string[] GetAllProductName();
         string[] GetAllProductName(string type);
+        string[] GetAllProd
 
         List<ImportProductDto> LoadAllImportInformation();
         List<SellProductDto> LoadAllSellInformation();
