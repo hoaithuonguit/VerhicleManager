@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Data.Dtos;
 
@@ -18,6 +18,7 @@ namespace Data.Repositories
 
         string[] GetAllProductNameLike(string type, string key);
         List<string> GetListProductNameLike(string type, string key);
+
 
         List<ProductDto> GetTopAccessories(int top);
         List<ProductDto> GetTopVehicles(int top);
