@@ -107,6 +107,15 @@ namespace Desktop
             cbb.DataSource = itemList;
         }
 
+        public static void loadCombobox_PhanLoai(ComboBox cbb, string Type, string key)
+        {
+            /// cần fix
+            AutoCompleteStringCollection itemList = new AutoCompleteStringCollection();
+            //List<string> itemList = new List<string>();
+            ProductService sv = new ProductService();
+            //itemList = sv.GetListProductNameLike(Type, cbb.Text.ToString());
+            cbb.DataSource = itemList;
+        }
 
         #endregion
 
